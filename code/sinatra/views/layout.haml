@@ -1,0 +1,17 @@
+!!! XML
+!!!
+
+%html
+  %head
+    %title FFStats
+    %script{:type => "text/javascript", :src => "/javascripts/jquery-1.4.2.min.js"}
+    %script{:type => "text/javascript", :src => "/javascripts/highcharts.js"}
+    %script{:type => "text/javascript", :src => "/javascripts/exporting.js"}
+  %body
+    %div(style="float:right")
+      %a(href="/") Timeline
+      |
+      %a(href="/cumulative")  Cumulative
+    %div
+      = yield
+

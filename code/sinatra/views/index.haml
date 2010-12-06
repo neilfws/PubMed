@@ -1,0 +1,55 @@
+%h1 Timeline
+
+%div#entries_date_chart(style="float: left")
+
+:javascript
+  $(function () {
+    new Highcharts.Chart({
+      chart:  {
+               renderTo: 'entries_date_chart',
+               defaultSeriesType: 'column',
+               width: 800,
+               zoomType: 'x'
+             },
+      subtitle: { text: 'Click and drag in the plot area to zoom in' },
+      legend: { enabled: false },
+      title:  { text: 'Retractions by date' },
+      xAxis:  { type: 'datetime', maxZoom: 604800000},
+      yAxis:  { title:
+               { text: 'Retractions' }
+             },
+      series: [{
+        data: #{@data.to_a.inspect.gsub(/"/,"")}
+            }],
+      credits: { enabled: false },
+      tooltip: {
+                formatter: function() {
+                                       return Highcharts.dateFormat('%A %B %e %Y', this.x) + ' : ' + this.y + ' entries';
+                                     }
+              },
+      plotOptions: {
+                    area: {
+                            lineWidth: 0,
+                            shadow: false,
+                            states: {
+                                     hover: { lineWidth: 0},
+                                   },
+                            marker: {
+                                     enabled: false,
+                                     states: {
+                                              hover: {
+                                                      enabled: true
+                                                    }
+                                            }
+                                   },
+                            fillColor: {
+                                        linearGradient: [0, 0, 0, 300],
+                                        stops: [
+                                                [0, 'rgb(69, 114, 167)'],
+                                                [1, 'rgba(2,0,0,0)']
+                                              ]
+                                     }
+                         }
+                 }
+    });
+  });
