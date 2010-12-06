@@ -5,7 +5,7 @@ require "bio"
 require "mongo"
 
 db  = Mongo::Connection.new.db('pubmed')
-col = db.collection('totals')
+col = db.collection('ecount')
 Bio::NCBI.default_email = "me@me.com"
 ncbi = Bio::NCBI::REST.new
 
