@@ -2,8 +2,9 @@ configure do
   DB = Mongo::Connection.new.db('pubmed')
 end
 
-entries     = DB.collection('entries')
-$KCODE      = "u"
+entries = DB.collection('entries')
+ecount  = DB.collection('ecount')
+$KCODE  = "u"
 
 # views
 get "/" do
@@ -18,5 +19,10 @@ get "/" do
 end
 
 get "/cumulative" do
+  @totals = ecount.find.map { |entry| [entry['year'], entry['total'], entry['retracted']]}
+  tsum = 0
+  rsum = 0
+  @totals.map! { |e| [e[0], tsum += e[1], rsum += e[2]]}
+  @totals.map! { |e| [e[0], e[1], 100000/e[1].to_f * e[2]]}
   haml :total
 end

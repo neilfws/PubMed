@@ -1,12 +1,12 @@
 %h1 Timeline
 
-%div#entries_date_chart(style="float: left")
+%div#container(style="float: left")
 
 :javascript
   $(function () {
     new Highcharts.Chart({
       chart:  {
-               renderTo: 'entries_date_chart',
+               renderTo: 'container',
                defaultSeriesType: 'column',
                width: 800,
                zoomType: 'x'

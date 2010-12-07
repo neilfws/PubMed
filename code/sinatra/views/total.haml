@@ -1,1 +1,71 @@
 %h1 Totals
+
+%div#container(style="float: left")
+
+:javascript
+  $(function () {
+    new Highcharts.Chart({
+    chart: {
+         renderTo: 'container',
+         zoomType: 'xy',
+         width: 800
+      },
+      legend: { enabled: false },
+      credits: { enabled: false },
+      title: {
+         text: 'Cumulative increase in publications and retractions'
+      },
+      xAxis: [{
+         categories: #{@totals.map { |e| e[0] }.inspect},
+         labels: { rotation: 90 }
+      }],
+      yAxis: [
+      { // Primary yAxis
+         labels: {
+            formatter: function() {
+               return this.value;
+            },
+            style: {
+               color: '#4572A7'
+            }
+         },
+         title: {
+            text: 'Cumulative sum of publications',
+            style: {
+               color: '#4572A7'
+            }
+         }
+      },
+      { // Secondary yAxis
+         title: {
+            text: 'Retractions per 100K publications',
+            style: {
+               color: '#89A54E'
+            }
+         },
+         labels: {
+            formatter: function() {
+               return this.value;
+            },
+            style: {
+               color: '#89A54E'
+            }
+         },
+         opposite: true
+      }],
+      series: [      {
+         name: 'Publications',
+         color: '#4572A7',
+         type: 'column',
+         yAxis: 0,
+         data: #{@totals.map { |e| e[1] }.inspect}
+      },
+      {
+         name: 'Retractions',
+         color: '#89A54E',
+         type: 'spline',
+         yAxis: 1,
+         data: #{@totals.map {|e| e[2] }.inspect}
+      }]
+    });
+  });
