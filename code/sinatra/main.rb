@@ -26,3 +26,20 @@ get "/cumulative" do
   @totals.map! { |e| [e[0], e[1], 100000/e[1].to_f * e[2]]}
   haml :total
 end
+
+get "/byyear" do
+  @totals = ecount.find.map { |entry| [entry['year'], entry['total'], entry['retracted']]}
+  @totals.map! { |e| [e[0], e[1], 100000/e[1].to_f * e[2]] }
+  haml :byyear
+end
+
+get "/journals" do
+  @journals = entries.find.inject(Hash.new(0)) {|h, e| h[e['MedlineCitation']['Article']['Journal']['ISOAbbreviation']] += 1; h }
+  @journals = @journals.sort_by { |k,v| v}.reverse
+  haml :journals
+end
+
+get "/testing" do
+  haml :test
+end
+

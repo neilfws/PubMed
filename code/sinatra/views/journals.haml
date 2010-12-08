@@ -1,4 +1,4 @@
-%h1 Timeline
+%h1 Journals
 
 %div#container(style="float: left")
 
@@ -7,25 +7,24 @@
     new Highcharts.Chart({
       chart:  {
                renderTo: 'container',
-               defaultSeriesType: 'column',
+               defaultSeriesType: 'bar',
                width: 800,
                height: 600,
-               zoomType: 'x'
+               marginLeft: 220
              },
-      subtitle: { text: 'Click and drag in the plot area to zoom in' },
       legend: { enabled: false },
-      title:  { text: 'Retractions by date' },
-      xAxis:  { type: 'datetime', maxZoom: 604800000},
+      title:  { text: 'Retractions by journal' },
+      xAxis:  { type: 'linear', categories: #{@journals.map {|j| j[0]}[0..19].inspect } },
       yAxis:  { title:
                { text: 'Retractions' }
              },
       series: [{
-        data: #{@data.to_a.inspect.gsub(/"/,"")}
+        data: #{@journals[0..19].inspect}
             }],
       credits: { enabled: false },
       tooltip: {
                 formatter: function() {
-                                       return Highcharts.dateFormat('%A %B %e %Y', this.x) + ' : ' + this.y + ' entries';
+                                       return this.x + ': ' + this.y + ' retractions';
                                      }
               },
       plotOptions: {

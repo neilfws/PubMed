@@ -1,4 +1,4 @@
-%h1 Totals
+%h1 By Year
 
 %div#container
 
@@ -17,7 +17,7 @@
         }
       },
       title: {
-         text: 'Cumulative increase in publications and retractions 1977-'
+         text: 'Publications and retractions by year 1977-'
       },
       xAxis: [{
          categories: #{@totals.map { |e| e[0] }.inspect},
@@ -35,7 +35,7 @@
             }
          },
          title: {
-            text: 'Cumulative sum of publications',
+            text: 'Publications',
             margin: 70,
             style: {
                color: '#89A54E'
