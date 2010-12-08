@@ -1,13 +1,13 @@
 %h1 Timeline
 
-%div#container(style="float: left")
+%div#container(style="margin-left: auto; margin-right: auto; width: 800px;")
 
 :javascript
   $(function () {
     new Highcharts.Chart({
       chart:  {
                renderTo: 'container',
-               defaultSeriesType: 'column',
+               defaultSeriesType: 'spline',
                width: 800,
                height: 600,
                zoomType: 'x'
