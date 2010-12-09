@@ -15,7 +15,7 @@ dates.each { |date| data[date] += 1}
 data = data.sort
 data.map! {|e| ["Date.UTC(#{e[0].year},#{e[0].month - 1},#{e[0].day})", e[1]] }
 
-t = { "timeline" => data}
+t = { "timeline" => data, "updated_at" => Time.now}
 timeline.save(t)
 
 puts "Saved #{timeline.find_one['timeline'].count} dates in timeline."
