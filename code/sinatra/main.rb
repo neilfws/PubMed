@@ -1,5 +1,8 @@
 configure do
-  DB = Mongo::Connection.new.db('pubmed')
+  conf = YAML::load(File.read("database.yml"))
+  host = conf['production']['host']
+  db   = conf['production']['db']
+  DB   = Mongo::Connection.new.db(db, host => host)
 end
 
 entries  = DB.collection('entries')
@@ -9,19 +12,32 @@ $KCODE   = "u"
 
 # function to format records
 def pmformat(records)
-  "#{records.to_a.map {|r| r['MedlineCitation']}.inspect}"
+  @html = "<ol>"
+  medline = records.map { |r| r['MedlineCitation']}
+  medline.each do |pub|
+    @html += "<li><a href=\"http://www.pubmed.org/#{pub['PMID']}\">#{pub['Article']['ArticleTitle']}</a></li>"
+    @html += "<b><i>#{pub['Article']['Journal']['Title']}</i></b><br />"
+    rof = pub['CommentsCorrectionsList']['CommentsCorrections']
+    @html += "Retraction of:"
+    if rof.class == Array
+      @html += "<ul>"
+      rof.each do |retract|
+        @html += "<li><a href=\"http://www.pubmed.org/#{retract['PMID']}\">#{retract['RefSource']}</a></li>" if retract['RefType'] == "RetractionOf"
+      end
+      @html += "</ul>"
+      elsif rof.class == BSON::OrderedHash
+      @html += "<ul>"
+        @html += "<li><a href=\"http://www.pubmed.org/#{rof['PMID']}\">#{rof['RefSource']}</a></li>" if rof['RefType'] == "RetractionOf"
+      @html += "</ul>"
+    end
+  end
+  @html += "</ol>"
+  "#{@html}"
 end
 
 # views
 get "/" do
-  @data = timeline.find_one['timeline']
-  # @dates = entries.find().map { |entry| entry['MedlineCitation']['DateCreated'] }
-  # @dates.map! { |d| Date.parse("#{d['Year']}-#{d['Month']}-#{d['Day']}") }
-  # @dates.sort!
-  # @data = (@dates.first..@dates.last).inject(Hash.new(0)) { |h, date| h[date] = 0; h }
-  # @dates.each { |date| @data[date] += 1}
-  # @data = @data.sort
-  # @data.map! {|e| ["Date.UTC(#{e[0].year},#{e[0].month - 1},#{e[0].day})", e[1]] }
+  @data = timeline.find_one
   haml :index
 end
 
@@ -52,7 +68,7 @@ get "/date/*" do
   haml :date
 end
 
-get "/testing" do
-  haml :test
+error 404 do
+  haml :error
 end
 
