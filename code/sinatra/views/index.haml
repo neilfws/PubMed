@@ -2,12 +2,14 @@
 
 %div#container(style="margin-left: auto; margin-right: auto; width: 800px;")
 
+%div#detail
+
 :javascript
   $(function () {
     new Highcharts.Chart({
       chart:  {
                renderTo: 'container',
-               defaultSeriesType: 'spline',
+               defaultSeriesType: 'area',
                width: 800,
                height: 600,
                zoomType: 'x'
@@ -15,17 +17,19 @@
       subtitle: { text: 'Click and drag in the plot area to zoom in' },
       legend: { enabled: false },
       title:  { text: 'Retractions by date' },
-      xAxis:  { type: 'datetime', maxZoom: 604800000},
+      xAxis:  { type: 'datetime'},
       yAxis:  { title:
                { text: 'Retractions' }
              },
       series: [{
-        data: #{@data.to_a.inspect.gsub(/"/,"")}
+        data: #{@data.inspect.gsub(/"/,"")}
             }],
       credits: { enabled: false },
       tooltip: {
                 formatter: function() {
-                                       return Highcharts.dateFormat('%A %B %e %Y', this.x) + ' : ' + this.y + ' entries';
+                                       var s = '<a href="/date/' + Highcharts.dateFormat('%Y-%m-%d', this.x) + '" target="_blank">' + Highcharts.dateFormat('%A %B %e %Y', this.x) + ' : ' + this.y + '</a>';
+                                       $('#detail').html(s);
+                                       return s;
                                      }
               },
       plotOptions: {
