@@ -10,12 +10,20 @@ def pmformat(records)
     if rof.class == Array
       @html += "<ul>"
       rof.each do |retract|
-        @html += "<li><a href=\"http://www.pubmed.org/#{retract['PMID']}\">#{retract['RefSource']}</a></li>" if retract['RefType'] == "RetractionOf"
+        if retract['PMID'].nil?
+          @html += "<li>#{retract['RefSource']}</li>" if retract['RefType'] == "RetractionOf"
+        else
+          @html += "<li><a href=\"http://www.pubmed.org/#{retract['PMID']}\">#{retract['RefSource']}</a></li>" if retract['RefType'] == "RetractionOf"
+        end
       end
       @html += "</ul>"
       elsif rof.class == BSON::OrderedHash
       @html += "<ul>"
+      if rof['PMID'].nil?
+        @html += "<li>#{rof['RefSource']}</li>" if rof['RefType'] == "RetractionOf"
+      else
         @html += "<li><a href=\"http://www.pubmed.org/#{rof['PMID']}\">#{rof['RefSource']}</a></li>" if rof['RefType'] == "RetractionOf"
+      end
       @html += "</ul>"
     end
   end
