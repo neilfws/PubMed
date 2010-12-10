@@ -4,4 +4,5 @@ require "mongo"
 require "haml"
 
 require "main"
+require "statistics"
 run Sinatra::Application
