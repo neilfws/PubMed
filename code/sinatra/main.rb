@@ -12,7 +12,7 @@ $KCODE   = "u"
 
 # views
 get "/" do
-  @data = timeline.find_one
+  @data = timeline.find.to_a.map { |e| [e['date'], e['count']] }
   haml :index
 end
 

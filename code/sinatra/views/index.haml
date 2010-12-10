@@ -1,5 +1,5 @@
 %h2 Timeline
-%p Last update: #{@data['updated_at']}
+%p Last update:
 
 %div#container(style="margin-left: auto; margin-right: auto; width: 800px;")
 
@@ -26,7 +26,7 @@
                { text: 'Retractions' }
              },
       series: [{
-        data: #{@data['timeline'].inspect.gsub(/"/,"")}
+        data: #{@data.inspect.gsub(/"/,"")}
             }],
       credits: { enabled: false },
       tooltip: {
