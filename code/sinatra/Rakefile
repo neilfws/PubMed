@@ -13,6 +13,7 @@ namespace :db do
   desc "Update pubmed collections"
   task :update do
     # ecount
+    puts "Updating ecount..."
     1977.upto(Time.now.year) do |year|
       all    = ncbi.esearch_count("#{year}[dp]", {"db" => "pubmed"})
       term   = ncbi.esearch_count("Retraction of Publication[ptyp] #{year}[dp]", {"db" => "pubmed"})
@@ -22,6 +23,7 @@ namespace :db do
     puts "Saved #{ecount.count} records in collection: ecount"
 
     # entries
+    puts "Updating entries..."
     max      = ncbi.esearch_count("Retraction of Publication[ptyp]", {"db" => "pubmed"})
     ids      = ncbi.esearch("Retraction of Publication[ptyp]", {"db" => "pubmed", "retmax" => max})
     xml      = Bio::NCBI::REST::EFetch.pubmed(ids, "xml")
@@ -33,6 +35,7 @@ namespace :db do
     puts "Saved #{entries.count} records in collection: entries"
 
     # timeline
+    puts "Updating timeline..."
     dates = entries.find.map { |entry| entry['MedlineCitation']['DateCreated'] }
     dates.map! { |d| Date.parse("#{d['Year']}-#{d['Month']}-#{d['Day']}") }
     dates.sort!
