@@ -16,7 +16,7 @@ data = data.sort
 data.map! {|e| ["Date.UTC(#{e[0].year},#{e[0].month - 1},#{e[0].day})", e[1]] }
 
 data.each do |date|
-  timeline.save({"date" => date[0], "count" => date[1]})
+  timeline.save({"_id" => date[0].gsub(".", "_"), "date" => date[0], "count" => date[1]})
 end
 
 puts "Saved #{timeline.count} dates in timeline."

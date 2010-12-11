@@ -17,7 +17,7 @@ namespace :db do
     1977.upto(Time.now.year) do |year|
       all    = ncbi.esearch_count("#{year}[dp]", {"db" => "pubmed"})
       term   = ncbi.esearch_count("Retraction of Publication[ptyp] #{year}[dp]", {"db" => "pubmed"})
-      record = {"year" => year, "total" => all, "retracted" => term}
+      record = {"_id" => year, "year" => year, "total" => all, "retracted" => term}
       ecount.save(record)
     end
     puts "Saved #{ecount.count} records in collection: ecount"
@@ -30,6 +30,7 @@ namespace :db do
     articles = Crack::XML.parse(xml)
 
     articles['PubmedArticleSet']['PubmedArticle'].each do |article|
+      article['_id'] = article['MedlineCitation']['PMID']
       entries.save(article)
     end
     puts "Saved #{entries.count} records in collection: entries"
@@ -44,7 +45,7 @@ namespace :db do
     data = data.sort
     data.map! {|e| ["Date.UTC(#{e[0].year},#{e[0].month - 1},#{e[0].day})", e[1]] }
     data.each do |date|
-      timeline.save({"date" => date[0], "count" => date[1]})
+      timeline.save({"_id" => date[0].gsub(".", "_"), "date" => date[0], "count" => date[1]})
     end
     puts "Saved #{timeline.count} dates in collection: timeline"
   end
