@@ -33,6 +33,7 @@ end
 
 get "/journals" do
   @journals = entries.find.inject(Hash.new(0)) {|h, e| h[e['MedlineCitation']['Article']['Journal']['ISOAbbreviation']] += 1; h }
+  @journals.delete(nil)
   @journals = @journals.sort_by { |k,v| v}.reverse
   haml :journals
 end
