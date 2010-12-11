@@ -5,7 +5,7 @@ def pmformat(records)
   medline.each do |pub|
     @html += "<li><a href=\"http://www.pubmed.org/#{pub['PMID']}\">#{pub['Article']['ArticleTitle']}</a></li>"
     @html += "<b><i>#{pub['Article']['Journal']['Title']}</i></b><br />"
-    rof = pub['CommentsCorrectionsList']['CommentsCorrections']
+    rof = pub['CommentsCorrectionsList'].nil? ? [] : pub['CommentsCorrectionsList']['CommentsCorrections']
     @html += "Retraction of:"
     if rof.class == Array
       @html += "<ul>"
