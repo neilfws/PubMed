@@ -3,7 +3,9 @@ configure do
   host = conf['production']['host']
   db   = conf['production']['db']
   DB   = Mongo::Connection.new.db(db, host => host)
-  # views
+  # timeline
+  timeline = DB.collection('timeline')
+  set :data, timeline.find.to_a.map { |e| [e['date'], e['count']] }
   # cumulative
   # by year
   # journals
@@ -11,12 +13,10 @@ end
 
 entries  = DB.collection('entries')
 ecount   = DB.collection('ecount')
-timeline = DB.collection('timeline')
 $KCODE   = "u"
 
 # views
 get "/" do
-  @data = timeline.find.to_a.map { |e| [e['date'], e['count']] }
   haml :index
 end
 
