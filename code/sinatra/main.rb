@@ -3,6 +3,10 @@ configure do
   host = conf['production']['host']
   db   = conf['production']['db']
   DB   = Mongo::Connection.new.db(db, host => host)
+  # views
+  # cumulative
+  # by year
+  # journals
 end
 
 entries  = DB.collection('entries')
@@ -26,8 +30,8 @@ get "/cumulative" do
 end
 
 get "/byyear" do
-  @totals = ecount.find.map { |entry| [entry['year'], entry['total'], entry['retracted']]}
-  @totals.map! { |e| [e[0], e[1], 100000/e[1].to_f * e[2]] }
+  @years = ecount.find.map { |entry| [entry['year'], entry['total'], entry['retracted']]}
+  @years.map! { |e| [e[0], e[1], 100000/e[1].to_f * e[2]] }
   haml :byyear
 end
 
