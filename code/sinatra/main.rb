@@ -6,13 +6,16 @@ configure do
   # timeline
   timeline = DB.collection('timeline')
   set :data, timeline.find.to_a.map { |e| [e['date'], e['count']] }
-  # cumulative
-  # by year
+  # cumulative + byyear
+  ecount = DB.collection('ecount')
+  set :totals, ecount.find.map { |entry| [entry['year'], entry['total'], entry['retracted']]}
   # journals
+  set :entries, DB.collection('entries')
+  set :journals, DB.collection('entries').find.inject(Hash.new(0)) {|h, e| h[e['MedlineCitation']['Article']['Journal']['ISOAbbreviation']] += 1; h }
 end
 
-entries  = DB.collection('entries')
-ecount   = DB.collection('ecount')
+# entries  = DB.collection('entries')
+# ecount   = DB.collection('ecount')
 $KCODE   = "u"
 
 # views
@@ -21,7 +24,7 @@ get "/" do
 end
 
 get "/cumulative" do
-  @totals = ecount.find.map { |entry| [entry['year'], entry['total'], entry['retracted']]}
+  @totals = options.totals
   tsum = 0
   rsum = 0
   @totals.map! { |e| [e[0], tsum += e[1], rsum += e[2]]}
@@ -30,13 +33,13 @@ get "/cumulative" do
 end
 
 get "/byyear" do
-  @years = ecount.find.map { |entry| [entry['year'], entry['total'], entry['retracted']]}
+  @years = options.totals
   @years.map! { |e| [e[0], e[1], 100000/e[1].to_f * e[2]] }
   haml :byyear
 end
 
 get "/journals" do
-  @journals = entries.find.inject(Hash.new(0)) {|h, e| h[e['MedlineCitation']['Article']['Journal']['ISOAbbreviation']] += 1; h }
+  @journals = options.journals
   @journals.delete(nil)
   @journals = @journals.sort_by { |k,v| v}.reverse
   haml :journals
@@ -44,7 +47,7 @@ end
 
 get "/date/*" do
   @date = params[:splat].first.split("-")
-  @records = pmformat(entries.find({"MedlineCitation.DateCreated.Year" => @date[0], "MedlineCitation.DateCreated.Month" => @date[1], "MedlineCitation.DateCreated.Day" => @date[2]}))
+  @records = pmformat(options.entries.find({"MedlineCitation.DateCreated.Year" => @date[0], "MedlineCitation.DateCreated.Month" => @date[1], "MedlineCitation.DateCreated.Day" => @date[2]}))
   haml :date
 end
 
