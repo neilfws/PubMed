@@ -6,16 +6,23 @@ configure do
   # timeline
   timeline = DB.collection('timeline')
   set :data, timeline.find.to_a.map { |e| [e['date'], e['count']] }
-  # cumulative + byyear
+  # cumulative
   ecount = DB.collection('ecount')
-  set :totals, ecount.find.map { |entry| [entry['year'], entry['total'], entry['retracted']]}
+  totals = ecount.find.map { |entry| [entry['year'], entry['total'], entry['retracted']]}
+  tsum = 0
+  rsum = 0
+  totals.map! { |e| [e[0], tsum += e[1], rsum += e[2]]}
+  totals.map! { |e| [e[0], e[1], 100000/e[1].to_f * e[2]]}
+  set :totals, totals
+  # by year
+  years = ecount.find.map { |entry| [entry['year'], entry['total'], entry['retracted']]}
+  years.map! { |e| [e[0], e[1], 100000/e[1].to_f * e[2]] }
+  set :years, years
   # journals
   set :entries, DB.collection('entries')
   set :journals, DB.collection('entries').find.inject(Hash.new(0)) {|h, e| h[e['MedlineCitation']['Article']['Journal']['ISOAbbreviation']] += 1; h }
 end
 
-# entries  = DB.collection('entries')
-# ecount   = DB.collection('ecount')
 $KCODE   = "u"
 
 # views
@@ -25,16 +32,11 @@ end
 
 get "/cumulative" do
   @totals = options.totals
-  tsum = 0
-  rsum = 0
-  @totals.map! { |e| [e[0], tsum += e[1], rsum += e[2]]}
-  @totals.map! { |e| [e[0], e[1], 100000/e[1].to_f * e[2]]}
   haml :total
 end
 
 get "/byyear" do
-  @years = options.totals
-  @years.map! { |e| [e[0], e[1], 100000/e[1].to_f * e[2]] }
+  @years = options.years
   haml :byyear
 end
 
@@ -54,4 +56,3 @@ end
 error 404 do
   haml :error
 end
-
