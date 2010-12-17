@@ -8,7 +8,8 @@ configure do
   set :data, timeline.find.to_a.map { |e| [e['date'], e['count']] }
   # cumulative + by year
   ecount = DB.collection('ecount')
-  totals = ecount.find.map { |entry| [entry['year'], entry['total'], entry['retracted']]}
+  totals = ecount.find.map { |entry| [entry['year'], entry['total'], entry['retracted'], entry['updated_at']]}
+  set :updated_at, totals.last[3]
   # by year
   years = totals.map { |e| [e[0], e[1], 100000/e[1].to_f * e[2]] }
   set :years, years
