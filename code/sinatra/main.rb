@@ -1,8 +1,12 @@
 configure do
-  conf = YAML::load(File.read("database.yml"))
-  host = conf['production']['host']
-  db   = conf['production']['db']
-  DB   = Mongo::Connection.new.db(db, host => host)
+  if ENV['MONGOHQ_URL']
+    uri  = URI.parse(ENV['MONGOHQ_URL'])
+    conn = Mongo::Connection.new(uri.host, uri.port)
+    DB   = conn.db(uri.path.gsub(/^\//, ''))
+    DB.authenticate(uri.user, uri.password)
+  else
+    DB   = Mongo::Connection.new.db('pubmed')
+  end
   # timeline
   timeline = DB.collection('timeline')
   set :data, timeline.find.to_a.map { |e| [e['date'], e['count']] }
@@ -19,7 +23,6 @@ configure do
   totals.map! { |e| [e[0], tsum += e[1], rsum += e[2]]}
   totals.map! { |e| [e[0], e[1], 100000/e[1].to_f * e[2]]}
   set :totals, totals
-
   # journals
   set :entries, DB.collection('entries')
   set :journals, DB.collection('entries').find.inject(Hash.new(0)) {|h, e| h[e['MedlineCitation']['Article']['Journal']['ISOAbbreviation']] += 1; h }
