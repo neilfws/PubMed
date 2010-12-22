@@ -1,3 +1,6 @@
+# NB Currently does not work
+# Parsing entries fails and task is set up for local DB only
+
 namespace :db do
   require 'mongo'
   require 'bio'
