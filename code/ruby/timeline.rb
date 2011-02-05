@@ -2,6 +2,7 @@
 
 require "rubygems"
 require "mongo"
+require "date"
 
 db       = Mongo::Connection.new.db('pubmed')
 entries  = db.collection('entries')
