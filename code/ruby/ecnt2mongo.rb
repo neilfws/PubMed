@@ -14,6 +14,7 @@ ncbi = Bio::NCBI::REST.new
   term   = ncbi.esearch_count("Retraction of Publication[ptyp] #{year}[dp]", {"db" => "pubmed"})
   record = {"_id" => year, "year" => year, "total" => all, "retracted" => term, "updated_at" => Time.now}
   col.save(record)
+  puts "#{year}..."
 end
 
 puts "Saved #{col.count} records."
