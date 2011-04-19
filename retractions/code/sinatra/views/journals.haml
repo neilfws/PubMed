@@ -1,0 +1,48 @@
+%h2 Pubmed Retractions - Top 20 Journals
+
+%div#container(style="margin-left: auto; margin-right: auto; width: 800px;")
+
+:javascript
+  $(function () {
+    new Highcharts.Chart({
+      chart:  {
+               renderTo: 'container',
+               defaultSeriesType: 'bar',
+               width: 800,
+               height: 600,
+               marginLeft: 220
+             },
+      legend: { enabled: false },
+      title:  { text: 'Retractions by journal' },
+      xAxis:  { type: 'linear', categories: #{@journals.map {|j| j[0]}[0..19].inspect } },
+      yAxis:  { title:
+               { text: 'Retractions' }
+             },
+      series: [{
+        data: #{@journals[0..19].inspect}
+            }],
+      credits: { enabled: false },
+      tooltip: {
+                formatter: function() {
+                                       return this.x + ': ' + this.y + ' retractions';
+                                     }
+              },
+      plotOptions: {
+                    area: {
+                            lineWidth: 0,
+                            shadow: false,
+                            states: {
+                                     hover: { lineWidth: 0},
+                                   },
+                            marker: {
+                                     enabled: false,
+                                     states: {
+                                              hover: {
+                                                      enabled: true
+                                                    }
+                                            }
+                                   }
+                         }
+                 }
+    });
+  });

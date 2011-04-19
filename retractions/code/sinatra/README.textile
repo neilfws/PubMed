@@ -1,0 +1,14 @@
+h1. Sinatra Code
+
+This directory contains the code which runs the "pmretract":http://pmretract.heroku.com/ application, hosted by Heroku/MongoHQ.
+
+Right now, it's not recommended that you try to run the sinatra code locally.  However, if you want to try, the steps are as follows:
+
+# Download the code, _e.g. git clone git@github.com:neilfws/PubMed.git_ and _cd code/sinatra_
+# _bundle install_
+# Install "MongoDB":http://www.mongodb.org on the same machine (default host _localhost_ and port)
+# Change back to the _code/ruby_ directory
+# Run scripts in order: _ecnt2mongo.rb, xml2mongo.rb, timeline.rb_ (requires the BioRuby _bio_ gem)
+# Change back to _code/sinatra_ and start the application (_e.g. shotgun config.ru_)
+
+In the future, Rakefile will supply tasks to replace step 5.

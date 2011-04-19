@@ -1,0 +1,55 @@
+# NB Currently does not work
+# Parsing entries fails and task is set up for local DB only
+
+namespace :db do
+  require 'mongo'
+  require 'bio'
+  require 'crack'
+
+  db = Mongo::Connection.new.db('pubmed')
+  ecount   = db.collection('ecount')
+  entries  = db.collection('entries')
+  timeline = db.collection('timeline')
+  Bio::NCBI.default_email = "me@me.com"
+  ncbi = Bio::NCBI::REST.new
+
+  desc "Update pubmed collections"
+  task :update do
+    # ecount
+    puts "Updating ecount..."
+    1977.upto(Time.now.year) do |year|
+      all    = ncbi.esearch_count("#{year}[dp]", {"db" => "pubmed"})
+      term   = ncbi.esearch_count("Retraction of Publication[ptyp] #{year}[dp]", {"db" => "pubmed"})
+      record = {"_id" => year, "year" => year, "total" => all, "retracted" => term}
+      ecount.save(record)
+    end
+    puts "Saved #{ecount.count} records in collection: ecount"
+
+    # entries
+    puts "Updating entries..."
+    max      = ncbi.esearch_count("Retraction of Publication[ptyp]", {"db" => "pubmed"})
+    ids      = ncbi.esearch("Retraction of Publication[ptyp]", {"db" => "pubmed", "retmax" => max})
+    xml      = Bio::NCBI::REST::EFetch.pubmed(ids, "xml")
+    articles = Crack::XML.parse(xml)
+
+    articles['PubmedArticleSet']['PubmedArticle'].each do |article|
+      article['_id'] = article['MedlineCitation']['PMID']
+      entries.save(article)
+    end
+    puts "Saved #{entries.count} records in collection: entries"
+
+    # timeline
+    puts "Updating timeline..."
+    dates = entries.find.map { |entry| entry['MedlineCitation']['DateCreated'] }
+    dates.map! { |d| Date.parse("#{d['Year']}-#{d['Month']}-#{d['Day']}") }
+    dates.sort!
+    data = (dates.first..dates.last).inject(Hash.new(0)) { |h, date| h[date] = 0; h }
+    dates.each { |date| data[date] += 1}
+    data = data.sort
+    data.map! {|e| ["Date.UTC(#{e[0].year},#{e[0].month - 1},#{e[0].day})", e[1]] }
+    data.each do |date|
+      timeline.save({"_id" => date[0].gsub(".", "_"), "date" => date[0], "count" => date[1]})
+    end
+    puts "Saved #{timeline.count} dates in collection: timeline"
+  end
+end

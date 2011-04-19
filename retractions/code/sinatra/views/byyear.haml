@@ -1,0 +1,79 @@
+%h2 PubMed Retractions - By Year
+
+%div#container(style="margin-left: auto; margin-right: auto; width: 800px;")
+
+:javascript
+  $(function () {
+    new Highcharts.Chart({
+    chart: {
+         renderTo: 'container',
+         width: 800,
+         height: 600
+      },
+      legend: { enabled: false },
+      credits: { enabled: false },
+      tooltip: { formatter: function() {
+        return this.x + ': ' + this.y
+        }
+      },
+      title: {
+         text: 'Publications and retractions by year 1977-'
+      },
+      xAxis: [{
+         categories: #{@years.map { |e| e[0] }.inspect},
+         labels: { rotation: 90 },
+         title: { text: "Year", margin: 40 }
+      }],
+      yAxis: [
+      { // Primary yAxis
+         labels: {
+            formatter: function() {
+               return this.value;
+            },
+            style: {
+               color: '#89A54E'
+            }
+         },
+         title: {
+            text: 'Publications',
+            margin: 70,
+            style: {
+               color: '#89A54E'
+            }
+         },
+         min: 0
+      },
+      { // Secondary yAxis
+         title: {
+            text: 'Retractions per 100K publications',
+            style: {
+               color: '#4572A7'
+            }
+         },
+         labels: {
+            formatter: function() {
+               return this.value;
+            },
+            style: {
+               color: '#4572A7'
+            }
+         },
+         // min: 0,
+         opposite: true
+      }],
+      series: [      {
+         name: 'Publications',
+         color: '#89A54E',
+         type: 'column',
+         yAxis: 0,
+         data: #{@years.map { |e| e[1] }.inspect}
+      },
+      {
+         name: 'Retractions',
+         color: '#4572A7',
+         type: 'spline',
+         yAxis: 1,
+         data: #{@years.map {|e| e[2] }.inspect}
+      }]
+    });
+  });
