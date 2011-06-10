@@ -14,7 +14,16 @@
              },
       legend: { enabled: false },
       title:  { text: 'Retractions by journal' },
-      xAxis:  { type: 'linear', categories: #{@journals.map {|j| j[0]}[0..19].inspect } },
+      subtitle: { text: 'Click journal name to see retractions for that journal' },
+      xAxis:  { type: 'linear',
+                categories: #{@journals.map {|j| j[0]}[0..19].inspect },
+                labels: {
+                formatter: function() {
+                return '<a href="/journal/' + escape(this.value) + '">' +
+                     this.value + '</a>';
+                     }
+                }
+                },
       yAxis:  { title:
                { text: 'Retractions' }
              },
@@ -24,7 +33,8 @@
       credits: { enabled: false },
       tooltip: {
                 formatter: function() {
-                                       return this.x + ': ' + this.y + ' retractions';
+                                       return this.point.name + '">' +
+                                       ' ' + this.y + ' retractions';
                                      }
               },
       plotOptions: {

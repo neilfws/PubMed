@@ -52,6 +52,12 @@ get "/journals" do
   haml :journals
 end
 
+get "/journal/*" do
+  @title = URI.decode(params[:splat].first)
+  @records = pmformat(options.entries.find("MedlineCitation.Article.Journal.ISOAbbreviation" => @title))
+  haml :journal
+end
+
 get "/date/*" do
   @date = params[:splat].first.split("-")
   @records = pmformat(options.entries.find({"MedlineCitation.DateCreated.Year" => @date[0], "MedlineCitation.DateCreated.Month" => @date[1], "MedlineCitation.DateCreated.Day" => @date[2]}))
