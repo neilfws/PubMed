@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+<!DOCTYPE PubmedArticleSet PUBLIC "-//NLM//DTD PubMedArticle, 1st January 2011//EN" "http://www.ncbi.nlm.nih.gov/corehtml/query/DTD/pubmed_110101.dtd">
+<PubmedArticleSet>
+
+<PubmedArticle>
+    <MedlineCitation Owner="NLM" Status="MEDLINE">
+        <PMID Version="1">993</PMID>
+        <DateCreated>
+            <Year>1976</Year>
+            <Month>02</Month>
+            <Day>09</Day>
+        </DateCreated>
+        <DateCompleted>
+            <Year>1976</Year>
+            <Month>02</Month>
+            <Day>09</Day>
+        </DateCompleted>
+        <DateRevised>
+            <Year>2009</Year>
+            <Month>11</Month>
+            <Day>18</Day>
+        </DateRevised>
+        <Article PubModel="Print">
+            <Journal>
+                <ISSN IssnType="Print">0264-6021</ISSN>
+                <JournalIssue CitedMedium="Print">
+                    <Volume>148</Volume>
+                    <Issue>3</Issue>
+                    <PubDate>
+                        <Year>1975</Year>
+                        <Month>Jun</Month>
+                    </PubDate>
+                </JournalIssue>
+                <Title>The Biochemical journal</Title>
+                <ISOAbbreviation>Biochem. J.</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>The stimulation by synaptic transmitters of the incorporation of oleate into the phospholipid of synaptic membranes.</ArticleTitle>
+            <Pagination>
+                <MedlinePgn>557-65</MedlinePgn>
+            </Pagination>
+            <Abstract>
+                <AbstractText>Noradrenaline stimulated the incorporation of oleate into choline glycerophospholipids of guinea-pig brain synaptic membranes incubated in sodium phosphate buffer. In the presence of 1 mm-NaF, noradrenaline stimulated the incorporation of oleate into the choline glycerophospholipids, phosphatidylinositol, ethanolamine glycerophospholipids, phosphatidylserine and phosphatidic acid of synaptic membranes incubated in 10 mm-Tris-HCl buffer. In Tris-CHl containing 1 mm-NaF, stimulation of incorporation of oleate into choline glycerophospholipids by noradrenaline was enhanced by ATP, CaCl2, MgCl2 and CoA plus dithiothreitol. The optimum concentration of CaCl2 for stimulation by 10 mum-noradrenaline was 10 mum. In the presence of CaCl2, the optimum concentration of ATP-2MgCl2 was in the range 0.1-1 mm. Acetylcholine, carbamoylcholine, 5-hydroxytryptamine, dopamine, histamine and gamma-aminobutyric acid also stimulated the incorporation of oleate into choline glycerophospholipids of synaptic membranes. Sigmoidal dose-response curves were obtained, similar to those obtained previously for stimulation by the same agonists of the hydrolysis of phosphatidylcholine by phospholipase A2 (Gullis &amp; Rowe, 1975a). The initial rate of transfer of oleate from oleoyl-CoA to choline glycerophospholipid was similar to the initial rate of transfer from oleate-albumin, stimulated by noradrenaline. Transfer of oleate from oleoyl-CoA was not appreciably stimulated by noradrenaline, but was stimulated by ATP and MgCl2.</AbstractText>
+            </Abstract>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>Gullis</LastName>
+                    <ForeName>R J</ForeName>
+                    <Initials>RJ</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Rowe</LastName>
+                    <ForeName>C E</ForeName>
+                    <Initials>CE</Initials>
+                </Author>
+            </AuthorList>
+            <Language>eng</Language>
+            <PublicationTypeList>
+                <PublicationType>Journal Article</PublicationType>
+                <PublicationType>Retracted Publication</PublicationType>
+            </PublicationTypeList>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>ENGLAND</Country>
+            <MedlineTA>Biochem J</MedlineTA>
+            <NlmUniqueID>2984726R</NlmUniqueID>
+            <ISSNLinking>0264-6021</ISSNLinking>
+        </MedlineJournalInfo>
+        <ChemicalList>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance>Albumins</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance>Neurotransmitter Agents</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance>Oleic Acids</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance>Phosphates</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance>Phosphatidylcholines</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance>Phospholipids</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>3483-12-3</RegistryNumber>
+                <NameOfSubstance>Dithiothreitol</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>51-41-2</RegistryNumber>
+                <NameOfSubstance>Norepinephrine</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>56-65-5</RegistryNumber>
+                <NameOfSubstance>Adenosine Triphosphate</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>7439-95-4</RegistryNumber>
+                <NameOfSubstance>Magnesium</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>7440-70-2</RegistryNumber>
+                <NameOfSubstance>Calcium</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>85-61-0</RegistryNumber>
+                <NameOfSubstance>Coenzyme A</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>EC 3.1.-</RegistryNumber>
+                <NameOfSubstance>Phospholipases</NameOfSubstance>
+            </Chemical>
+        </ChemicalList>
+        <CitationSubset>IM</CitationSubset>
+        <CommentsCorrectionsList>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Biol Chem. 1969 Dec 10;244(23):6395-402</RefSource>
+                <PMID Version="1">4311198</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Biol Chem. 1961 Oct;236:2620-3</RefSource>
+                <PMID Version="1">13899833</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Biochem J. 1975 Jun;148(3):567-81</RefSource>
+                <PMID Version="1">173287</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Biochem J. 1975 May;148(2):197-208</RefSource>
+                <PMID Version="1">239707</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Biochem J. 1969 Mar;112(1):61-70</RefSource>
+                <PMID Version="1">4304511</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Biochem J. 1967 Jan;102(1):373-80</RefSource>
+                <PMID Version="1">6030296</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Biol Chem. 1972 May 25;247(10):3269-77</RefSource>
+                <PMID Version="1">4337510</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Biochim Biophys Acta. 1972 Jun 20;266(3):695-707</RefSource>
+                <PMID Version="1">4339171</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Nature. 1971 May 14;231(5298):91-6</RefSource>
+                <PMID Version="1">4930103</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Mol Pharmacol. 1971 Sep;7(5):538-53</RefSource>
+                <PMID Version="1">5139565</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="RetractionIn">
+                <RefSource>Rowe CE. Biochem J. 1977 Apr 15;164(1):287-8</RefSource>
+                <PMID Version="1">195582</PMID>
+            </CommentsCorrections>
+        </CommentsCorrectionsList>
+        <MeshHeadingList>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Adenosine Triphosphate</DescriptorName>
+                <QualifierName MajorTopicYN="N">pharmacology</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Albumins</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Animals</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Brain</DescriptorName>
+                <QualifierName MajorTopicYN="N">metabolism</QualifierName>
+                <QualifierName MajorTopicYN="N">ultrastructure</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Calcium</DescriptorName>
+                <QualifierName MajorTopicYN="N">pharmacology</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Coenzyme A</DescriptorName>
+                <QualifierName MajorTopicYN="N">pharmacology</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Dithiothreitol</DescriptorName>
+                <QualifierName MajorTopicYN="N">pharmacology</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Dose-Response Relationship, Drug</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Guinea Pigs</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Kinetics</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Magnesium</DescriptorName>
+                <QualifierName MajorTopicYN="N">pharmacology</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Neurotransmitter Agents</DescriptorName>
+                <QualifierName MajorTopicYN="N">pharmacology</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Norepinephrine</DescriptorName>
+                <QualifierName MajorTopicYN="Y">pharmacology</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Oleic Acids</DescriptorName>
+                <QualifierName MajorTopicYN="Y">metabolism</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Phosphates</DescriptorName>
+                <QualifierName MajorTopicYN="N">pharmacology</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Phosphatidylcholines</DescriptorName>
+                <QualifierName MajorTopicYN="N">metabolism</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Phospholipases</DescriptorName>
+                <QualifierName MajorTopicYN="N">metabolism</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Phospholipids</DescriptorName>
+                <QualifierName MajorTopicYN="Y">biosynthesis</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Stimulation, Chemical</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName MajorTopicYN="N">Synaptic Membranes</DescriptorName>
+                <QualifierName MajorTopicYN="Y">metabolism</QualifierName>
+            </MeshHeading>
+        </MeshHeadingList>
+        <OtherID Source="NLM">PMC1165577</OtherID>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>1975</Year>
+                <Month>6</Month>
+                <Day>1</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>1975</Year>
+                <Month>6</Month>
+                <Day>1</Day>
+                <Hour>0</Hour>
+                <Minute>1</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>1975</Year>
+                <Month>6</Month>
+                <Day>1</Day>
+                <Hour>0</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>ppublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">993</ArticleId>
+            <ArticleId IdType="pmc">PMC1165577</ArticleId>
+        </ArticleIdList>
+    </PubmedData>
+</PubmedArticle>
+
+</PubmedArticleSet>

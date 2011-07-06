@@ -1,0 +1,35 @@
+h1. PubMed Retraction Data
+
+There are 3 directories in this section of the repository:
+
+* data
+* code/ruby and code/R
+* output
+
+h2. Data
+
+PubMed XML files for the queries "Retraction of Publication"[Publication Type] and "Retracted Publication"[Publication Type].
+
+h2. Code
+
+Ruby and R code for processing the data.  The key scripts and their output files are:
+
+* retraction_count.rb -> retractions.tsv
+- prints year, publications count, retractions count and retraction notices count for 1971-2011
+* pubmedxml2mongo.rb (no output file)
+- parses PubMed XML files and saves records in a mongodb database
+* mongo2journal.rb -> retractions_journals.tsv
+- prints pmid, journal, publication date, Medline date created and country published for retracted records
+* mongo2mesh.rb -> retractions_mesh.tsv
+- prints pmid, year and mesh terms for retracted records
+
+In addition, there are currently (2011-07-05) two R scripts:
+
+* by_journal.R -> retractions_journals_count.tsv
+- counts retractions by journal
+* by_country.R -> retractions_country_count.tsv
+- counts retractions by country of publication (NOT of authors)
+
+h2. Output
+
+Holds the output files from scripts in code directory. Usually TSV (tab-separated values) format.
