@@ -23,7 +23,7 @@ Ruby and R code for processing the data.  The key scripts and their output files
 * mongo2mesh.rb -> retractions_mesh.tsv
 - prints pmid, year and mesh terms for retracted records
 * mongo2dates.rb -> retractions_dates.tsv
-- prints pmids and years for publication + its retraction
+- prints pmids, years and months for publication + its retraction
 
 In addition, there are currently (2011-07-05) two R scripts:
 
