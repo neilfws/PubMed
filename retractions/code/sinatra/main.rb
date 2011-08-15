@@ -65,7 +65,7 @@ get "/date/*" do
 end
 
 get "/about" do
-  textile :about, :layout_engine => :haml
+  haml :about
 end
 
 error 404 do
