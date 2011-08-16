@@ -68,6 +68,10 @@ get "/about" do
   haml :about
 end
 
+get "/test" do
+  haml :test
+end
+
 error 404 do
   haml :error
 end

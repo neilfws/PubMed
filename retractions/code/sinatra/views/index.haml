@@ -3,8 +3,6 @@
 
 %div#container(style="margin-left: auto; margin-right: auto; width: 800px;")
 
-%div#detail(style="margin-left: auto; margin-right: auto; width: 800px; text-align: center; background-color: #FFFFC0;")
-
 :javascript
   $(function () {
     new Highcharts.Chart({
@@ -17,7 +15,7 @@
                marginTop: 80
              },
       subtitle: {
-               text: 'Click and drag in the plot area to zoom in<br/>Hover over point and click link under chart for details'
+               text: 'Click and drag in the plot area to zoom in<br/>Hover over point and click for details'
                },
       legend: { enabled: false },
       title:  { text: 'Retractions by date' },
@@ -31,9 +29,10 @@
       credits: { enabled: false },
       tooltip: {
                 formatter: function() {
-                                       var s = '<a href="/date/' + Highcharts.dateFormat('%Y-%m-%d', this.x) + '" target="_blank">' + Highcharts.dateFormat('%A %B %e %Y', this.x) + ' : ' + this.y + '</a>';
-                                       $('#detail').html(s);
-                                       return s;
+                                       // var s = '<a href="/date/' + Highcharts.dateFormat('%Y-%m-%d', this.x) + '" target="_blank">' + Highcharts.dateFormat('%A %B %e %Y', this.x) + ' : ' + this.y + '</a>';
+                                       return Highcharts.dateFormat('%A %B %e %Y', this.x) + ' : ' + this.y;
+                                       // $('#detail').html(s);
+                                       // return s;
                                      }
               },
       plotOptions: {
@@ -51,7 +50,19 @@
                                                     }
                                             }
                                    }
-                         }
-                 }
-    });
+                         },
+                    series: {
+                    cursor: 'pointer',
+                    point: {
+                      events: {
+                        click: function() {
+                          var s = '/date/' + Highcharts.dateFormat('%Y-%m-%d', this.x);
+                            window.open(s);
+                            return false;
+                                }
+                              }
+                            }
+                        }
+                   }
+         });
   });
