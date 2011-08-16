@@ -1,9 +1,12 @@
-%h3 Testing
+%h3 PubMed Retraction Notices - Timeline
+%h4 Alternative interface (testing)
+%p Last update: #{options.updated_at}
 
 %div#container(style="margin-left: auto; margin-right: auto; width: 800px;")
 
 :javascript
   var masterChart, detailChart;
+  var data = #{options.data.inspect.gsub(/"/,"")};
 
   $(document).ready(function() {
                                 // create the master chart
@@ -16,6 +19,7 @@
                                                         backgroundColor: null,
                                                         marginLeft: 50,
                                                         marginRight: 20,
+                                                        marginBottom: 70,
                                                         zoomType: 'x',
                                                         events: {
 
@@ -42,7 +46,8 @@
                                                                         xAxis.removePlotBand('mask-before');
                                                                         xAxis.addPlotBand({
                                                                                 id: 'mask-before',
-                                                                                from: Date.UTC(2006, 0, 1),
+                                                                                // from: Date.UTC(2006, 0, 1),
+                                                                                from: data[0][0],
                                                                                 to: min,
                                                                                 color: 'rgba(0, 0, 0, 0.2)'
                                                                         });
@@ -51,7 +56,7 @@
                                                                         xAxis.addPlotBand({
                                                                                 id: 'mask-after',
                                                                                 from: max,
-                                                                                to: Date.UTC(2008, 11, 31),
+                                                                                to: data[data.length -1][0],
                                                                                 color: 'rgba(0, 0, 0, 0.2)'
                                                                         });
 
@@ -71,8 +76,8 @@
                                                         maxZoom: 14 * 24 * 3600000, // fourteen days
                                                         plotBands: [{
                                                                 id: 'mask-before',
-                                                                from: Date.UTC(2006, 0, 1),
-                                                                to: Date.UTC(2008, 7, 1),
+                                                                from: data[0][0],
+                                                                to:   data[data.length - 1][0],
                                                                 color: 'rgba(0, 0, 0, 0.2)'
                                                         }],
                                                         title: {
@@ -126,11 +131,11 @@
 
                                                 series: [{
                                                         type: 'area',
-                                                        name: 'USD to EUR',
+                                                        // name: 'USD to EUR',
                                                         pointInterval: 24 * 3600 * 1000,
-                                                        pointStart: Date.UTC(2006, 0, 01),
-                                                        // data: data
-                                                        data: #{options.data.inspect.gsub(/"/,"")}
+                                                        pointStart: data[0][0],
+                                                        data: data
+                                                        // data: #{options.data.inspect.gsub(/"/,"")}
                                                 }],
 
                                                 exporting: {
@@ -164,6 +169,7 @@
                                                         reflow: false,
                                                         marginLeft: 50,
                                                         marginRight: 20,
+                                                        marginTop: 80,
                                                         style: {
                                                                 position: 'absolute'
                                                         }
@@ -175,7 +181,7 @@
                                                         text: 'Retractions by date'
                                                 },
                                                 subtitle: {
-                                                        text: 'Select an area by dragging across the lower chart'
+                                                        text: 'Select an area by dragging across the lower chart<br>Hover over point in upper chart and click for details'
                                                 },
                                                 xAxis: {
                                                         type: 'datetime'
@@ -220,7 +226,7 @@
                                                         }
                                                 },
                                                 series: [{
-                                                        name: 'USD to EUR',
+                                                        // name: 'USD to EUR',
                                                         pointStart: detailStart,
                                                         pointInterval: 24 * 3600 * 1000,
                                                         data: detailData
@@ -241,7 +247,7 @@
                                         .appendTo($container);
 
                                 var $masterContainer = $('<div id="master-container">')
-                                        .css({ position: 'absolute', top: 300, height: 120, width: '100%' })
+                                        .css({ position: 'absolute', top: 300, height: 150, width: '100%' })
                                         .appendTo($container);
 
                                 // create master and in its callback, create the detail chart

@@ -6,6 +6,7 @@ require "crack"
 
 db  = Mongo::Connection.new.db("pubmed")
 col = db.collection('entries')
+col.drop
 
 xmlfile = "#{ENV['HOME']}/Dropbox/projects/pubmed/retractions/data/retract.xml"
 xml     = Crack::XML.parse(File.read(xmlfile))
