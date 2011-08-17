@@ -1,11 +1,11 @@
 journal	retractions
-Science	65
-Proc. Natl. Acad. Sci. U.S.A.	58
+Science	66
+Proc. Natl. Acad. Sci. U.S.A.	60
 Nature	44
-J. Biol. Chem.	38
+J. Biol. Chem.	42
 J. Immunol.	32
 Anesth. Analg.	29
-Blood	22
+Blood	23
 Cell	22
 J. Clin. Invest.	22
 Biochem. Biophys. Res. Commun.	17
@@ -19,17 +19,19 @@ Lancet	13
 Cancer Res.	12
 J. Virol.	12
 Anesthesiology	11
+Br J Anaesth	11
 Eur J Anaesthesiol	11
 Biochem. J.	10
 Gut	10
 Phytother Res	10
 Biochemistry	9
 Mol. Cells	9
+Circ. Res.	8
 J. Exp. Med.	8
 Nat. Med.	8
 Wiad. Lek.	8
+Anaesthesia	7
 Ann. Thorac. Surg.	7
-Circ. Res.	7
 Contraception	7
 FASEB J.	7
 J Pak Med Assoc	7
@@ -58,6 +60,7 @@ Neuroscience	5
 Nucleic Acids Res.	5
 Oral Oncol.	5
 Transplantation	5
+Transplant. Proc.	5
 Yonsei Med. J.	5
 Am. J. Cardiol.	4
 Anal Sci	4
@@ -76,9 +79,11 @@ J Colloid Interface Sci	4
 J Drug Target	4
 J. Huazhong Univ. Sci. Technol. Med. Sci.	4
 J. Neurochem.	4
+J. Neurosci.	4
 J. Obstet. Gynaecol. Res.	4
 J. Surg. Res.	4
 J. Thorac. Cardiovasc. Surg.	4
+J Trauma	4
 J. Urol.	4
 Langmuir	4
 Leukemia	4
@@ -87,6 +92,7 @@ Mol. Cancer	4
 Nat. Cell Biol.	4
 Neuron	4
 Obstet Gynecol	4
+Org. Lett.	4
 Plant Physiol.	4
 Plast. Reconstr. Surg.	4
 Radiology	4
@@ -103,6 +109,7 @@ Biol. Pharm. Bull.	3
 Biol. Psychiatry	3
 Biophys. J.	3
 Brain Res.	3
+Br. J. Haematol.	3
 Br J Ophthalmol	3
 Br. J. Pharmacol.	3
 Cardiovasc Intervent Radiol	3
@@ -120,6 +127,7 @@ Eur. J. Neurosci.	3
 FEMS Immunol. Med. Microbiol.	3
 Gan To Kagaku Ryoho	3
 Glia	3
+Gynecol. Oncol.	3
 Hypertension	3
 Int. J. Cancer	3
 Int. J. Cardiol.	3
@@ -130,17 +138,15 @@ J. Leukoc. Biol.	3
 J. Med. Primatol.	3
 J Pain	3
 J. Pharm. Pharmacol.	3
-J Trauma	3
 Microbiology (Reading, Engl.)	3
 Mol. Cell. Biochem.	3
 Molecules	3
 Neurosurg Focus	3
-Org. Lett.	3
+Oncogene	3
 Pediatrics	3
 Sci. China, C, Life Sci.	3
 Sleep	3
 Tidsskr. Nor. Laegeforen.	3
-Transplant. Proc.	3
 Viral Immunol.	3
 Virus Res.	3
 Accid Emerg Nurs	2
@@ -171,6 +177,7 @@ Bioorg. Med. Chem. Lett.	2
 Bioresour. Technol.	2
 BJU Int.	2
 Blood Cells Mol. Dis.	2
+BMC Microbiol.	2
 Br J Nurs	2
 Bull. Exp. Biol. Med.	2
 Can Fam Physician	2
@@ -199,11 +206,11 @@ Exp. Mol. Med.	2
 Eye Contact Lens	2
 Folia Biol. (Praha)	2
 Gastroenterology	2
+Genes Dev.	2
 Gene Ther.	2
 Genetica	2
 Genome Res.	2
 Genomics	2
-Gynecol. Oncol.	2
 Haematologica	2
 HBPD INT	2
 Hereditas	2
@@ -226,6 +233,7 @@ ISA Trans	2
 J. Agric. Food Chem.	2
 J. Allergy Clin. Immunol.	2
 JAMA	2
+J Am Acad Nurse Pract	2
 J. Am. Soc. Nephrol.	2
 J Appl Physiol	2
 J Assoc Physicians India	2
@@ -293,6 +301,7 @@ Surg Laparosc Endosc	2
 Thyroid	2
 Transfus Med	2
 Virol. J.	2
+Vox Sang.	2
 Yao Xue Xue Bao	2
 Zhonghua Yi Xue Yi Chuan Xue Za Zhi	2
 AAPS PharmSciTech	1
@@ -327,7 +336,8 @@ Am. J. Physiol. Lung Cell Mol. Physiol.	1
 Am. J. Reprod. Immunol.	1
 Am Surg	1
 Amyloid	1
-Anaesthesia	1
+Anaesthesist	1
+Anal. Chem.	1
 Andrologia	1
 Anim. Reprod. Sci.	1
 Ann Allergy	1
@@ -338,6 +348,7 @@ Ann Pharmacother	1
 Ann. Rheum. Dis.	1
 Ann. Transplant.	1
 Anticancer Drugs	1
+Appl Radiat Isot	1
 Arch. Biochem. Biophys.	1
 Arch. Dermatol. Res.	1
 Arch. Dis. Child.	1
@@ -378,7 +389,6 @@ Breast Cancer	1
 Breast J	1
 Br J Addict	1
 Br. J. Cancer	1
-Br. J. Haematol.	1
 Br J Sociol	1
 Br J Surg	1
 Bull Environ Contam Toxicol	1
@@ -477,7 +487,6 @@ Food Chem. Toxicol.	1
 Forum (Genova)	1
 Gait Posture	1
 Gene	1
-Genes Dev.	1
 Glob Public Health	1
 Haemophilia	1
 Harefuah	1
@@ -496,7 +505,10 @@ Immunopharmacol Immunotoxicol	1
 Indian J Dent Res	1
 Indian J Gastroenterol	1
 Indian J Ophthalmol	1
+Indian J Pathol Microbiol	1
 Inhal Toxicol	1
+Interact Cardiovasc Thorac Surg	1
+Intern Emerg Med	1
 Int Heart J	1
 Int. Immunopharmacol.	1
 Int. J. Biol. Sci.	1
@@ -516,7 +528,6 @@ Int Orthop	1
 Invert. Neurosci.	1
 J Adv Nurs	1
 J. Am. Acad. Dermatol.	1
-J Am Acad Nurse Pract	1
 J. Am. Coll. Surg.	1
 J Am Geriatr Soc	1
 J. Anim. Sci.	1
@@ -547,11 +558,13 @@ J Clin Psychiatry	1
 J Clin Rheumatol	1
 J Commun Dis	1
 J Contemp Health Law Policy	1
+J. Cutan. Pathol.	1
 J. Dermatol.	1
 J Drugs Dermatol	1
 J. Econ. Entomol.	1
 J Egypt Natl Canc Inst	1
 J. Endocrinol.	1
+J Environ Radioact	1
 J Environ Sci (China)	1
 J. Exp. Biol.	1
 J Exp Psychol Anim Behav Process	1
@@ -560,6 +573,7 @@ J Exp Psychol Hum Percept Perform	1
 J. Fish Biol.	1
 J Fluoresc	1
 J. Hepatol.	1
+J Integr Bioinform	1
 J. Interferon Cytokine Res.	1
 J Intern Med Suppl	1
 J. Investig. Med.	1
@@ -583,7 +597,6 @@ J. Nephrol.	1
 J Neural Transm	1
 J. Neurol. Sci.	1
 J. Neurophysiol.	1
-J. Neurosci.	1
 J. Neurotrauma	1
 J Nurs Manag	1
 J Opt Soc Am A Opt Image Sci Vis	1
@@ -662,7 +675,6 @@ Nucleosides Nucleotides Nucleic Acids	1
 Nucl Med Commun	1
 Nutrition	1
 Obesity (Silver Spring)	1
-Oncogene	1
 Onkologie	1
 Ophthal Plast Reconstr Surg	1
 Optom Vis Sci	1
@@ -723,6 +735,7 @@ Sheng Li Xue Bao	1
 Sheng Wu Hua Xue Yu Sheng Wu Wu Li Xue Bao	1
 Shock	1
 Singapore Med J	1
+Sleep Breath	1
 Sleep Med.	1
 Small	1
 Sociol Health Illn	1
@@ -737,6 +750,7 @@ Thorac Surg Clin	1
 Tohoku J. Exp. Med.	1
 Toxicol. Mech. Methods	1
 Toxicology	1
+Toxicol. Sci.	1
 Transpl. Immunol.	1
 Trop Doct	1
 Trop Gastroenterol	1
@@ -745,7 +759,6 @@ Verh Dtsch Ges Pathol	1
 Vet. Clin. North Am. Small Anim. Pract.	1
 Virology	1
 Vojnosanit Pregl	1
-Vox Sang.	1
 Water Res.	1
 World Hosp Health Serv	1
 World J Surg	1

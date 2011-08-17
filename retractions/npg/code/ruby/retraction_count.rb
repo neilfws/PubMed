@@ -5,7 +5,7 @@ require "bio"
 
 Bio::NCBI.default_email = "me@me.com"
 ncbi = Bio::NCBI::REST.new
-outdir = "../../output"
+outdir = "#{ENV['HOME']}/Dropbox/projects/pubmed/retractions/npg/output"
 
 File.open("#{outdir}/retractions.tsv", "w") do |f|
   f.write "year\tpublications\tretracted\tretractionOf\n"

@@ -21,4 +21,4 @@ m <- match(dcc$journal, dcmin$journal)
 dcc$minDateCreated <- dcmin[m, "minDateCreated"]
 dcc <- na.omit(dcc)
 
-# write.table(dcc, file = "journals_mindate.tsv", sep = "\t", quote = F, col.names = T, row.names = F)
+write.table(dcc, file = "journals_mindate.tsv", sep = "\t", quote = F, col.names = T, row.names = F)
