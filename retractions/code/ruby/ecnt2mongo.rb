@@ -11,8 +11,10 @@ ncbi = Bio::NCBI::REST.new
 
 1977.upto(Time.now.year) do |year|
   all    = ncbi.esearch_count("#{year}[dp]", {"db" => "pubmed"})
-  term   = ncbi.esearch_count("Retraction of Publication[ptyp] #{year}[dp]", {"db" => "pubmed"})
-  record = {"_id" => year, "year" => year, "total" => all, "retracted" => term, "updated_at" => Time.now}
+  term   = ncbi.esearch_count("Retraction of Publication[ptyp] #{year}[dp]",
+                               {"db" => "pubmed"})
+  record = {"_id" => year, "year" => year, "total" => all,
+            "retracted" => term, "updated_at" => Time.now}
   col.save(record)
   puts "#{year}..."
 end
