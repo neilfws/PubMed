@@ -26,6 +26,7 @@ def pmformat(records)
       end
       @html += "</ul>"
     end
+    @html += "<hr />"
   end
   @html += "</ol>"
   "#{@html}"
