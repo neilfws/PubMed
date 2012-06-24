@@ -53,8 +53,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 10666572	1999	Dec	20124703	2010	Feb	RetractionIn
 10667788	2000	Jan	12621444	2003	Mar	RetractionIn
 10669410	2000	Feb	12416506	2002	Nov	RetractionIn
-10688189	2000	Feb	12024219	2002	May	RetractionIn
-10696980	2000	Feb	11073015	2000	Oct	RetractionIn
 10698743	2000	Mar	17170272	2006	Dec	RetractionIn
 10698946	2000	Mar	12134869	2001	Sep	RetractionIn
 10700237	2000	Mar	12949529	2003	Sep	RetractionIn
@@ -62,10 +60,10 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 10717780	1999	Nov	15504385	2004	Nov	RetractionIn
 10720165	2000	Feb	10958843	2000	Sep	RetractionIn
 10722567	2000	Apr	21177931	2011	Jan	RetractionIn
-11286195	2001	Mar	11411464	2001	Jun	RetractionIn
 10733203	1999	Dec	18759949	2008	Aug	RetractionIn
 10754111	2000	Apr	11707783	2001	Dec	RetractionIn
 10755190	2000	Mar	19891639	2009	Dec	RetractionIn
+3043903	1988	Jan	9669965	1998		RetractionIn
 10781579	2000	Jul	17939191	2007	Sep	RetractionIn
 10784445	2000	Apr	12416506	2002	Nov	RetractionIn
 10786832	2000	Apr	16329169	2005	Nov	RetractionIn
@@ -121,12 +119,12 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 11146662	2000	Dec	12833069	2003	Jul	RetractionIn
 11169971	2001	Mar	12080958	2002	Jun	RetractionIn
 11179289	2001	Mar	21177932	2011	Jan	RetractionIn
-11182366	2001	Feb	12809932	2003	Jun	RetractionIn
 11202499	2000	Nov	11934009	2002	Mar	RetractionIn
 11206594	2000	Dec	11874225	2002	Feb	RetractionIn
 11222596	2001	Mar	12867482	2003	Aug	RetractionIn
 11242074	2001	Mar	12621441	2003	Mar	RetractionIn
 11248046	2001	Mar	20534577	2010	Jun	RetractionIn
+11286195	2001	Mar	11411464	2001	Jun	RetractionIn
 11292876	2001	Apr	11887789	2002	Feb	RetractionIn
 11303093	2001	Apr	12416506	2002	Nov	RetractionIn
 11303094	2001	Apr	16614196	2006	Apr	RetractionIn
@@ -145,7 +143,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 11418471	2001	Jul	18056845	2007	Dec	PartialRetractionIn
 11430323	2001	Jun	12482104	2002	Sep	RetractionIn
 11433760	2001	Jan	12380568	2002	Jan	RetractionIn
-11435477	2001	Jul	14517276	2003	Oct	RetractionIn
 11439362	2001	Jul	17136756	2007	Jan	RetractionIn
 11444867	2001	Jul	15540369	2004	Nov	RetractionIn
 11447161	2001	Aug	19767645	2009	Oct	RetractionIn
@@ -153,7 +150,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 11461904	2001	Oct	12243194	2002	Aug	RetractionIn
 11474113	2001	Jul	15653487	2005	Jan	RetractionIn
 11489795	2001	Aug	12231550	2002	Sep	RetractionIn
-11490022	2001	Aug	17056589	2006	Nov	RetractionIn
 11506111	2001	Aug	19218855	2009	Mar	RetractionIn
 11509576	2001	Oct	14712821	2004	Jan	RetractionIn
 11518677	2001	Sep	19797239	2009	Oct	RetractionIn
@@ -162,13 +158,10 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 11533443	2001	Sep	12416506	2002	Nov	RetractionIn
 11535583	2001	Nov	16498716	2005	Dec	RetractionIn
 11535776	2001	Sep	12119325	2002	Jul	RetractionIn
-11536383	2001	Sep	18814186	2008	Oct	RetractionIn
 11542874	1993	Oct	11712587	2000	Feb	RetractionIn
-11543891	2001	Sep	11600210	2001	Oct	RetractionIn
 11546864	2001	Sep	17185584	2006	Dec	RetractionIn
 11558215	2001	Jul	19004130	2008	Jul	RetractionIn
 11564576	2001	Oct	17457991	2007	Apr	RetractionIn
-11565755	2001	Sep	14561890	2003	Nov	PartialRetractionIn
 11571675	2001		12211159	2002	Apr	RetractionIn
 11577230	2001	Sep	12730577	2003	May	RetractionIn
 11607026	2001	Oct	12621440	2003	Mar	RetractionIn
@@ -268,19 +261,24 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 12531578	2003	Jan	19819378	2009	Oct	RetractionIn
 12538722	2003	Feb	16422027	2005	Dec	RetractionIn
 12547818	2003	Feb	14645037	2003	Dec	RetractionIn
-12570065	2002	Dec	17457992	2007	Apr	RetractionIn
 12554767	2003	May	15277603	2004	Aug	RetractionIn
 12560494	2003	Feb	16670428	2006		RetractionIn
-12574348	2003	Feb	20483792	2010	Jun	RetractionIn
+12570065	2002	Dec	17457992	2007	Apr	RetractionIn
 12585428	2003	Jan	14725315	2003	Dec	RetractionIn
 12596084	2003	Jan	14745671	2003	Dec	RetractionIn
 12612585	2003	Apr	19710717	2009	Sep	RetractionIn
 12615337	2003	Mar	12850266	2003	Jul	RetractionIn
-12618524	2003	Mar	14617761	2003	Nov	RetractionIn
 12619192	2003	Feb	18159609	2007	Dec	RetractionIn
+12643269	2003	Apr	14649221	2003	Dec	RetractionIn
+12418875	2002	Nov	16787102	2006	Jun	RetractionIn
+11812703	2002	Feb	21451081	2011	May	RetractionIn
+11546713	2001	Sep	21792704	2011	Sep	RetractionIn
+11473870	2001	Aug	21451066	2011	May	RetractionIn
+10972607	2000	Aug	22013600	2011	Aug	RetractionIn
+10735806	2000	Apr	21451076	2011	May	RetractionIn
+9098916	1997	Feb	10075549	1998	Oct	RetractionIn
 12626456	2003	Mar	20357076	2010	Apr	RetractionIn
 12642615	2003	Mar	15557126	2004	Nov	RetractionIn
-12643269	2003	Apr	14649221	2003	Dec	RetractionIn
 12650488	2003	Mar	20220359	2010	Apr	RetractionIn
 12652308	2003	Apr	17401390	2007	Apr	RetractionIn
 12652309	2003	Apr	17401390	2007	Apr	RetractionIn
@@ -319,14 +317,11 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 12823979	2003	Jul	17580380	2007	Jun	RetractionIn
 12833645	2003	May	19649932	2009	Aug	RetractionIn
 12843327	2003	Jul	15520405	2004	Nov	RetractionIn
-12845635	2003	Jul	17029327	2006	Nov	RetractionIn
 12869699	2003	Aug	16210516	2005	Oct	RetractionIn
 12883403	2003	Aug	20177373	2010	Apr	RetractionIn
-12893944	2003	Aug	15044784	2004	Mar	RetractionIn
 12895212	2003	Aug	14687178	2004	Jan	RetractionIn
 12919395	2003	Sep	14636358	2003	Nov	RetractionIn
 12919678	2003	Aug	16724417	2006	May	RetractionIn
-12935295	2003	Aug	14723796	2004	Jan	RetractionIn
 12943767	2003	Sep	19330947	2009	Jan	RetractionIn
 12944035	2003	Sep	19020510	2008	Dec	RetractionIn
 12954032			20008771	2009	Dec	RetractionIn
@@ -353,13 +348,11 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 14512211	2003	Oct	15526407	2004	Jun	RetractionIn
 14517260	2003	Oct	18185496	2008	Jan	RetractionIn
 14530809	2003		14689962	2003		RetractionIn
-1455228	1992	Nov	10383305	1999	May	RetractionIn
 14572313	2003	Sep	14723797	2004	Jan	RetractionIn
 14578081	2003	Nov	17095496	2006	Dec	RetractionIn
 14587731	2003	Oct	15559988	2004	Oct	RetractionIn
 14600393	2003	Nov	15088600	2004	Apr	RetractionIn
 14608366	2003	Dec	15122294	2004	May	RetractionIn
-14620432	2003	Oct	15117135	2004	Apr	RetractionIn
 14622809	2001	Oct	14622684	2003	Sep	RetractionIn
 1463587	1992		8373552	1993		RetractionIn
 14642133	2003	Nov	15844253	2005	Apr	RetractionIn
@@ -438,11 +431,9 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 15218149	2004	Jun	18239106	2008	Feb	RetractionIn
 15234210	2004	Aug	15372728	2004	Sep	RetractionIn
 15239366	2004		16060010	2005		RetractionIn
-15240731	2004	Jul	20483793	2010	Jun	RetractionIn
 15240891	2004	Jul	18287002	2008	Mar	RetractionIn
 15250046	2004	Jun	15627319	2004	Dec	RetractionIn
 15254533	2004	Jul	16222302	2005	Oct	RetractionIn
-15256470	2004	Jul	21045150	2010	Nov	RetractionIn
 15256569	2004	Jul	19423630	2009	Jul	RetractionIn
 15260988	2004	Jul	16220614	2005	Sep	RetractionIn
 15267089	2004	Jun	15354845	2004	Jul	RetractionIn
@@ -452,7 +443,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 15284244	2004	Oct	21495271			RetractionIn
 15295347	2004	Jul	15695968	2005	Feb	RetractionIn
 15295367	2004	Jul	17162772	2006	Nov	RetractionIn
-15297874	2004	Aug	17971824	2007	Oct	RetractionIn
 15298725	2004	Aug	15958062	2005	Jun	RetractionIn
 15301984	2004	Aug	18592666	2008	Apr	RetractionIn
 15302444	2004	Aug	18572427	2008	Mar	RetractionIn
@@ -497,7 +487,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 15569762			17846225	2007	Sep	RetractionIn
 15571382	2004	Dec	19731911	2009	Sep	RetractionIn
 15575251	2004	Oct	18827437	2008		RetractionIn
-15583985	2004	Dec	16456801	2006	Feb	RetractionIn
 15590255	2004	Nov	19475772	2009	May	RetractionIn
 15604363	2005	Jan	17962537	2007	Oct	RetractionIn
 15604405	2004	Dec	18403691	2008	Apr	RetractionIn
@@ -573,10 +562,8 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 15955294	2005	May	16733874	2006	May	RetractionIn
 15961411	2005	Aug	17470461	2007	Apr	PartialRetractionIn
 15965225	2005	Jul	16484665	2006	Mar	RetractionIn
-15965464	2005	Jun	16222304	2005	Oct	RetractionIn
 15968000	2005	Jun	19590011	2009	Jul	RetractionIn
 15968290	2005	Aug	19513083	2009	Jun	RetractionIn
-15976327	2005	Sep	21508337	2011	May	RetractionIn
 15981993	2005	Jul	17567051	2007	Jul	RetractionIn
 15987643	2005	Nov	17176513	2006	Nov	RetractionIn
 15988546			17982441			RetractionIn
@@ -592,7 +579,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 16045557	2005	Jul	17010023	2006	Oct	RetractionIn
 16054423	2005	Oct	16892492	2006	Jul	RetractionIn
 160560	1979	Dec	3883350	1985	Feb	RetractionIn
-16061819	2005	Aug	20375280	2010	May	RetractionIn
 16076637	2005	Oct	19662582	2009		RetractionIn
 16077385	2005	Aug	17726800	2007	Sep	RetractionIn
 16080255	2003	Oct	15738363	2005	Mar	RetractionIn
@@ -604,8 +590,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 16138565	2005	Apr	19417759	2009	May	RetractionIn
 16146159	2005	Aug	16528862	2006	Feb	RetractionIn
 16151024	2005	Oct	20538690	2010	Jun	RetractionIn
-16157701	2005	Sep	17485494	2007	May	RetractionIn
-16159641	2005	Sep	20464794	2010	May	RetractionIn
 16162900	2005	Oct	19525407	2009	Jul	RetractionIn
 16166739	2005	Dec	18695263	2008	Sep	RetractionIn
 16174581	2005	Sep	17366688	2007	Feb	RetractionIn
@@ -654,11 +638,9 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 16368125	2006	Mar	18041113	2007	Nov	RetractionIn
 16373256	2005	Nov	18365839	2008	Apr	RetractionIn
 16373573	2005	Dec	17185584	2006	Dec	RetractionIn
-16383300	2005	Aug	18350680	2007	Dec	RetractionIn
 16387853	2006	Jan	16505348	2006	Mar	RetractionIn
 16390818	2005	Dec	18951275	2008	Nov	RetractionIn
 16394597	2005	Nov	19506343	2009	May	RetractionIn
-16398468	2005	Nov	21322744	2011	Feb	RetractionIn
 16399311	2006	Jan	16736557	2006	Jun	RetractionIn
 16399846	2006	Jan	17596640	2007	Jul	RetractionIn
 16406483	2006	Aug	18770890	2008	Aug	RetractionIn
@@ -721,9 +703,7 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 16641293	2006	May	17496231	2007	Jun	RetractionIn
 16641989	2006	Apr	17066038	2006	Oct	RetractionIn
 16644507	2006	Apr	18334470	2008	Jan	RetractionIn
-16645343	2006	Jun	16871030	2006	Sep	RetractionIn
 16649305	2005	Jun	16635876	2006	Feb	RetractionIn
-16675392	2006	May	17326324	2007	Feb	RetractionIn
 16686385			17181116			RetractionIn
 16687409	2006	Jul	18210667	2008	Jan	RetractionIn
 16688891	2006	Apr	20369409	2010	Apr	RetractionIn
@@ -732,7 +712,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 16712650	2006	Jun	17504515	2007	Jun	RetractionIn
 16714283	2006	Jul	18499917	2008	Apr	RetractionIn
 16719806	2006		17549846	2007		RetractionIn
-16723796	2006	Jun	20689222	2010	Sep	RetractionIn
 16725387	2006	Sep	18441551	2008	Mar	RetractionIn
 16732280	2006	Jun	16960577	2006	Sep	RetractionIn
 16734562	2006	Jun	17115904	2006	Nov	RetractionIn
@@ -792,9 +771,7 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 16974114	2006	Sep	18063880	2007	Dec	RetractionIn
 17000298	2006	Oct	17726799	2007	Sep	RetractionIn
 1701215	1990	Dec	8371720	1993	Sep	RetractionIn
-17012269	2006		17178748	2007		RetractionIn
 17021747	2007	Mar	18193493	2007	Dec	RetractionIn
-17023390	2006	Nov	20515957	2010	Jun	RetractionIn
 17030610	2006	Dec	19279189	2009	Apr	RetractionIn
 17041727	2006	Oct	17717854	2007	Jun	RetractionIn
 17042945	2006		17092331	2006		RetractionIn
@@ -840,7 +817,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 17164266	2007	Jan	17895373	2007	Nov	RetractionIn
 17177150	2006	Aug	19816840	2008	Aug	RetractionIn
 17184598	2006		18727213	2008		RetractionIn
-17188242	2007	Feb	19777639	2009	Oct	RetractionIn
 17188809	2007	Jul	18508008	2008	Jun	RetractionIn
 17190127			19469057			RetractionIn
 17194752	2007	Mar	20194629	2010	Mar	RetractionIn
@@ -855,12 +831,10 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 17223697	2007	Jan	17935358	2007	Nov	RetractionIn
 17227430	2007	Jan	18665945	2008	Aug	RetractionIn
 17229471	2007	Feb	18705032	2008	Jun	RetractionIn
-17237390	2007	Feb	20483794	2010	Jun	RetractionIn
 17237576	2006	Jun	19209403	2008	Dec	RetractionIn
 17238449	2006		18297753	2006		RetractionIn
 17238568	2006		18297754	2006		RetractionIn
 17241506	2007	Jun	21540655	2011	Jun	RetractionIn
-17241528	2007	Feb	17974074	2007	Oct	RetractionIn
 17242103	2007	Feb	21451072	2011	May	RetractionIn
 17251387	2007	Mar	18309008	2008	Mar	RetractionIn
 17251541	2007	Jan	17409337	2007	Apr	RetractionIn
@@ -891,7 +865,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 17369374	2007	Apr	18320608	2008	Mar	RetractionIn
 17373355	2006	Mar	18340965	2007	Jun	RetractionIn
 17374986	2007	Apr	19901515	2009	Sep	PartialRetractionIn
-17380192			19750127			RetractionIn
 17381062			19319708			RetractionIn
 17383328	2007	Apr	17650548	2007	Aug	RetractionIn
 17384515	2007		18431861	2008		RetractionIn
@@ -902,7 +875,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 17406346	2007	Jun	20859262	2010	Dec	RetractionIn
 17406964	2007		19707850	2010	Jan	RetractionIn
 17416190	2007	Mar	18065108	2007	Nov	RetractionIn
-17418097	2007	May	19777640	2009	Oct	RetractionIn
 1742073	1991	Oct	1457188	1992	Oct	RetractionIn
 17431619	2008	Aug	19513713	2009	Oct	RetractionIn
 17433423	2007	Jun	19062393	2008	Dec	RetractionIn
@@ -915,7 +887,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 17457626	2007	Jul	19225817	2009	Apr	RetractionIn
 17461059	2007	Apr	17977112	2007	Oct	RetractionIn
 17464449	2007	Oct	20119650	2010	Apr	RetractionIn
-17470215	2007	Apr	17986024	2007	Sep	RetractionIn
 17483799	2007	Apr	17978810	2007	Oct	RetractionIn
 17499217	2007	Jun	19777641	2009	Oct	RetractionIn
 17499512	2007	Jul	19177601	2009	Jan	RetractionIn
@@ -926,19 +897,17 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 1752960	1991	Dec	16695966	1993	Feb	RetractionIn
 17545440	2007	Jun	19339584	2009	Apr	RetractionIn
 17546574	2007	Jul	17907250	2007	Oct	RetractionIn
-17550372	2007	Aug	19906100	2009	Dec	RetractionIn
 17555966	2007	Jun	19839099	2009	Oct	RetractionIn
 17562229	2007	Mar	18824454	2008	Sep	RetractionIn
 17562360	2007	Aug	17987674	2007	Sep	RetractionIn
 17564894	2007	Jun	17786654	2007	Sep	RetractionIn
 17572536	2007	Jul	18454036	2008	May	RetractionIn
 17573344	2007	Aug	18163247	2007	Dec	RetractionIn
-17576198	2007	Sep	21348857	2011	Feb	RetractionIn
+17576198	2007	Sep	21348857	2011	Mar	RetractionIn
 17578978	2007	Jul	19299812	2009	Apr	RetractionIn
 17578979	2007	Jul	19299812	2009	Apr	RetractionIn
 17601758	2007	Sep	20050157	2010	Feb	RetractionIn
 17604800	2007	Jun	18774408	2008	Sep	RetractionIn
-17628467	2007	Dec	18444246	2008	May	RetractionIn
 17629231	2007	Jun	20583383	2010	Jul	RetractionIn
 17633759	2007	Apr	21288870	2011	Feb	RetractionIn
 17637719	2007	Oct	20859260	2010	Dec	RetractionIn
@@ -958,7 +927,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 17706021	2007		18070421	2007		RetractionIn
 17722322	2005	Oct	20695125	2010	Jul	RetractionIn
 17724069	2007	Nov	21177934	2011	Jan	RetractionIn
-17761782	2007	Nov	21189485	2011	Jan	RetractionIn
 17763102	2007	Jul	19662582	2009		RetractionIn
 1779199	1991	Nov	1560215	1992	Mar	RetractionIn
 17827835	2007		18825845	2008		RetractionIn
@@ -981,7 +949,7 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 17918804			19145694			RetractionIn
 17920515	2007	Nov	19222129	2009	Mar	RetractionIn
 17933655	2007	Oct	18294986	2008	Jan	RetractionIn
-1793460	1991	Dec	1538775	1992	Mar	RetractionIn
+1793460	1991	Dec	1552948	1992	Mar	RetractionIn
 17938933	2008	Feb	19083241	2009	Feb	RetractionIn
 17939000			19557476	2009	Jul	RetractionIn
 17947268	2007	Nov	21137116	2010	Dec	RetractionIn
@@ -1056,7 +1024,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 18351416	2008	May	19572166	2009	Jul	RetractionIn
 18356840	2008	May	19584876	2009	Jun	RetractionIn
 18358812	2008	Mar	18630350	2008	Jul	RetractionIn
-18381456	2008	Apr	21045159	2010	Nov	RetractionIn
 18387770			20891033			RetractionIn
 18389185			21085959	2011	Feb	RetractionIn
 18389490	2008	Jul	19391125	2009	May	RetractionIn
@@ -1078,7 +1045,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 18463486	2008	May	19421012	2009	May	RetractionIn
 18472592	2008	Apr	19771609	2009	Aug	RetractionIn
 18476299	2008	Jan	18478651	2008	Feb	RetractionIn
-18480056	2008	Jul	19160472	2008	Dec	RetractionIn
 1848710	1991	Mar	8234308	1993	Nov	RetractionIn
 18487988	2008	Jun	21488230	2010	Apr	RetractionIn
 18500349	2008	Jun	20134478	2010	Feb	RetractionIn
@@ -1097,7 +1063,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 18570267	2008	Aug	19391101	2009	May	RetractionIn
 18570278	2008	Aug	19067374	2008	Dec	RetractionIn
 18590891			19700129			RetractionIn
-18591817	2008	Jul	20523007	2010	Jun	RetractionIn
 18592845	2008	Jun	18814384	2008	Sep	RetractionIn
 18599453	2008	Jul	19380749	2009	Apr	RetractionIn
 18599454	2008	Jul	20160072	2010	Mar	RetractionIn
@@ -1111,12 +1076,9 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 18654872			21322769	2011	May	RetractionIn
 18662363			19400820			RetractionIn
 18664249	2008		18694506	2008		RetractionIn
-18669965	2008	Aug	19258600	2009	Mar	RetractionIn
-18681910	2009	Jun	20589983	2009	Jun	RetractionIn
 18686939	2008	May	19637404	2009	May	RetractionIn
 18688044	2008	Sep	19745169	2009	Sep	RetractionIn
 18688632	2009	Jul	20872267	2010	Dec	RetractionIn
-18688676	2009	Jun	20217143	2010	Jun	RetractionIn
 18692561			20891034			RetractionIn
 18692991	2008	Oct	19866515	2009	Dec	RetractionIn
 18693175	2008	Aug	19670505	2009	Aug	RetractionIn
@@ -1124,7 +1086,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 18698377	2008		19192491	2008		RetractionIn
 18704014	2008	Oct	19365234	2009	May	RetractionIn
 18704087	2008	Aug	20376151	2010	Apr	RetractionIn
-18713984	2008	Sep	20483796	2010	Jun	RetractionIn
 18716186	2008	Sep	19022988	2008	Dec	RetractionIn
 18717013	2008	Mar	18618946	2008	Apr	RetractionIn
 18718126	2008	Sep	19406009	2009	May	RetractionIn
@@ -1132,6 +1093,38 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 18758063	2008	Sep	19522041	2009	Jun	RetractionIn
 1876370	1991	Sep	1923217	1991	Nov	RetractionIn
 18765339	2009	Jan	19129144	2009	Mar	RetractionIn
+18703532	2009	Jan	21917991	2011	Oct	RetractionIn
+18458091	2008	Jun	21812127	2011	Jun	RetractionIn
+18055753	2007	Dec	21508781	2011	May	RetractionIn
+17970858	2007	Nov	21649776	2011	Jun	RetractionIn
+17418097	2007	May	19777640	2009	Oct	RetractionIn
+17138800	2006	Dec	21422878	2011	Apr	RetractionIn
+17135312	2006	Nov	21602548	2011	Jun	RetractionIn
+17039348	2006	Dec	21604011	2011	Jul	RetractionIn
+16963789	2006	Nov	21685126	2011	Jul	RetractionIn
+16709778	2006	May	21960607	2011	Sep	RetractionIn
+16648433	2006	May	21508781	2011	May	RetractionIn
+16645343	2006	Jun	16871030	2006	Sep	RetractionIn
+16579874	2006	May	22538400	2012	Jun	RetractionIn
+16575915	2006	Jul	22536599	2012	Jul	RetractionIn
+16319281	2005	Dec	21422878	2011	Apr	RetractionIn
+16260544	2005	Nov	21508781	2011	May	RetractionIn
+16157375	2006	Mar	21887858	2011	Aug	RetractionIn
+15985545	2005	Oct	21546458	2011	Jun	RetractionIn
+15946590	2005	Jul	22371000	2012	Apr	RetractionIn
+15793222	2005	Mar	22016497	2011		RetractionIn
+15703630	2004	Mar	22357136	2012	Mar	RetractionIn
+15640275	2005	Jul	21784791	2011	Aug	RetractionIn
+15276654	2004	Aug	21870359	2011	Sep	RetractionIn
+14742313	2004	Jun	22532577	2012	May	RetractionIn
+14716207	2004	Feb	21897154	2011	Sep	RetractionIn
+14712346	2004	Mar	21604012	2011	Jul	RetractionIn
+14643807	2003	Dec	22191098	2011	Dec	RetractionIn
+14623532	2003	Sep	22250293	2012	Jan	RetractionIn
+12893944	2003	Aug	15044784	2004	Mar	RetractionIn
+12720429	2003	May	16787103	2006	Jun	RetractionIn
+12029431	2002	May	21647619	2011	Aug	RetractionIn
+11878519	2001	Nov	21685126	2011	Jul	RetractionIn
 18771528	2008	Nov	21265954	2011	Feb	RetractionIn
 18783367	2008	Sep	20128857	2009	Dec	PartialRetractionIn
 18788947	2008	Sep	19115940	2008	Dec	RetractionIn
@@ -1143,7 +1136,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 18821210			19116816			RetractionIn
 18824687	2008	Oct	19380733	2009	Apr	RetractionIn
 18828704	2008	Oct	19341349	2009	Apr	RetractionIn
-18832301	2008	Oct	21368319	2011	Mar	RetractionIn
 18845673	2008	Dec	20135772	2010	Feb	RetractionIn
 18846795	2008	Sep	19031650	2008	Nov	RetractionIn
 18854833	2008	Nov	21206499	2011	Jan	RetractionIn
@@ -1163,7 +1155,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 19024117	2008	Oct	19195270	2009	Jan	RetractionIn
 19029826	2009	Jan	19838083	2009	Sep	RetractionIn
 19032896	2008	Dec	19486588	2009	Jun	RetractionIn
-19036880	2009	Apr	20503521	2010	Jun	RetractionIn
 19040206	2009	Feb	19382283	2009	May	RetractionIn
 19043384	2008	Dec	19734840	2009	Aug	RetractionIn
 19055698	2008	Dec	19874555	2009	Nov	RetractionIn
@@ -1177,7 +1168,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 19116866	2009		20183618	2009	Aug	RetractionIn
 19117294	2009	Jan	19459165	2009	Jun	RetractionIn
 19117302	2009	Jan	19459165	2009	Jun	RetractionIn
-19118527	2009	Feb	21328799	2011	Jan	RetractionIn
 19121620	2009	Feb	19725179	2009	Oct	RetractionIn
 19122277	2009	Jan	19517630	2009	Jun	RetractionIn
 1912585	1991	Oct	11012249	1999	May	RetractionIn
@@ -1199,7 +1189,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 19193721	2009	Jun	19643742	2009	Aug	RetractionIn
 19196658	2009	Apr	20383878	2010	Apr	RetractionIn
 19199800	2009	Mar	21520973	2011	May	RetractionIn
-19203584	2009	Feb	21458674	2011	Apr	RetractionIn
 19215781	2009	Feb	21360846	2011	Feb	RetractionIn
 19229901	2009	Apr	19472291	2009	Jun	RetractionIn
 19236848	2009	Apr	19725178	2009	Oct	RetractionIn
@@ -1212,21 +1201,17 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 19261910	2009	Mar	19948690	2009	Dec	RetractionIn
 19265329	2009	Mar	19421013	2009	May	RetractionIn
 19271734	2009	Apr	19827838	2009	Oct	RetractionIn
-19276379	2009	Apr	21045160	2010	Nov	RetractionIn
 19285023	2009	Mar	19725173	2009	Oct	RetractionIn
 19288944	2009	Mar	19449482	2009	May	RetractionIn
 19289130	2009	May	21077284	2010	Nov	RetractionIn
-19290641	2009	Mar	21314200	2009	May	RetractionIn
 19293376	2009	Mar	19357308	2009	Apr	RetractionIn
 19298132	2009	Jul	20235840	2010	Mar	RetractionIn
-19300490	2009	Mar	20020059	2009	Dec	RetractionIn
 19306990	2009	Aug	20050156	2010	Jan	RetractionIn
 19309363	2009	May	21265955	2011	Feb	RetractionIn
 19321219	2009	May	20615571	2010	Sep	RetractionIn
 19334954	2009	Mar	20192529	2010	Feb	RetractionIn
 19352700	2009	Oct	20112029	2010	Apr	RetractionIn
 1935905	1991	Dec	1396574	1992	Oct	RetractionIn
-19359525	2009	Jul	19940110	2009	Dec	RetractionIn
 19367671	2009	Sep	19670213	2009	Sep	RetractionIn
 19379691	2009	Apr	20873370	2010	Sep	RetractionIn
 19381036	2009	Apr	19891088	2009	Oct	RetractionIn
@@ -1256,7 +1241,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 19504437	2009	Jun	19806586	2009	Oct	RetractionIn
 19514790	2009	Jun	20973504	2010	Nov	RetractionIn
 19524249	2009	Sep	21553730	2011	May	RetractionIn
-19533144	2009	Sep	19774385	2009	Nov	RetractionIn
 19538383	2009	Jun	19703005	2009	Sep	RetractionIn
 19557557	2009	Jun	19842787	2009	Dec	RetractionIn
 19562870	2008	Sep	21180206			RetractionIn
@@ -1284,7 +1268,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 19720939	2009	Sep	20194873	2010	Mar	RetractionIn
 19725757	2009	Sep	19916875	2009	Dec	RetractionIn
 19734285	2010		20068240	2010	Jan	RetractionIn
-19757023	2010	Mar	20628899	2010	Aug	RetractionIn
 19757704	2009	Aug	20535878	2010	Jun	RetractionIn
 1975894	1990	Sep	1354831	1992	Aug	RetractionIn
 19762904	2009	Oct	20682723	2010	Aug	RetractionIn
@@ -1295,10 +1278,8 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 19794843	2009	Apr	19816134	2009	Jun	RetractionIn
 19797727	2010	Feb	20139396	2010	Feb	RetractionIn
 1979954	1990	Dec	11284436	2001	Mar	RetractionIn
-19810061	2009	Oct	21170950	2010	Dec	RetractionIn
 19815770	2009	Oct	21071648	2010	Nov	RetractionIn
 19817692	2009	Aug	21166649			RetractionIn
-19824623	2009	Oct	20000553	2009	Dec	RetractionIn
 19843519	2009	Dec	20617571	2010	Jul	RetractionIn
 19863197	2009	Dec	20001573	2010	Jan	RetractionIn
 19878337	2009	Oct	21046708	2010	Nov	RetractionIn
@@ -1320,7 +1301,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 19966658			20305530			RetractionIn
 1998509	1991	Feb	9230040	1997	Jun	RetractionIn
 20002225	2010	Jan	20936755	2010	Oct	RetractionIn
-20002437	2009	Dec	21355989	2011	Mar	RetractionIn
 20004514	2010	Apr	20737670	2010	Oct	RetractionIn
 20005630	2010	Apr	20737669	2010	Oct	RetractionIn
 20021100	2004		20199169	2010	May	RetractionIn
@@ -1335,7 +1315,7 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 20082444	2010	Jan	20641129	2010	Aug	RetractionIn
 20091744	2010	Apr	20380034	2010	Apr	RetractionIn
 2009973	1991	Mar	9687235	1998	Jun	RetractionIn
-20102336	2010	Apr	21348858	2011	Feb	RetractionIn
+20102336	2010	Apr	21348858	2011	Mar	RetractionIn
 20103540	2010	Apr	21106975	2010	Dec	RetractionIn
 20110993	2010	Jan	20944751	2010	Oct	RetractionIn
 20112019	2010	Jul	21318428	2011	Apr	RetractionIn
@@ -1359,14 +1339,12 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 2040823	1991	Jan	1960483	1991	Sep	RetractionIn
 20414968	2010	Jan	20931702	2010	Jan	RetractionIn
 20418299	2010	May	20664094	2010	Aug	RetractionIn
-20420460	2009	Oct	20420465	2010	May	RetractionIn
 20427961	2010		20527365	2010		RetractionIn
 20442581	2010	Jun	21124097	2011	Jan	RetractionIn
 20451373	2010	Jun	21465684	2011	Mar	RetractionIn
 20455114	2010	May	20686986	2010	Aug	RetractionIn
 20462659	2010	Jul	20964248			RetractionIn
 20464617	2010	Jun	21538125	2011	Jun	RetractionIn
-20477499	2009	Apr	21473732	2011	Apr	RetractionIn
 20485002	2010	Jun	21471772	2011	May	RetractionIn
 20486884	1999		20486885	2003		RetractionIn
 20489582	2010	Jul	20966679	2010	Nov	RetractionIn
@@ -1396,9 +1374,7 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 20843327	2010		21176130	2010		RetractionIn
 20845913	2010	Oct	21110522	2010	Dec	RetractionIn
 20846133	2010	Aug	21108618	2010	Nov	RetractionIn
-20861846			21552282	2011	Mar	RetractionIn
 20879957	2010	Oct	21126155	2010	Dec	RetractionIn
-20879978	2010	Jul	21319393	2011	Jan	RetractionIn
 20883167	2010	Oct	21319981	2011	Feb	RetractionIn
 2089274	1990		8008220	1994	Apr	RetractionIn
 20924196	2010		21196765	2010		RetractionIn
@@ -1409,18 +1385,12 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 2105793	1990	Jan	7627038	1995	Jul	RetractionIn
 21063492	2010		21475564	2011		RetractionIn
 21063496	2010		21475563	2011		RetractionIn
-21064188	2010	Nov	20027667	2011	May	RetractionIn
-21070227	2010	Nov	21462432	2011	Mar	RetractionIn
 21077410	1999	Dec	20567194	2010	Jul	RetractionIn
-21078266	2010	Nov	21563601	2011	Apr	RetractionIn
 21166349			21608297	2011	Mar	RetractionIn
 21176917	2011	Mar	21520509	2011	May	RetractionIn
-21225599	2011	Jan	21374897			RetractionIn
 2124237	1990	Dec	1541834	1992	Mar	RetractionIn
 21291296	2011	Apr	21591868	2011	Jun	RetractionIn
-21297532	2011	Feb	21336080	2011	Mar	RetractionIn
 213200	1978	Nov	3899403	1985	Oct	RetractionIn
-21341971	2011	Feb	21526888	2011		RetractionIn
 2135381	1990	Mar	1565437	1992	Apr	RetractionIn
 21355427	2010	Dec	21542215	2011	Mar	RetractionIn
 2137012	1990	Feb	8286407	1994	Jan	RetractionIn
@@ -1487,7 +1457,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 2935936	1986	Mar	3535071	1986	Nov	RetractionIn
 2936315	1986	Feb	2665689	1989	Aug	RetractionIn
 2997609	1985	Nov	1944427	1991	Nov	RetractionIn
-3043903	1988	Jan	9669965	1998		RetractionIn
 3047873	1988	Sep	2643156	1989	Jan	RetractionIn
 3058479	1988	Nov	2180696	1990	Feb	RetractionIn
 3066912	1988		2695651	1989		RetractionIn
@@ -1511,7 +1480,7 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 350903	1978	Jul	7002682	1980	Aug	RetractionIn
 3511090	1986	Jan	2656759	1989	Mar	RetractionIn
 3519831	1986	Jun	3553413	1987	Jan	RetractionIn
-3524257	1986	Jul	2645791	1989	Feb	RetractionIn
+3524257	1986	Jul	2656759	1989	Mar	RetractionIn
 3526270	1986	Aug	3313259	1987	Nov	RetractionIn
 3554186	1987	Mar	3050911	1988	Sep	RetractionIn
 3554260	1987	Jun	2181455	1990	Apr	RetractionIn
@@ -1532,7 +1501,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 4092997	1985	Nov	9867474	1998	Jul	RetractionIn
 4620957	1973	Jul	195582	1977	Apr	RetractionIn
 6149691	1984	Oct	3524269	1986	Jul	RetractionIn
-6152872	1982	Jan	3329345	1987		RetractionIn
 6171369	1981	Jul	3882286	1985	Jan	RetractionIn
 6182304	1982	Oct	7932905	1994	Oct	RetractionIn
 6192441	1983	Aug	6371812	1984	Apr	RetractionIn
@@ -1543,7 +1511,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 6264596	1981	Jul	6765631	1981	Sep	RetractionIn
 6270222	1981	Oct	6384395	1984	Oct	RetractionIn
 6337398	1983	Feb	6340200	1983	Apr	RetractionIn
-6338856	1983	Mar	3289525	1988	Jul	RetractionIn
 6341859			6400697			RetractionIn
 6345451			3514538	1986	Feb	RetractionIn
 6349935	1983	Sep	3545676	1987	Mar	RetractionIn
@@ -1565,7 +1532,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 6417790	1983	Dec	2655085	1989	May	RetractionIn
 6444674	1980	Mar	7932905	1994	Oct	RetractionIn
 6594315	1984	Sep	2054096	1991	Mar	RetractionIn
-6753612	1982	Nov	2653058	1989	May	RetractionIn
 6765635	1981		3079527	1988		RetractionIn
 6782124	1981	Mar	6400360	1984	Apr	RetractionIn
 6810463	1982	Sep	2655085	1989	May	RetractionIn
@@ -1619,8 +1585,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 7680491	1993	Feb	8160005	1994	Apr	RetractionIn
 7687746	1993	Aug	8065370	1994	Sep	RetractionIn
 7699537	1995	Apr	7636677	1995	Aug	RetractionIn
-7702575	1995	Mar	9841640	1998	Oct	RetractionIn
-7706332	1995	Mar	9378749	1997	Sep	RetractionIn
 7708684	1995	Mar	9786782	1998	Sep	RetractionIn
 7708759	1995	Mar	9122270	1997	Mar	RetractionIn
 7718247	1995	Apr	9652915	1998	May	RetractionIn
@@ -1659,7 +1623,7 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 8197188	1994	May	12465612	1998	Aug	RetractionIn
 8207722	1994	May	9303950	1997	Jul	RetractionIn
 8213314	1993		8017228	1994		RetractionIn
-8219868	1993	Oct	20463268			RetractionIn
+8219868	1993	Oct	20463268	2010	May	RetractionIn
 8249380			9669965	1998		RetractionIn
 8249383			9669965	1998		RetractionIn
 8249398	1993	Mar	9669965	1998		RetractionIn
@@ -1717,7 +1681,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 9066475	1997	Mar	9490125	1998	Jan	RetractionIn
 9096355	1997	Apr	17179216	2006	Dec	PartialRetractionIn
 9097935	1997	Apr	9634359	1998	May	RetractionIn
-9098916	1997	Feb	10075549	1998	Oct	RetractionIn
 9103197	1997	Apr	9229764	1997	Jul	RetractionIn
 9113601	1997	Apr	16832233	2006	Jul	RetractionIn
 9130629	1997	Apr	9925444	1998	Oct	RetractionIn
@@ -1734,7 +1697,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 9294183	1997	Sep	12465610	1998	Aug	RetractionIn
 9300696	1997	Sep	10991640	1999	Nov	RetractionIn
 9312044	1997	Oct	10400497	1999	May	RetractionIn
-9314560	1997	Oct	19364884	2009	May	RetractionIn
 9328234	1997		10681222	2000		RetractionIn
 9354333	1997	Oct	9615991	1998	Apr	RetractionIn
 9368808	1997	Nov	9696633	1998	May	RetractionIn
@@ -1753,7 +1715,6 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 9482945	1998	Mar	16790551	2006	Jul	RetractionIn
 9485373	1998	Feb	17929839	2007	Nov	RetractionIn
 9492007	1998	Feb	19378493	2009	Apr	RetractionIn
-9500320	1998	Feb	20137807	2010	Feb	RetractionIn
 9510328	1998	Mar	10375260	1999	May	RetractionIn
 9533776	1998	Mar	10336342	1999	May	RetractionIn
 9544783	1998	Feb	19067750	2009	Jan	RetractionIn
@@ -1787,65 +1748,437 @@ pmid	yearPublished	monthPublished	pmidRetraction	yearRetracted	monthRetracted	re
 993	1975	Jun	195582	1977	Apr	RetractionIn
 9931130	1999	Jan	14718349	2004	Feb	RetractionIn
 9987036	1999	Jan	10383651	1999	Jul	RetractionIn
+22428884	2012		22560040	2012		RetractionIn
+22393576	2011	Sep	22570855	2012	Apr	RetractionIn
+22360771	2012	Feb	22649798	2012	Jun	RetractionIn
+22307816	2012	Feb	22135011	2012	Mar	RetractionIn
+22272916	2012	Jan	22288912	2012	Apr	RetractionIn
+22259793			22553859			RetractionIn
+22212943	2011		22538349	2012		RetractionIn
+22207911	2011	Jul	22368791			RetractionIn
+22180685	2011	Dec	22473496	2012	Jun	RetractionIn
+22163930	2011		22164057	2011		RetractionIn
+22150496	2012	Jan	22611569	2012	May	RetractionIn
+22139679	2011	Nov	22553070	2012	Mar	RetractionIn
+22123660	2012	Jan	22495694	2012	May	RetractionIn
+22074389	2011		22248113	2012		RetractionIn
+22071019	2011		22414203	2012		RetractionIn
+22070530	2012	Jan	22662342	2012	Jan	RetractionIn
+22059288			22550766			RetractionIn
+22046297	2011		22523531	2012		RetractionIn
+22041231	2011	Nov	22507713	2012	Apr	RetractionIn
+22028568	2011	Sep	22577287	2012	May	RetractionIn
+22027512	2011	Dec	22456190	2012	Apr	RetractionIn
+21977502	2011	Apr	22180894	2011	Dec	RetractionIn
+21957410	2011	Jul	22412768	2012	Jan	RetractionIn
+21912230	2011	Oct	22406871	2012	Apr	RetractionIn
+21932149	2011	Oct	22349771	2012	Feb	RetractionIn
+21921049	2011	Nov	22267602	2012	Apr	RetractionIn
+21917665	2011	Nov	22140061	2012	Jan	RetractionIn
+21901618	2011		22113237	2011		RetractionIn
+21875150	2011	Oct	22066544	2011	Dec	RetractionIn
+21862592	2011	Oct	22532973	2012	Mar	RetractionIn
+21858694	2011	Oct	22323187	2012	Mar	RetractionIn
+21838248	2011	Sep	22279957	2012	Feb	RetractionIn
+21802601	2010	Nov	22525251	2012	Jun	RetractionIn
+21796001	2011	Jul	21971490	2011	Nov	RetractionIn
+21763177	2011	Sep	22359742	2012	Jan	RetractionIn
+21725405	2011	Mar	22382267	2012	Feb	RetractionIn
+21677664	2011	Jun	21833005	2011	Sep	RetractionIn
+21671709	2011	Jul	22080829	2011	Dec	RetractionIn
+21670203	2011	Jul	22084411	2011	Nov	RetractionIn
+21653655	2011	Sep	22128402	2011	Nov	RetractionIn
+21632882	2011	Oct	22431770	2012	Apr	RetractionIn
+21623320	2011	Jun	22242215	2011	Sep	RetractionIn
+21617427	2011	Jun	22186523	2012	Jan	RetractionIn
+21613570	2011	Jun	22160710	2011	Dec	RetractionIn
+21609302	2011	Aug	22404701	2012	Apr	RetractionIn
+21603011	2011	Apr	21811663	2011	Jul	RetractionIn
+21592827	2011	Aug	22393569	2012	Feb	RetractionIn
+21569412	2011		22394565	2012		RetractionIn
+21529349	2011		21933420	2011		RetractionIn
+21517120	2011	May	21919520	2011	Oct	RetractionIn
+21498042			22084820			RetractionIn
+21493417	2011	Feb	22203684	2012	Apr	RetractionIn
+21482993	2011	May	22204025	2011	Nov	RetractionIn
+21476531	2011	May	22280205	2012	Feb	RetractionIn
+21474762	2011	Apr	22144595	2011	Dec	RetractionIn
+21469168	2011	Jul	22590714	2012	Jun	RetractionIn
+21459887	2011	Apr	22159072	2011	Dec	RetractionIn
 21446757	2011	May	21574658	2011	Jun	RetractionIn
+21415384	2011	May	22629554	2011	May	RetractionIn
 21409777	2011	Mar	21770066	2011	Jul	RetractionIn
+21405500	2011	Feb	21991585	2011	Jul	RetractionIn
+21395560	2011	Jun	22309262	2012	Mar	RetractionIn
+21376079	2011	Aug	21609733	2011	Dec	RetractionIn
+21358639	2011	Apr	21772286	2011	Aug	RetractionIn
+21357312	2011	Feb	21885565	2011	Jun	RetractionIn
+21343162	2011	Apr	22467140	2012	Apr	RetractionIn
+21342071	2011	Feb	22114971	2011	Dec	RetractionIn
+21341971	2011	Feb	21526888	2011		RetractionIn
+21324434	2011	Apr	22167828	2011	Nov	RetractionIn
 21323727	2011	Feb	21521365	2011	Jun	RetractionIn
+21321040	2011	Feb	21957068	2011	Sep	RetractionIn
+21309141	2010		22022739	2011		RetractionIn
+21297532	2011	Feb	21336080	2011	Mar	RetractionIn
+21294695	2011	Mar	22519771	2012	May	RetractionIn
+21270176	2011	Feb	21868785	2011	Sep	RetractionIn
+21249209	2011		21346793	2011		RetractionIn
+21243427	2011	May	22354809	2012	Apr	RetractionIn
+21225599	2011	Jan	21374897			RetractionIn
+21221660	2011	Aug	21922232	2011	Nov	RetractionIn
 21220413	2011	Apr	21659324	2011	Jun	RetractionIn
+21211018	2011		22054052	2011		RetractionIn
+21205608	2011	Jan	22292165	2011	Dec	RetractionIn
+21158588	2011	Feb	22168171	2012	Jan	RetractionIn
+21156402	2010	Oct	22046629	2011	Oct	RetractionIn
+21148031	2011	Jan	22434856	2012	Apr	RetractionIn
+21133437	2010	Nov	21405195	2011	Mar	RetractionIn
+21131686	2011	Feb	21917904	2011	Sep	RetractionIn
+21109134	2010	Dec	22167871	2011	Nov	RetractionIn
 21106792	2011	Jan	21525233	2011	May	RetractionIn
 21098881	2010		21646682	2011		RetractionIn
+21078266	2010	Nov	21563601	2011	Apr	RetractionIn
+21070227	2010	Nov	21462432	2011	Mar	RetractionIn
+21064188	2010	Nov	20027667	2011	May	RetractionIn
+21063536			22470224	2012	Jan	RetractionIn
+21063029	2011	Jan	21705492	2011	Aug	RetractionIn
+21061058	2011	Mar	21773740	2011	Sep	RetractionIn
 21051238	2011	Feb	21774119	2011	Sep	RetractionIn
 21045465			21770087			RetractionIn
 21039783	2010	Nov	21218607	2011	Jan	RetractionIn
+20978351	2010	Nov	22482119	2012	Mar	RetractionIn
 20974943	2010	Nov	21628567	2011	Jun	RetractionIn
+20974934	2010	Nov	21817064	2011	Aug	RetractionIn
+20962322	2010	Oct	21521780	2011	Jun	RetractionIn
+20958973	2010		21752243	2011		RetractionIn
+20937111	2010		21324197	2011		RetractionIn
+20929972	2011	Feb	22020868	2011	Nov	RetractionIn
+20879978	2010	Jul	21319393	2011	Jan	RetractionIn
 20865477	2010	Oct	21442183	2011	Jun	RetractionIn
+20870577			21972456			RetractionIn
+20861846			21552282			RetractionIn
+20837949	2010	Dec	22029053	2011	Sep	RetractionIn
+20829510	2010	Nov	22345596	2012	Mar	RetractionIn
+20826813	2010	Nov	21853614	2011	Jul	RetractionIn
 20826636	2010	Nov	21372330	2011	Mar	RetractionIn
+20823877	2010	Sep	21738162	2011	Jul	RetractionIn
+20818377	2010	Sep	21738163	2011	Jul	RetractionIn
+20798047	2010	Sep	22203980	2012	Jan	RetractionIn
+20696651	2010	Oct	22454841	2012	Mar	RetractionIn
+20694492	2010	Nov	22350149	2012	Apr	RetractionIn
+20688921	2011	Mar	22215847	2012	Jan	RetractionIn
+20688432	2010	Nov	22106458	2011	Oct	RetractionIn
+20677908	2011	Mar	22074180	2012	Feb	RetractionIn
+20676002	2010	Apr	21206216	2010	Oct	RetractionIn
+20674194	2011	Jan	22489308	2012	Apr	RetractionIn
 20653821	2010	Sep	21615767	2011	Jul	RetractionIn
+20627396	2010	Aug	22220304	2011	Dec	RetractionIn
+20613542	2010	Dec	22317774	2012	Mar	RetractionIn
 20610538	2010	Aug	21270322	2011	Feb	RetractionIn
 20595579	2010	Jul	21778381	2011	Jul	RetractionIn
+20593161	2010	Oct	22170464	2012	Feb	RetractionIn
+20593050	2010	Jun	22457872	2012	Mar	RetractionIn
+20584786	2010	Aug	22128322	2011	Dec	RetractionIn
+20577784	2011	Apr	21881862	2012	Feb	RetractionIn
+20562409	2010	Oct	21844531	2011	Sep	RetractionIn
+20548031	2010	Jul	21900184	2011	Sep	RetractionIn
+20542304	2010	Oct	22167894	2011	Dec	RetractionIn
+20527608	2010	May	22206126	2011	Jun	RetractionIn
+20510247	2010	Jun	22013600	2011	Aug	RetractionIn
+20477499	2009	Apr	21473732	2011	Apr	RetractionIn
+20476501	2010		22206128	2011	Oct	RetractionIn
+20466931	2010	May	21885757	2011	Sep	RetractionIn
+20457181	2010	Oct	22106469	2011	Oct	RetractionIn
+20452642	2010	Jun	22224204	2012	Jan	RetractionIn
+20448536	2010	May	20523300	2011	May	RetractionIn
+20434775	2010	Jul	22312627	2012	Feb	RetractionIn
+20434240	2010	Jul	22355807	2012	Jan	RetractionIn
+20427204	2011	Feb	22013600	2011	Aug	RetractionIn
+20421646	2010	Jun	22158336	2011	Dec	RetractionIn
+20420536	2011	Jan	21443413	2011	Mar	RetractionIn
+20420460	2009	Oct	22016890	2011	Sep	RetractionIn
+20414782	2010	Dec	22410819	2012	May	RetractionIn
 20414325	2010	Aug	20953214	2010	Nov	RetractionIn
+20404027	2010	Jan	22045775	2011	Nov	RetractionIn
+20391342	2010		21968764	2011		RetractionIn
 20386275	2010	Apr	21610379	2011	Mar	RetractionIn
+20384599	2010	Dec	22624154	2012	May	RetractionIn
+20374662	2010		21914195	2011		RetractionIn
+20336331	2010	Aug	21509564	2011	Aug	RetractionIn
+20331515	2011	Jun	22468279	2012	Mar	RetractionIn
+20298690	2010	Jun	22351953	2012	Jan	RetractionIn
+20213279	2010	Jun	22038494	2011	Dec	RetractionIn
+20158989	2010	Jan	22250297	2011	Dec	RetractionIn
+20134303	2009	Dec	21422878	2011	Apr	RetractionIn
+20122083	2010	Feb	21810140	2011	Aug	RetractionIn
 20104898	2010	Mar	21591786	2011	Jun	RetractionIn
+20091890	2010	Mar	22606693	2012	May	RetractionIn
+20091867	2010	Oct	21960263	2011	Dec	RetractionIn
 20080942	2010	Feb	21685368	2011	Jun	RetractionIn
 20071605	2010	Mar	20921193	2010	Oct	RetractionIn
+20066585			22508078			RetractionIn
 20051107	2010		21635756	2011		RetractionIn
+22219706	2010		22163773	2011		RetractionIn
+20005132	2010	Jun	22013600	2011	Aug	RetractionIn
+20002437	2009	Dec	21355989	2011	Mar	RetractionIn
+19996213	2009	Dec	22355011	2012	Mar	RetractionIn
+19962793	2010	Mar	22049548	2011	Oct	RetractionIn
+19935063	2010	Feb	22549129	2012	Jun	RetractionIn
+19932130	2010	Jun	22206101	2012	Jan	RetractionIn
+19839869	2009	Sep	22168171	2012	Jan	RetractionIn
+19837064	2010	Jan	22351952	2012	Jan	RetractionIn
+19829383	2009	Oct	22699624	2012	Jun	RetractionIn
 19828216	2010	Feb	21728258	2011	Jun	RetractionIn
+19824623	2009	Oct	22010279	2011	Sep	RetractionIn
+19819984	2009	Dec	21984988	2011	Sep	RetractionIn
+19818798	2009	Nov	22013593	2011	Sep	RetractionIn
+19815723	2009	Oct	22194552	2011	Dec	RetractionIn
+19810061	2009	Oct	21170950	2010	Dec	RetractionIn
+19805217	2009	Sep	21821790	2011	Sep	RetractionIn
+19785751	2009		21635743	2011		RetractionIn
+19781383	2009	Sep	22040552	2011	Oct	RetractionIn
+19757023	2010	Mar	20628899	2010	Aug	RetractionIn
+19743640	2009	Aug	22206129	2011	Oct	RetractionIn
+19726425	2011	Jun	21768187	2011	Aug	RetractionIn
+19722587	2009	Aug	22414429	2012	Mar	RetractionIn
+19702965	2009	Aug	21810142	2011	Aug	RetractionIn
+19702964	2009	Aug	21810141	2011	Aug	RetractionIn
+19670296	2010	Mar	22319775	2012	Feb	RetractionIn
+19657716	2009		21769485	2011	Sep	RetractionIn
+19643537	2009	Dec	22106457	2011	Oct	RetractionIn
+19604631	2009	Nov	22106456	2011	Oct	RetractionIn
 19545692	2009	Jun	21770058	2011	May	RetractionIn
+19533144	2009	Sep	19774385	2009	Nov	RetractionIn
 19482857	2009	Aug	21685126	2011	Jul	RetractionIn
+19476833	2009	May	21871390	2011	Sep	RetractionIn
+19468278	2009	Jun	21540815	2011	May	RetractionIn
+19464740	2010	Feb	21866585	2011	Jul	RetractionIn
+19406399	2010	Jul	21880283	2011	Sep	RetractionIn
+19404876	2008	Oct	22047018			RetractionIn
+19395854	2009	May	21697655	2011	Jul	RetractionIn
+19371446	2009		21752242	2011		RetractionIn
+19359525	2009	Jul	19940110	2009	Dec	RetractionIn
 19336536	2009	May	21685126	2011	Jul	RetractionIn
+19300490	2009	Mar	20020059	2009	Dec	RetractionIn
+19290641	2009	Mar	21314200	2009	May	RetractionIn
+19277796	2009	May	21975685	2011	Dec	RetractionIn
+19276379	2009	Apr	21045160	2010	Nov	RetractionIn
+19246396	2009	Mar	22411792	2012	Mar	RetractionIn
+19230025	2009	Jun	21960263	2011	Dec	RetractionIn
+19224130	2009	May	22354389	2012	Mar	RetractionIn
+19223576	2009	Mar	22025547	2011	Nov	RetractionIn
 19216748	2009		21635758	2011		RetractionIn
+19203584	2009	Feb	21458674	2011	Apr	RetractionIn
+19200286	2009	Feb	21810143	2011	Aug	RetractionIn
 19189065	2009	Mar	21744521	2011	May	RetractionIn
 19174511	2009	Feb	21628591	2011	Jun	RetractionIn
+19145153	2009	Jan	21937967	2011	Aug	RetractionIn
+19141861	2009	Mar	21571990	2011	Jun	RetractionIn
+19141685	2009	Apr	22031778	2011	Nov	RetractionIn
+19136629	2009	Jan	21724836	2011	Jul	RetractionIn
+19118527	2009	Feb	21328799	2011	Jan	RetractionIn
+19109492	2008	Dec	21957266	2011	Sep	RetractionIn
+19105710	2009	Jan	22050027	2011	Nov	RetractionIn
 19074154	2009	Feb	21685126	2011	Jul	RetractionIn
 19059841	2009	Jan	21617131	2011	May	RetractionIn
+19050079	2008	Dec	21969600	2011	Oct	RetractionIn
+19047050	2009	Jan	22242217	2011	Dec	RetractionIn
+19036880	2009	Apr	20503521	2010	Jun	RetractionIn
+19032554	2009	Jan	21749338	2011	Aug	RetractionIn
+19031236	2009	Jan	21992069	2012		RetractionIn
+19019824	2009	Mar	22319784	2012	Jan	RetractionIn
+19015639	2009	Feb	22011759	2011	Oct	RetractionIn
+18986162	2009	Jan	22003501	2011	Sep	RetractionIn
+18974386	2008	Dec	22343559	2012	Feb	RetractionIn
+18922426	2008	Oct	22059234	2011	Oct	RetractionIn
+18840581	2008	Mar	22028286	2011	Nov	RetractionIn
+18832301	2008	Oct	21368319	2011	Mar	RetractionIn
+18812912	2008	Sep	21937966	2011	Aug	RetractionIn
+18821770	2008	Oct	22414430	2012	Mar	RetractionIn
+18807007	2009	Mar	21604010	2011	Jul	RetractionIn
+18800988	2009	May	21932468	2011	Sep	RetractionIn
+18776129	2009	Mar	22383655	2012	Mar	RetractionIn
+18713984	2008	Sep	20483796	2010	Jun	RetractionIn
+18688676	2009	Jun	20217143	2010	Jun	RetractionIn
+18681910	2009	Jun	20589983	2009	Jun	RetractionIn
+18669965	2008	Aug	19258600	2009	Mar	RetractionIn
+18663085	2008	Aug	22331929	2012	Feb	RetractionIn
+18611381	2008	Jul	21827955	2011	Aug	RetractionIn
+18591817	2008	Jul	20523007	2010	Jun	RetractionIn
 18581155	2009	Mar	21229322	2011	Jan	RetractionIn
+18534388	2009	Jan	21777774	2011	Aug	RetractionIn
+18517206	2008	Jun	22126598	2011	Dec	RetractionIn
 18503581	2008	Aug	21623764	2011	Mar	RetractionIn
-18458091	2008	Jun	21812127	2011	Jun	RetractionIn
+18480056	2008	Jul	19160472	2008	Dec	RetractionIn
+18458081	2008	Jul	21961174	2011	Aug	RetractionIn
+18456874	2008	Aug	22197880	2012	Feb	RetractionIn
+18444895	2008	May	21854316	2011	Aug	RetractionIn
+18427122	2008	Apr	22431606	2012	Apr	RetractionIn
+18419724	2008	May	22489994	2012	May	RetractionIn
+18397993	2008	May	22194307	2011	Dec	RetractionIn
+18390835	2008	Jun	22549970	2012	May	RetractionIn
+18387932	2008	Apr	22228686	2012	Feb	RetractionIn
+18384566			22423355	2012	Jan	RetractionIn
+18382681	2008		21912632	2011		RetractionIn
+18381456	2008	Apr	21045159	2010	Nov	RetractionIn
+18368379	2008	Jun	22231743	2012	Apr	RetractionIn
+18364112	2008	Mar	22340352	2011	Dec	RetractionIn
+18363823	2008	Jun	22606698	2012	May	RetractionIn
 18354009	2008	Mar	21697393	2011	Jun	RetractionIn
+18305176	2008	Mar	22160712	2011	Dec	RetractionIn
 18305082	2008	Apr	21685126	2011	Jul	RetractionIn
+18273444	2007	Dec	21843506	2011	Oct	RetractionIn
+18227494	2008	Feb	22275445	2012	Feb	RetractionIn
+18249329	2008	Feb	22013600	2011	Aug	RetractionIn
+18192589	2008	Mar	22142987	2011	Dec	RetractionIn
+18165258	2008	May	21813438	2011	Aug	RetractionIn
+18163565	2008	Jan	22414431	2012	Mar	RetractionIn
 18089389	2007	Dec	21770059	2011	May	RetractionIn
-17970858	2007	Nov	21649776	2011	Jun	RetractionIn
+18030693	2007	Oct	22215848	2012	Jan	RetractionIn
+17893629	2007	Dec	22026015	2011	Oct	RetractionIn
+17761782	2007	Nov	21189485	2011	Jan	RetractionIn
+17715156	2007	Sep	21914820	2011	Sep	RetractionIn
+17698563	2007	Aug	21708887	2011	Jul	RetractionIn
+16729804	2006	May	22088083	2011	Nov	RetractionIn
+16451145	2006	Jan	21749337	2011	Aug	RetractionIn
+9454848	1998	Feb	21653874	2011	Jun	RetractionIn
+7706332	1995	Mar	9378749	1997	Sep	RetractionIn
+7627633	1995	Feb	9410477	1997	Oct	RetractionIn
+6152872	1982	Jan	3329345	1987		RetractionIn
 17683357	2007	Aug	21668864	2011	Jul	RetractionIn
+17628467	2007	Dec	18444246	2008	May	RetractionIn
 17611265	2007	Jul	21653875	2011	Jun	RetractionIn
+17601799	2007	Sep	22467678	2012	Apr	RetractionIn
+17576121	2007	Sep	22076701	2011	Dec	RetractionIn
+17550372	2007	Aug	19906100	2009	Dec	RetractionIn
+17516552	2007	Aug	22120875	2012	Feb	RetractionIn
+17470215	2007	Apr	17986024	2007	Sep	RetractionIn
+17445657	2007	Apr	22413136	2012	Feb	RetractionIn
+17443681	2007	Aug	22120876	2012	Feb	RetractionIn
+17380192			19750127			RetractionIn
 17369855	2007	Aug	21677654	2011	Jun	RetractionIn
+17347151	2007	May	22319783	2012	Jan	RetractionIn
+17344217	2007	Apr	21961173	2011	Aug	RetractionIn
+17316397	2007	Mar	22497026	2012	Mar	RetractionIn
+17311278	2007	Jul	22120874	2012	Feb	RetractionIn
+17290060	2007	Feb	22451975	2012	Feb	RetractionIn
+17280485	2007	Apr	22239245	2012	Apr	RetractionIn
+17278100	2007	May	21960263	2011	Dec	RetractionIn
+17267205	2007	Mar	22200063	2011	Nov	RetractionIn
+17264214	2007	Feb	22408789	2012	Jan	RetractionIn
+17241528	2007	Feb	17974074	2007	Oct	RetractionIn
+17237390	2007	Feb	20483794	2010	Jun	RetractionIn
+17237224	2007	Mar	21879499	2011	Jul	RetractionIn
+17230513	2007	Apr	21960263	2011	Dec	RetractionIn
 17218375	2007	Feb	21685126	2011	Jul	RetractionIn
-17135312	2006	Nov	21602548	2011	Jun	RetractionIn
-16963789	2006	Nov	21685126	2011	Jul	RetractionIn
+17188242	2007	Feb	19777639	2009	Oct	RetractionIn
+17158886	2007	Feb	22319782	2012	Jan	RetractionIn
+17034353			22239245	2012	Apr	RetractionIn
+17023390	2006	Nov	20515957	2010	Jun	RetractionIn
+17015251	2006	Oct	22339484	2012	Mar	RetractionIn
+17012269	2006		17178748	2007		RetractionIn
 16912040	2006	Oct	21812126	2011	Jun	RetractionIn
+16882662	2006	Oct	21882397	2011	Jul	RetractionIn
+16807438	2006	May	22024726	2011	Nov	RetractionIn
+16723796	2006	Jun	20689222	2010	Sep	RetractionIn
+16688670			22132425			RetractionIn
+16675392	2006	May	17326324	2007	Feb	RetractionIn
+16557440	2006	Mar	21815117	2011	Jul	RetractionIn
+16556129	2006	Feb	22458403	2012	Apr	RetractionIn
+16469308	2006	Mar	22679637	2012	May	RetractionIn
+16411566	2005		22528543	2012	Jun	RetractionIn
 16409294	2006	Feb	21623763	2011	Mar	RetractionIn
+16398468	2005	Nov	21322744	2011	Feb	RetractionIn
+16383300	2005	Aug	18350680	2007	Dec	RetractionIn
 16293615	2006	Jan	21812125	2011	Jun	RetractionIn
-15985545	2005	Oct	21546458	2011	Jun	RetractionIn
+16263789	2006	Feb	21856862	2011	Oct	RetractionIn
+16159641	2005	Sep	20464794	2010	May	RetractionIn
+16157701	2005	Sep	17485494	2007	May	RetractionIn
+16154993	2005	Nov	22319781	2012	Jan	RetractionIn
+16152613	2006	Mar	21960263	2011	Dec	RetractionIn
+16109640	2005	Aug	22168171	2012	Jan	RetractionIn
+16106398	2006	Feb	21960263	2011	Dec	RetractionIn
+16061819	2005	Aug	20375280	2010	May	RetractionIn
+16061473	2005	Sep	21882370	2011	Jul	RetractionIn
+15976327	2005	Sep	21508337	2011	May	RetractionIn
+15965464	2005	Jun	16222304	2005	Oct	RetractionIn
+15864528	2005	Jun	21584794	2011	Sep	RetractionIn
 15819761	2005	May	21682719	2011	Jul	RetractionIn
+15817890	2005	May	21709285	2011	Jul	RetractionIn
+15798955	2005	Apr	21961161	2011	Sep	RetractionIn
+15677767	2005	Apr	22383655	2012	Mar	RetractionIn
+15618276	2005	Mar	21646413	2011	Jul	RetractionIn
+15609310	2005	May	21960263	2011	Dec	RetractionIn
+15583985	2004	Dec	16456801	2006	Feb	RetractionIn
 15580304	2005	Jan	21677655	2011	Jun	RetractionIn
+15571483	2004	Nov	22352418	2012	Mar	RetractionIn
+15501944	2005	Jan	21943438	2011	Sep	RetractionIn
+15297874	2004	Aug	17971824	2007	Oct	RetractionIn
+15256470	2004	Jul	21045150	2010	Nov	RetractionIn
+15240731	2004	Jul	20483793	2010	Jun	RetractionIn
+15194459	2004	Jul	21917990	2011	Oct	RetractionIn
 15144295	2004	Jun	21826809	2011	Jul	RetractionIn
 15047708	2004	Jun	21812124	2011	Jun	RetractionIn
+15042502	2004	Mar	21928511	2011	Jul	RetractionIn
+14656778	2003	Dec	21792706	2011	Sep	RetractionIn
+14633524	2003	Dec	21451070	2011	May	RetractionIn
+14620432	2003	Oct	15117135	2004	Apr	RetractionIn
+14519073	2003	Oct	22088135	2012	Jan	RetractionIn
+12940740	2003	Sep	16787104	2006	Jun	RetractionIn
+12935295	2003	Aug	14723796	2004	Jan	RetractionIn
+12845635	2003	Jul	17029327	2006	Nov	RetractionIn
+12837248	2003	Jun	22464333	2012	Mar	RetractionIn
+12735579	2003	May	21847821	2011	Jul	RetractionIn
+12692091	2003	Jun	21807755	2011	Aug	RetractionIn
+12665995	2003	May	21604013	2011	Jul	RetractionIn
 12625310	2003	Feb	21826810	2011	Jul	RetractionIn
+12620953	2003	Mar	21792707	2011	Sep	RetractionIn
+12618524	2003	Mar	14617761	2003	Nov	RetractionIn
+12574348	2003	Feb	20483792	2010	Jun	RetractionIn
+12558978	2003	Feb	22125797	2011	Nov	RetractionIn
+12538174	2003	Feb	21451075	2011	May	RetractionIn
+12477671	2002	Dec	21792705	2011	Sep	RetractionIn
+12468196	2002	Dec	21422878	2011	Apr	RetractionIn
 12393770	2002	Nov	21685126	2011	Jul	RetractionIn
-11878519	2001	Nov	21685126	2011	Jul	RetractionIn
+12373472	2002	Oct	21604014	2011	Jul	RetractionIn
+12198052	2002	Sep	21451078	2011	May	RetractionIn
+12142192	2002	Aug	22191097	2011	Dec	RetractionIn
+12034030	2002	Apr	21923251	2011	Sep	RetractionIn
+12031711	2002	Jun	21917989	2011	Oct	RetractionIn
+11772810	2002	Jan	21451086	2011	May	RetractionIn
+11565755	2001	Sep	14561890	2003	Nov	PartialRetractionIn
+11543891	2001	Sep	11600210	2001	Oct	RetractionIn
+11536383	2001	Sep	18814186	2008	Oct	RetractionIn
 11531667	2001	Sep	21826811	2011	Jul	RetractionIn
 11517128	2001	Sep	21685126	2011	Jul	RetractionIn
+11505347	2001	Aug	22013600	2011	Aug	RetractionIn
+11490022	2001	Aug	17056589	2006	Nov	RetractionIn
+11435477	2001	Jul	14517276	2003	Oct	RetractionIn
+11426361	2001	Jun	22013600	2011	Aug	RetractionIn
+11383794	2001	May	21847820	2011	Jul	RetractionIn
+11378603	2001	May	22026015	2011	Oct	RetractionIn
+11226079	2001	Mar	21451074	2011	May	RetractionIn
+11182366	2001	Feb	12809932	2003	Jun	RetractionIn
+11167165	2001	Feb	21749336	2011	Aug	RetractionIn
+11139111	2000	Dec	22013600	2011	Aug	RetractionIn
 11103184	2000	Sep	21685126	2011	Jul	RetractionIn
+10930202	2000	Jul	21818715	2011		RetractionIn
+10890482	2000	Jun	22013600	2011	Aug	RetractionIn
+10882875	2000	Jun	22308570	2012	Jan	RetractionIn
+10866914	2000	Jul	21451084	2011	May	RetractionIn
+10798759	2000	Apr	22158472	2011	Dec	RetractionIn
+10696980	2000	Feb	11073015	2000	Oct	RetractionIn
+10688189	2000	Feb	12024219	2002	May	RetractionIn
 10651673	2000	Feb	21826812	2011	Jul	RetractionIn
+10589610	1999	Dec	21451082	2011	May	RetractionIn
 10417466	1999	Jul	21826813	2011	Jul	RetractionIn
+10417151	1999	Aug	21765000	2011	Aug	RetractionIn
 10364988	1999	Feb	21685126	2011	Jul	RetractionIn
-9454848	1998	Feb	21653874	2011	Jun	RetractionIn
-7627633	1995	Feb	9410477	1997	Oct	RetractionIn
+9895070	1999	Jan	21451069	2011	May	RetractionIn
+9500320	1998	Feb	20137807	2010	Feb	RetractionIn
+9314560	1997	Oct	19364884	2009	May	RetractionIn
+7702575	1995	Mar	9841640	1998	Oct	RetractionIn
+1455228	1992	Nov	10383305	1999	May	RetractionIn
+6338856	1983	Mar	3289525	1988	Jul	RetractionIn
+6753612	1982	Nov	2653058	1989	May	RetractionIn
