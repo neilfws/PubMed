@@ -1,55 +1,113 @@
-# NB Currently does not work
-# Parsing entries fails and task is set up for local DB only
+# rake tasks to automate PMRetract
+
+require "rubygems"
+require "bio"
+require "mongo"
+require "crack"
+require "date"
+require "yaml"
+
+basedir = "#{ENV['HOME']}/Dropbox/projects"
+db      = Mongo::Connection.new.db('pubmed')
+ncbi    = Bio::NCBI::REST.new
+Bio::NCBI.default_email = "me@me.com"
+
+desc "Fetch retraction notices and write XML file"
+task :fetch do
+  retmax = ncbi.esearch_count("Retraction of Publication[ptyp]", {"db" => "pubmed"})
+  search = ncbi.esearch("Retraction of Publication[ptyp]", {"db" => "pubmed", "retmax" => retmax})
+  result = ncbi.efetch(search, {"db" => "pubmed", "retmode" => "xml"})
+
+  File.open("#{basedir}/pubmed/retractions/data/retract.xml", "w") do |f|
+    f.write(result)
+  end
+end
+
+desc "Restart PMRetract @ Heroku"
+task :restart do
+  Dir.chdir("#{basedir}/heroku/pmretract") do
+    system "heroku restart"
+  end
+end
 
 namespace :db do
-  require 'mongo'
-  require 'bio'
-  require 'crack'
-
-  db = Mongo::Connection.new.db('pubmed')
-  ecount   = db.collection('ecount')
-  entries  = db.collection('entries')
-  timeline = db.collection('timeline')
-  Bio::NCBI.default_email = "me@me.com"
-  ncbi = Bio::NCBI::REST.new
-
-  desc "Update pubmed collections"
-  task :update do
-    # ecount
-    puts "Updating ecount..."
+  desc "Update collection: ecount"
+  task :ecount do
+    col = db.collection('ecount')
     1977.upto(Time.now.year) do |year|
       all    = ncbi.esearch_count("#{year}[dp]", {"db" => "pubmed"})
-      term   = ncbi.esearch_count("Retraction of Publication[ptyp] #{year}[dp]", {"db" => "pubmed"})
-      record = {"_id" => year, "year" => year, "total" => all, "retracted" => term}
-      ecount.save(record)
+      term   = ncbi.esearch_count("Retraction of Publication[ptyp] #{year}[dp]",
+                               {"db" => "pubmed"})
+      record = {"_id" => year, "year" => year, "total" => all,
+                "retracted" => term, "updated_at" => Time.now}
+      col.save(record)
+      puts "#{year}..."
     end
-    puts "Saved #{ecount.count} records in collection: ecount"
+    puts "Saved #{col.count} records."
+  end
 
-    # entries
-    puts "Updating entries..."
-    max      = ncbi.esearch_count("Retraction of Publication[ptyp]", {"db" => "pubmed"})
-    ids      = ncbi.esearch("Retraction of Publication[ptyp]", {"db" => "pubmed", "retmax" => max})
-    xml      = Bio::NCBI::REST::EFetch.pubmed(ids, "xml")
-    articles = Crack::XML.parse(xml)
+  desc "Update collection: entries"
+  task :entries do
+    col  = db.collection('entries')
+    file = "#{basedir}/pubmed/retractions/data/retract.xml"
+    col.drop
+    xml  = Crack::XML.parse(File.read(file))
 
-    articles['PubmedArticleSet']['PubmedArticle'].each do |article|
+    xml['PubmedArticleSet']['PubmedArticle'].each do |article|
       article['_id'] = article['MedlineCitation']['PMID']
-      entries.save(article)
+      col.save(article)
     end
-    puts "Saved #{entries.count} records in collection: entries"
+    puts "Saved #{col.count} articles."
+  end
 
-    # timeline
-    puts "Updating timeline..."
-    dates = entries.find.map { |entry| entry['MedlineCitation']['DateCreated'] }
+  desc "Update collection: timeline"
+  task :timeline do
+    entries  = db.collection('entries')
+    timeline = db.collection('timeline')
+    dates    = entries.find.map { |entry| entry['MedlineCitation']['DateCreated'] }
     dates.map! { |d| Date.parse("#{d['Year']}-#{d['Month']}-#{d['Day']}") }
     dates.sort!
     data = (dates.first..dates.last).inject(Hash.new(0)) { |h, date| h[date] = 0; h }
+
     dates.each { |date| data[date] += 1}
-    data = data.sort
-    data.map! {|e| ["Date.UTC(#{e[0].year},#{e[0].month - 1},#{e[0].day})", e[1]] }
-    data.each do |date|
-      timeline.save({"_id" => date[0].gsub(".", "_"), "date" => date[0], "count" => date[1]})
+      data = data.sort
+      data.map! {|e| ["Date.UTC(#{e[0].year},#{e[0].month - 1},#{e[0].day})", e[1]] }
+      data.each do |date|
+        timeline.save({"_id" => date[0].gsub(".", "_"), "date" => date[0], "count" => date[1]})
+      end
+      puts "Saved #{timeline.count} dates in timeline."
+  end
+end
+
+namespace :git do
+  desc "Commit changes"
+  task :commit do
+    Dir.chdir("#{basedir}/pubmed/retractions") do
+      system "git commit -a -m 'Latest XML data'"
     end
-    puts "Saved #{timeline.count} dates in collection: timeline"
+  end
+
+  desc "Push changes to Github"
+  task :push do
+    Dir.chdir("#{basedir}/pubmed/retractions") do
+      system "git push origin master"
+    end
+  end
+end
+
+namespace :mongo do
+  desc "Dump MongoDB database"
+  task :dump do
+    Dir.chdir("#{basedir}/heroku/pmretract") do
+      system "mongodump -d pubmed"
+    end
+  end
+
+  desc "Restore MongoDB database at Heroku"
+  task :restore do
+    Dir.chdir("#{basedir}") do
+      conf = YAML.load_file("pubmed/retractions/data/heroku.yml")
+      system "mongorestore -h flame.mongohq.com:27057 -d #{conf['db']} -u #{conf['user']} -p#{conf['pass']} --drop heroku/pmretract/dump/pubmed"
+    end
   end
 end
