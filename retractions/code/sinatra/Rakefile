@@ -12,8 +12,15 @@ db      = Mongo::Connection.new.db('pubmed')
 ncbi    = Bio::NCBI::REST.new
 Bio::NCBI.default_email = "me@me.com"
 
+desc "Complete PMRetract update; runs all tasks"
+task :pmretract => [:fetch, :"db:ecount", :"db:entries", :"db:timeline", :"git:commit", :"git:push",
+                    :"mongo:dump", :"mongo:restore", :restart] do
+  puts "All tasks complete."
+end
+
 desc "Fetch retraction notices and write XML file"
 task :fetch do
+  puts "Fetching latest XML data..."
   retmax = ncbi.esearch_count("Retraction of Publication[ptyp]", {"db" => "pubmed"})
   search = ncbi.esearch("Retraction of Publication[ptyp]", {"db" => "pubmed", "retmax" => retmax})
   result = ncbi.efetch(search, {"db" => "pubmed", "retmode" => "xml"})
@@ -21,6 +28,7 @@ task :fetch do
   File.open("#{basedir}/pubmed/retractions/data/retract.xml", "w") do |f|
     f.write(result)
   end
+  puts "Wrote retract.xml"
 end
 
 desc "Restart PMRetract @ Heroku"
@@ -33,6 +41,7 @@ end
 namespace :db do
   desc "Update collection: ecount"
   task :ecount do
+    puts "Updating collection: ecount"
     col = db.collection('ecount')
     1977.upto(Time.now.year) do |year|
       all    = ncbi.esearch_count("#{year}[dp]", {"db" => "pubmed"})
@@ -48,6 +57,7 @@ namespace :db do
 
   desc "Update collection: entries"
   task :entries do
+    puts "Updating collection: entries"
     col  = db.collection('entries')
     file = "#{basedir}/pubmed/retractions/data/retract.xml"
     col.drop
@@ -62,6 +72,7 @@ namespace :db do
 
   desc "Update collection: timeline"
   task :timeline do
+    puts "Updating collection: timeline"
     entries  = db.collection('entries')
     timeline = db.collection('timeline')
     dates    = entries.find.map { |entry| entry['MedlineCitation']['DateCreated'] }
@@ -82,6 +93,7 @@ end
 namespace :git do
   desc "Commit changes"
   task :commit do
+    puts "Running git commit..."
     Dir.chdir("#{basedir}/pubmed/retractions") do
       system "git commit -a -m 'Latest XML data'"
     end
@@ -89,6 +101,7 @@ namespace :git do
 
   desc "Push changes to Github"
   task :push do
+    puts "Running git push..."
     Dir.chdir("#{basedir}/pubmed/retractions") do
       system "git push origin master"
     end
@@ -98,6 +111,7 @@ end
 namespace :mongo do
   desc "Dump MongoDB database"
   task :dump do
+    puts "Running mongodump..."
     Dir.chdir("#{basedir}/heroku/pmretract") do
       system "mongodump -d pubmed"
     end
@@ -105,6 +119,7 @@ namespace :mongo do
 
   desc "Restore MongoDB database at Heroku"
   task :restore do
+    puts "Running mongorestore..."
     Dir.chdir("#{basedir}") do
       conf = YAML.load_file("pubmed/retractions/data/heroku.yml")
       system "mongorestore -h flame.mongohq.com:27057 -d #{conf['db']} -u #{conf['user']} -p#{conf['pass']} --drop heroku/pmretract/dump/pubmed"
