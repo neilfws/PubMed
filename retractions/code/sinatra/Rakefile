@@ -23,7 +23,7 @@ task :fetch do
   puts "Fetching latest XML data..."
   retmax = ncbi.esearch_count("Retraction of Publication[ptyp]", {"db" => "pubmed"})
   search = ncbi.esearch("Retraction of Publication[ptyp]", {"db" => "pubmed", "retmax" => retmax})
-  result = ncbi.efetch(search, {"db" => "pubmed", "retmode" => "xml"})
+  result = ncbi.efetch(search, {"db" => "pubmed", "retmode" => "xml"}, step = retmax)
 
   File.open("#{basedir}/pubmed/retractions/data/retract.xml", "w") do |f|
     f.write(result)
