@@ -6,6 +6,7 @@ require "mongo"
 require "crack"
 require "date"
 require "yaml"
+require "rexml/document"
 
 basedir = "#{ENV['HOME']}/Dropbox/projects"
 db      = Mongo::Connection.new.db('pubmed')
