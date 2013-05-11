@@ -5,6 +5,7 @@ GEM
     bson (1.5.2)
     bson_ext (1.5.2)
       bson (= 1.5.2)
+    crack (0.3.2)
     haml (3.1.4)
     mongo (1.5.2)
       bson (= 1.5.2)
@@ -20,6 +21,7 @@ PLATFORMS
 DEPENDENCIES
   RedCloth (= 4.2.8)
   bson_ext
+  crack
   haml
   mongo
   sinatra (= 1.1.2)
