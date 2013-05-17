@@ -2,6 +2,7 @@ GEM
   remote: http://rubygems.org/
   specs:
     RedCloth (4.2.8)
+    bio (1.4.3)
     bson (1.5.2)
     bson_ext (1.5.2)
       bson (= 1.5.2)
@@ -20,6 +21,7 @@ PLATFORMS
 
 DEPENDENCIES
   RedCloth (= 4.2.8)
+  bio
   bson_ext
   crack
   haml
