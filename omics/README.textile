@@ -1,0 +1,9 @@
+Code and data for the blog post "-omics in 2013":http://nsaunders.wordpress.com/2013/06/25/omics-in-2013/.
+
+h3. Note
+
+The raw data file from PubMed is > 200 MB and so not included in this repository. To get it:
+
+# Search PubMed using the term 2013[PDAT]
+# Choose "Send to...File" and "Format...CSV"
+# cut -f1 -d "," pubmed_result.csv | grep -ioP "(\w+omics)" > omics.txt
