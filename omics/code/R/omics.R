@@ -19,5 +19,5 @@ getOmics <- function(words) {
   dev.off()
 # write all
   outfile <- paste("output/", basename(words), ".csv", sep = "")
-  write.table(omics.freq, outfile, quote = F, sep = ",", row.names = F)
+  write.table(omics.freq, outfile, quote = F, sep = ",", row.names = F, col.names = F)
 }
