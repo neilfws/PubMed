@@ -7,3 +7,4 @@ The raw data file from PubMed is > 200 MB and so not included in this repository
 # Search PubMed using the term 2013[PDAT]
 # Choose "Send to...File" and "Format...CSV"
 # cut -f1 -d "," pubmed_result.csv | grep -ioP "(\w+omics)" > omics.txt
+## or to include hyphenated -omics: cut -f1 -d "," pubmed_result.csv | grep -ioP "([-\w]+omics)" > omics.txt 
