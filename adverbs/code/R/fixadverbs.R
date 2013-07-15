@@ -14,6 +14,6 @@ l2 <- c(adverbs[ok], l1)
 
 adverbs2 <- read.table(textConnection(l2), sep = ",", stringsAsFactors = F, header = F)
 colnames(adverbs2) <- c("pmc", "jour", "epub", "ppub", "adv", "start", "end")
-adverbs2$jour <- tolower(adverbs2$jour)
+# adverbs2$jour <- tolower(adverbs2$jour)
 adverbs.uniq <- adverbs2[rownames(unique(adverbs2[, c("pmc", "adv", "start", "end")])), ]
 write.table(adverbs.uniq, "data/adverbs.uniq.csv", sep = ",", row.names = F, col.names = T, quote = F)
