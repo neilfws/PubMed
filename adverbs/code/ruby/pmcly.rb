@@ -17,6 +17,7 @@ jour  = doc.xpath("//article/front/journal-meta/journal-id[@journal-id-type='nlm
 abs.scan(/[A-Z][a-z]+ly,/m) {
   b = $~.begin(0)
   e = $~.end(0)
-  o = [pmc, jour, epub, ppub, $&.gsub(',', ''), b, e]
+  a = $&.gsub(",", "")
+  o = [pmc, jour.downcase, epub, ppub, a, b, e]
   puts o.join(",")
 }
