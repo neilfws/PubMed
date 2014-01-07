@@ -21,9 +21,9 @@
                },
       legend: { enabled: false },
       title:  { text: 'Retractions by date' },
-      xAxis:  { type: 'datetime'},
+      xAxis:  { type: 'datetime', title: { text: 'Year'} },
       yAxis:  { title:
-               { text: 'Retractions' }
+               { text: 'Retraction notices' }
              },
       series: [{
         data: #{options.data.inspect.gsub(/"/,"")}
