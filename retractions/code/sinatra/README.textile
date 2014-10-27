@@ -1,6 +1,6 @@
 h1. Sinatra Code
 
-This directory contains the code which runs the "pmretract":http://pmretract.heroku.com/ application, hosted by Heroku/MongoHQ.
+This directory contains the code which runs the "pmretract":http://pmretract.herokuapp.com/ application, hosted by Heroku/MongoHQ.
 
 Right now, it's not recommended that you try to run the sinatra code locally.  However, if you want to try, the steps are as follows:
 
