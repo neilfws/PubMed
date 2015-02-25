@@ -5,6 +5,6 @@ require "haml"
 require "uri"
 require "redcloth"
 
-require "main"
-require "statistics"
+require "./main"
+require "./statistics"
 run Sinatra::Application
