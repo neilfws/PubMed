@@ -1,5 +1,5 @@
 ---
-title: "PubMed Retractions report compiled `r Sys.Date()`"
+title: "PubMed Retractions report compiled `r Sys.time()`"
 author: "Neil Saunders"
 date: 
 output: html_document
@@ -11,7 +11,7 @@ output: html_document
 ```{r echo=FALSE, ref.label="timeline", message=FALSE}
 ```
 
-```{r}
+```{r eval = FALSE}
 doc <- getRetractedXML()
 ```
 
@@ -19,7 +19,7 @@ doc <- getRetractedXML()
 ```{r echo=FALSE, ref.label="byyear", message=FALSE}
 ```
 
-```{r chart2, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
+```{r chart2, message=FALSE, echo=FALSE, results='asis', warning=FALSE, eval = FALSE}
 y <- getByYear(doc)
 h2 <- Highcharts$new()
 h2$series(data = y$count, type = "column")
@@ -32,14 +32,17 @@ h2$show('inline', cdn = FALSE, include_assets = TRUE)
 ## 3. Cumulative
 
 ## 4. By Journal
-```{r echo=FALSE, ref.label="journals", message=FALSE}
+```{r echo=FALSE, ref.label="journals", message=FALSE, eval = FALSE}
 ```
 
 ```{r chart4, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
-j20 <- retractedByJournal(doc)
+setwd("~/Dropbox/projects/pubmed/retractions/data")
+#j20 <- retractedByJournal(doc)
+j20 <- read.csv("journals.csv")
 h4 <- Highcharts$new()
-h4$series(data = j20$Freq, type = "bar")
-h4$xAxis(categories = j20$jour)
+h4$series(data = j20$count, type = "bar")
+h4$xAxis(categories = j20$journal)
+h4$legend(enabled = FALSE)
 h4$show('inline', cdn = FALSE, include_assets = TRUE)
 ```
 
