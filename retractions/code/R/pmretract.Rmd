@@ -1,0 +1,98 @@
+---
+title: "PubMed Retractions report compiled `r Sys.Date()`"
+author: "Neil Saunders"
+date: 
+output: html_document
+---
+```{r echo=FALSE, ref.label="setup", message=FALSE}
+```
+
+## 1. Timeline
+```{r echo=FALSE, ref.label="timeline", message=FALSE}
+```
+
+```{r}
+doc <- getRetractedXML()
+```
+
+## 2. By Year
+```{r echo=FALSE, ref.label="byyear", message=FALSE}
+```
+
+```{r chart2, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
+y <- getByYear(doc)
+h2 <- Highcharts$new()
+h2$series(data = y$count, type = "column")
+h2$xAxis(categories = y$year)
+h2$legend(enabled = FALSE)
+h2$show('inline', cdn = FALSE, include_assets = TRUE)
+```
+
+
+## 3. Cumulative
+
+## 4. By Journal
+```{r echo=FALSE, ref.label="journals", message=FALSE}
+```
+
+```{r chart4, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
+j20 <- retractedByJournal(doc)
+h4 <- Highcharts$new()
+h4$series(data = j20$Freq, type = "bar")
+h4$xAxis(categories = j20$jour)
+h4$show('inline', cdn = FALSE, include_assets = TRUE)
+```
+
+## 5. Functions
+
+### 5.1 Setup
+```{r setup, tidy=TRUE, warning=FALSE, cache=TRUE, eval=FALSE}
+library(rCharts)
+library(rentrez)
+library(XML)
+library(lubridate)
+
+getRetractedXML <- function() {
+  es <- entrez_search("pubmed", "\"Retracted Publication\"[PTYP]")
+  #es <- entrez_search("pubmed", "\"Retracted Publication\"[PTYP]", retmax = es$count, usehistory = "y")
+  es <- entrez_search("pubmed", "\"Retracted Publication\"[PTYP]", retmax = 20, usehistory = "y")
+  ef <- entrez_fetch("pubmed", WebEnv = es$WebEnv, query_key = es$QueryKey, rettype = "xml")
+  ex <- xmlTreeParse(ef, useInternalNodes = TRUE)
+  return(ex)
+}
+```
+
+### 5.2 Timeline
+```{r timeline, tidy=TRUE, warning=FALSE, cache=TRUE, eval=FALSE}
+getTimeline <- function(d) {
+  dates <- xpathSApply(d, "//MedlineCitation/DateCreated", xmlValue)
+  dates.cnt <- as.data.frame(table(as.Date(dates, "%Y%m%d")), stringsAsFactors = FALSE)
+  tl <- data.frame(date = seq(as.Date(dates.cnt$Var1[1]), as.Date(dates.cnt$Var1[nrow(dates.cnt)]), 1),
+                   retracted = 0)
+  m <- match(tl$date, as.Date(dates.cnt$Var1))
+  tl$retracted <- dates.cnt[m, "Freq"]
+  return(tl)
+}
+```
+
+### 5.3 By Year
+```{r byyear, tidy=TRUE, warning=FALSE, cache=TRUE, eval=FALSE}
+getByYear <- function(d) {
+  dates <- xpathSApply(d, "//MedlineCitation/DateCreated", xmlValue)
+  years <- as.data.frame(table(year(ymd(dates))), stringsAsFactors = FALSE)
+  colnames(years) <- c("year", "count")
+  return(years)
+}
+```
+
+### 5.4 Cumulative
+
+### 5.5 By Journal
+```{r journals, tidy=TRUE, warning=FALSE, cache=TRUE, eval=FALSE}
+retractedByJournal <- function(x) {
+  jour <- xpathSApply(x, "//MedlineCitation/Article/Journal/ISOAbbreviation", xmlValue)
+  jour.cnt <- as.data.frame(table(jour), stringsAsFactors = FALSE)
+  jour20 <- head(jour.cnt[order(jour.cnt$Freq, decreasing = TRUE),], 20)
+  return(jour20)
+}
+```
