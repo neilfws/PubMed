@@ -4,26 +4,20 @@ author: "Neil Saunders"
 date: 
 output: html_document
 ---
+
 ```{r echo=FALSE, ref.label="setup", message=FALSE}
 ```
 
 ## 1. Timeline
-```{r echo=FALSE, ref.label="timeline", message=FALSE}
-```
-
-```{r eval = FALSE}
-doc <- getRetractedXML()
-```
+Where is this text?
 
 ## 2. By Year
-```{r echo=FALSE, ref.label="byyear", message=FALSE}
-```
-
-```{r chart2, message=FALSE, echo=FALSE, results='asis', warning=FALSE, eval = FALSE}
-y <- getByYear(doc)
+```{r chart2, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
+setwd("~/Dropbox/projects/pubmed/retractions/data")
+y <- read.csv("years.csv")
 h2 <- Highcharts$new()
-h2$series(data = y$count, type = "column")
-h2$xAxis(categories = y$year)
+h2$series(data = y$retracted, type = "column")
+h2$xAxis(categories = y$year, labels = list(rotation = 90))
 h2$legend(enabled = FALSE)
 h2$show('inline', cdn = FALSE, include_assets = TRUE)
 ```
@@ -32,16 +26,13 @@ h2$show('inline', cdn = FALSE, include_assets = TRUE)
 ## 3. Cumulative
 
 ## 4. By Journal
-```{r echo=FALSE, ref.label="journals", message=FALSE, eval = FALSE}
-```
-
 ```{r chart4, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
 setwd("~/Dropbox/projects/pubmed/retractions/data")
-#j20 <- retractedByJournal(doc)
 j20 <- read.csv("journals.csv")
 h4 <- Highcharts$new()
+h4$chart(marginLeft = 220)
 h4$series(data = j20$count, type = "bar")
-h4$xAxis(categories = j20$journal)
+h4$xAxis(categories = j20$journal, labels = list(formatter = "#! function() { return '<a href=\"http://www.pubmed.org/?term=%22Retracted Publication%22[PTYP] AND %22' + escape(this.value) + '%22[JOUR]\" target=\"_blank\">' + this.value + '</a>'; } !#", useHTML = "true"))
 h4$legend(enabled = FALSE)
 h4$show('inline', cdn = FALSE, include_assets = TRUE)
 ```
@@ -80,22 +71,10 @@ getTimeline <- function(d) {
 
 ### 5.3 By Year
 ```{r byyear, tidy=TRUE, warning=FALSE, cache=TRUE, eval=FALSE}
-getByYear <- function(d) {
-  dates <- xpathSApply(d, "//MedlineCitation/DateCreated", xmlValue)
-  years <- as.data.frame(table(year(ymd(dates))), stringsAsFactors = FALSE)
-  colnames(years) <- c("year", "count")
-  return(years)
-}
 ```
 
 ### 5.4 Cumulative
 
 ### 5.5 By Journal
 ```{r journals, tidy=TRUE, warning=FALSE, cache=TRUE, eval=FALSE}
-retractedByJournal <- function(x) {
-  jour <- xpathSApply(x, "//MedlineCitation/Article/Journal/ISOAbbreviation", xmlValue)
-  jour.cnt <- as.data.frame(table(jour), stringsAsFactors = FALSE)
-  jour20 <- head(jour.cnt[order(jour.cnt$Freq, decreasing = TRUE),], 20)
-  return(jour20)
-}
 ```
