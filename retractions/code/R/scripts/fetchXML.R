@@ -7,5 +7,10 @@ getXML <- function(ptyp) {
 }
 
 setwd("~/Dropbox/projects/pubmed/retractions/data/")
+
+## retracted
 retracted <- getXML("\"Retracted Publication\"")
 writeLines(retracted, "retracted.xml")
+## retraction of
+retraction <- getXML("\"Retraction of Publication\"")
+writeLines(retraction, "retractionOf.xml")
