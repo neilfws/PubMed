@@ -10,7 +10,7 @@ output: html_document
 
 ## Introduction
 This is the latest report on retracted publications in the [PubMed database](http://www.pubmed.org). It was generated on `r 
-strftime(Sys.Date(), "%B %d %Y")`. This report replaces the application PMRetract, formerly hosted by Heroku.
+strftime(Sys.Date(), "%B %d %Y")`. This report replaces the application PMRetract, formerly hosted at [Heroku](https://www.heroku.com).
 
 ## 1. Timeline of retractions
 This chart shows the number of retracted publications per year. PubMed uses a variety of different dates; the year used here is the date that the record was created (CRDT).
@@ -39,15 +39,15 @@ hc2$show('inline', cdn = FALSE, include_assets = TRUE)
 ```
 
 ## 3. Retraction rate by year
-This chart shows the rate of retracted publications per year, as retractions per 100 000 publications. The year used here is the publication date (DP or PDAT).
+This chart shows the rate of retracted publications per year, as retractions per 100 000 publications. The year used here is the date that the record was created (CRDT).
 
-Clicking on a year will open a new window at PubMed showing the retracted articles published in that year.
+Clicking on a year will open a new window at PubMed showing the retracted articles for that year.
 
 ```{r echo=FALSE, ref.label="byyear", message=FALSE}
 ```
 
 ```{r chart3, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
-hc3 <- plotByYear()
+hc3 <- plotByYear(doc, years.total)
 hc3$show('inline', cdn = FALSE, include_assets = TRUE)
 ```
 
@@ -67,26 +67,16 @@ hc4$show('inline', cdn = FALSE, include_assets = TRUE)
 ## 5. Functions
 
 ### 5.1 Setup
-This code loads required libraries, searches PubMed for retracted articles, downloads the results as XML and returns a parsed XML document.
+This code loads required libraries and pre-saved data.
 
 ```{r setup, tidy=TRUE, warning=FALSE, eval=FALSE}
 library(rCharts)
 library(rentrez)
 library(XML)
-library(lubridate)
 
-fetchXML <- function(ptyp) {
-  require(rentrez)
-  require(XML)
-  es <- entrez_search("pubmed", paste(ptyp, "[PTYP]", sep = ""), usehistory = "y")
-  ef <- entrez_fetch("pubmed", WebEnv = es$WebEnv, query_key = es$QueryKey, retmax = es$count, rettype = "xml")
-  return(ef)
-}
-
-setwd("~/Dropbox/projects/pubmed/retractions/data")
-retracted <- fetchXML("\"Retracted Publication\"")
-writeLines(retracted, "retracted.xml")
+setwd("../../data")
 doc <- xmlTreeParse("retracted.xml", useInternalNodes = TRUE)
+years.total <- read.csv("years.csv")
 ```
 
 ### 5.2 Timeline
@@ -125,17 +115,24 @@ plotCumSumTimeline <- function(d) {
 }
 ```
 
-### 5.4 By Year
+### 5.4 By year
 This code generates the retraction rate by year chart.
 
 ```{r byyear, tidy=TRUE, warning=FALSE, eval=FALSE}
-plotByYear <- function() {
-  setwd("~/Dropbox/projects/pubmed/retractions/data")
-  y <- read.csv("years.csv")
+plotByYear <- function(d, total) {
+  dates <- xpathSApply(d, "//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year", xmlValue)
+  years <- as.numeric(dates)
+  ydf <- data.frame(year = min(years):max(years), total = NA, retracted = NA)
+  years.cnt <- as.data.frame(table(years), stringsAsFactors = FALSE)
+  m <- match(ydf$year, years.cnt$years)
+  ydf$retracted <- years.cnt[m, "Freq"]
+  ydf$retracted <- ifelse(is.na(ydf$retracted), 0, ydf$retracted)
+  m <- match(ydf$year, total$year)
+  ydf$total <- total[m, "total"]  
   hc <- Highcharts$new()
-  hc$title(text = "Retracted publications per 100 000 publications by year of publication")
-  hc$series(data = as.numeric(sprintf("%.3f", (100000 / y$total) * y$retracted)), type = "column", events = list(click = "#! function() {window.open(this.options.url)} !#"))
-  hc$xAxis(categories = y$year, labels = list(rotation = 90, formatter = "#! function() { return '<a href=\"http://www.pubmed.org/?term=%22Retracted Publication%22[PTYP] AND ' + escape(this.value) + '[DP]\" target=\"_blank\">' + this.value + '</a>'; } !#", useHTML = "true"), title = list(text = "year"))
+  hc$title(text = "Retracted publications per 100 000 publications by year of Entrez record creation")
+  hc$series(data = as.numeric(sprintf("%.3f", (100000 / ydf$total) * ydf$retracted)), type = "column", events = list(click = "#! function() {window.open(this.options.url)} !#"))
+  hc$xAxis(categories = ydf$year, labels = list(rotation = 90, formatter = "#! function() { return '<a href=\"http://www.pubmed.org/?term=%22Retracted Publication%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; } !#", useHTML = "true"), title = list(text = "year"))
   hc$yAxis(title = list(text = "retracted publications per 100 000 publications"))
   hc$legend(enabled = FALSE)
   hc$tooltip(pointFormat = "{point.y} retracted records per 100 000 publication records")
@@ -143,7 +140,7 @@ plotByYear <- function() {
 }
 ```
 
-### 5.5 By Journal
+### 5.5 By journal
 This code generates the retractions by journal chart.
 
 ```{r byjournal, tidy=TRUE, warning=FALSE, eval=FALSE}

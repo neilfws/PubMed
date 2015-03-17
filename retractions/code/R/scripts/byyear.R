@@ -2,15 +2,14 @@ yearsToCSV <- function(xmlfile) {
   require(XML)
   require(rentrez)
   doc <- xmlTreeParse(xmlfile, useInternalNodes = TRUE)
-  dates <- xpathSApply(doc, "//MedlineCitation/Article/Journal/JournalIssue/PubDate/Year", xmlValue)
+  dates <- xpathSApply(doc, "//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year", xmlValue)
   years <- as.numeric(dates)
-  ydf <- data.frame(year = min(years):max(years), total = NA, retracted = NA)
+  ydf <- data.frame(year = min(years):max(years), total = NA)
   for(y in min(years):max(years)) {
-    total <- entrez_search("pubmed", paste(y, "[DP]", sep = ""))
-    retd  <- entrez_search("pubmed", paste("\"Retracted Publication\"[PTYP] ", y, "[DP]", sep = ""))
+    total <- entrez_search("pubmed", paste(y, "[CRDT]", sep = ""))
+    Sys.sleep(3)
+    cat(y, total$count, "\n")
     ydf[(y - min(years)) + 1, "total"]     <- total$count
-    ydf[(y - min(years)) + 1, "retracted"] <- retd$count
-    Sys.sleep(2)
   }
   return(ydf)
 }
