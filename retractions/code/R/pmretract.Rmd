@@ -1,7 +1,7 @@
 ---
-title: "pmRetract PubMed retractions report <br />compiled `r Sys.time()`"
+title: "pmRetract PubMed retractions report"
 author: "Neil Saunders"
-date: 
+date: "compiled `r Sys.time()`"
 output: html_document
 ---
 
@@ -17,19 +17,12 @@ This chart shows the number of retracted publications per year. PubMed uses a va
 
 Clicking on a year will open a new window at PubMed showing the retracted articles for that year.
 
-```{r chart1, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
-dates <- xpathSApply(doc, "//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year", xmlValue)
-#dates <- as.Date(dates, "%Y%m%d")
-df1 <- as.data.frame(table(dates), stringsAsFactors = FALSE)
+```{r echo=FALSE, ref.label="timeline", message=FALSE}
+```
 
-h1 <- Highcharts$new()
-h1$title(text = "Retracted publications by year of Entrez record creation")
-h1$series(data = df1$Freq, type = "column")
-h1$xAxis(categories = df1$dates, labels = list(rotation = 90, formatter = "#! function() { return '<a href=\"http://www.pubmed.org/?term=%22Retracted Publication%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; } !#", useHTML = "true"), title = list(text = "year"))
-h1$yAxis(title = list(text = "retracted publications"))
-h1$legend(enabled = FALSE)
-h1$tooltip(pointFormat = "{point.y} records")
-h1$show('inline', cdn = FALSE, include_assets = TRUE)
+```{r chart1, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
+hc1 <- plotTimeline(doc)
+hc1$show('inline', cdn = FALSE, include_assets = TRUE)
 ```
 
 ## 2. Cumulative timeline of retractions
@@ -37,15 +30,12 @@ This chart shows the cumulative sum of retracted publications per year. The year
 
 Clicking on a year will open a new window at PubMed showing the retracted articles from 1959 up to and including that year.
 
+```{r echo=FALSE, ref.label="cumulative", message=FALSE}
+```
+
 ```{r chart2, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
-h2 <- Highcharts$new()
-h2$title(text = "Cumulative sum of retracted publications by year of Entrez record creation")
-h2$series(data = cumsum(df1$Freq), type = "column")
-h2$xAxis(categories = df1$dates, labels = list(rotation = 90, formatter = "#! function() { return '<a href=\"http://www.pubmed.org/?term=%22Retracted Publication%22[PTYP] AND 1959:' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; } !#", useHTML = "true"), title = list(text = "year"))
-h2$yAxis(title = list(text = "sum of retracted publications"))
-h2$legend(enabled = FALSE)
-h2$tooltip(pointFormat = "{point.y} records since 1959")
-h2$show('inline', cdn = FALSE, include_assets = TRUE)
+hc2 <- plotCumSumTimeline(doc)
+hc2$show('inline', cdn = FALSE, include_assets = TRUE)
 ```
 
 ## 3. Retraction rate by year
@@ -53,55 +43,121 @@ This chart shows the rate of retracted publications per year, as retractions per
 
 Clicking on a year will open a new window at PubMed showing the retracted articles published in that year.
 
-```{r chart3, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
-h3 <- Highcharts$new()
-h3$title(text = "Retracted publications per 100 000 publications by year of publication")
-h3$series(data = as.numeric(sprintf("%.3f", (100000 / y$total) * y$retracted)), type = "column", events = list(click = "#! function() {window.open(this.options.url)} !#"))
-h3$xAxis(categories = y$year, labels = list(rotation = 90, formatter = "#! function() { return '<a href=\"http://www.pubmed.org/?term=%22Retracted Publication%22[PTYP] AND ' + escape(this.value) + '[DP]\" target=\"_blank\">' + this.value + '</a>'; } !#", useHTML = "true"), title = list(text = "year"))
-h3$yAxis(title = list(text = "retracted publications per 100 000 publications"))
-h3$legend(enabled = FALSE)
-h3$tooltip(pointFormat = "{point.y} retracted records per 100 000 publication records")
-h3$show('inline', cdn = FALSE, include_assets = TRUE)
+```{r echo=FALSE, ref.label="byyear", message=FALSE}
 ```
 
+```{r chart3, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
+hc3 <- plotByYear()
+hc3$show('inline', cdn = FALSE, include_assets = TRUE)
+```
 
 ## 4. Retractions by Journal
 This chart shows the top 20 journals by number of retracted articles.
 
 Clicking on a journal name will open a new window at PubMed showing the retracted articles from that journal.
 
+```{r echo=FALSE, ref.label="byjournal", message=FALSE}
+```
+
 ```{r chart4, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
-journals <- xpathSApply(doc, "//MedlineCitation/Article/Journal/ISOAbbreviation", xmlValue)
-journals.cnt <- as.data.frame(table(journals), stringsAsFactors = FALSE)
-colnames(journals.cnt) <- c("journal", "count")
-j20 <- head(journals.cnt[order(journals.cnt$count, decreasing = TRUE),], 20)
-h4 <- Highcharts$new()
-h4$chart(marginLeft = 220)
-h4$series(data = j20$count, type = "bar")
-h4$xAxis(categories = j20$journal, labels = list(formatter = "#! function() { return '<a href=\"http://www.pubmed.org/?term=%22Retracted Publication%22[PTYP] AND %22' + escape(this.value) + '%22[JOUR]\" target=\"_blank\">' + this.value + '</a>'; } !#", useHTML = "true"))
-h4$yAxis(title = list(text = "retracted publications"))
-h4$legend(enabled = FALSE)
-h4$show('inline', cdn = FALSE, include_assets = TRUE)
+hc4 <- plotByJournal(doc)
+hc4$show('inline', cdn = FALSE, include_assets = TRUE)
 ```
 
 ## 5. Functions
 
 ### 5.1 Setup
-```{r setup, tidy=TRUE, warning=FALSE, cache=TRUE, eval=FALSE}
+This code loads required libraries, searches PubMed for retracted articles, downloads the results as XML and returns a parsed XML document.
+
+```{r setup, tidy=TRUE, warning=FALSE, eval=FALSE}
 library(rCharts)
 library(rentrez)
 library(XML)
 library(lubridate)
 
+fetchXML <- function(ptyp) {
+  require(rentrez)
+  require(XML)
+  es <- entrez_search("pubmed", paste(ptyp, "[PTYP]", sep = ""), usehistory = "y")
+  ef <- entrez_fetch("pubmed", WebEnv = es$WebEnv, query_key = es$QueryKey, retmax = es$count, rettype = "xml")
+  return(ef)
+}
+
 setwd("~/Dropbox/projects/pubmed/retractions/data")
+retracted <- fetchXML("\"Retracted Publication\"")
+writeLines(retracted, "retracted.xml")
 doc <- xmlTreeParse("retracted.xml", useInternalNodes = TRUE)
-y <- read.csv("years.csv")
 ```
 
 ### 5.2 Timeline
+This code generates the timeline chart.
 
-### 5.3 By Year
+```{r timeline, tidy=TRUE, warning=FALSE, eval=FALSE}
+plotTimeline <- function(d) {
+  dates <- xpathSApply(d, "//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year", xmlValue)
+  df1 <- as.data.frame(table(dates), stringsAsFactors = FALSE)
+  hc <- Highcharts$new()
+  hc$title(text = "Retracted publications by year of Entrez record creation")
+  hc$series(data = df1$Freq, type = "column")
+  hc$xAxis(categories = df1$dates, labels = list(rotation = 90, formatter = "#! function() { return '<a href=\"http://www.pubmed.org/?term=%22Retracted Publication%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; } !#", useHTML = "true"), title = list(text = "year"))
+  hc$yAxis(title = list(text = "retracted publications"))
+  hc$legend(enabled = FALSE)
+  hc$tooltip(pointFormat = "{point.y} records")
+  return(hc)
+}
+```
 
-### 5.4 Cumulative
+### 5.3 Cumulative timeline
+This code generates the cumulative timeline chart.
+
+```{r cumulative, tidy=TRUE, warning=FALSE, eval=FALSE}
+plotCumSumTimeline <- function(d) {
+  dates <- xpathSApply(d, "//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year", xmlValue)
+  df1 <- as.data.frame(table(dates), stringsAsFactors = FALSE)
+  hc <- Highcharts$new()
+  hc$title(text = "Cumulative sum of retracted publications by year of Entrez record creation")
+  hc$series(data = cumsum(df1$Freq), type = "column")
+  hc$xAxis(categories = df1$dates, labels = list(rotation = 90, formatter = "#! function() { return '<a href=\"http://www.pubmed.org/?term=%22Retracted Publication%22[PTYP] AND 1959:' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; } !#", useHTML = "true"), title = list(text = "year"))
+  hc$yAxis(title = list(text = "sum of retracted publications"))
+  hc$legend(enabled = FALSE)
+  hc$tooltip(pointFormat = "{point.y} records since 1959")
+  return(hc)
+}
+```
+
+### 5.4 By Year
+This code generates the retraction rate by year chart.
+
+```{r byyear, tidy=TRUE, warning=FALSE, eval=FALSE}
+plotByYear <- function() {
+  setwd("~/Dropbox/projects/pubmed/retractions/data")
+  y <- read.csv("years.csv")
+  hc <- Highcharts$new()
+  hc$title(text = "Retracted publications per 100 000 publications by year of publication")
+  hc$series(data = as.numeric(sprintf("%.3f", (100000 / y$total) * y$retracted)), type = "column", events = list(click = "#! function() {window.open(this.options.url)} !#"))
+  hc$xAxis(categories = y$year, labels = list(rotation = 90, formatter = "#! function() { return '<a href=\"http://www.pubmed.org/?term=%22Retracted Publication%22[PTYP] AND ' + escape(this.value) + '[DP]\" target=\"_blank\">' + this.value + '</a>'; } !#", useHTML = "true"), title = list(text = "year"))
+  hc$yAxis(title = list(text = "retracted publications per 100 000 publications"))
+  hc$legend(enabled = FALSE)
+  hc$tooltip(pointFormat = "{point.y} retracted records per 100 000 publication records")
+  return(hc)
+}
+```
 
 ### 5.5 By Journal
+This code generates the retractions by journal chart.
+
+```{r byjournal, tidy=TRUE, warning=FALSE, eval=FALSE}
+plotByJournal <- function(d) {
+  journals <- xpathSApply(d, "//MedlineCitation/Article/Journal/ISOAbbreviation", xmlValue)
+  journals.cnt <- as.data.frame(table(journals), stringsAsFactors = FALSE)
+  colnames(journals.cnt) <- c("journal", "count")
+  j20 <- head(journals.cnt[order(journals.cnt$count, decreasing = TRUE),], 20)
+  hc <- Highcharts$new()
+  hc$chart(marginLeft = 220)
+  hc$series(data = j20$count, type = "bar")
+  hc$xAxis(categories = j20$journal, labels = list(formatter = "#! function() { return '<a href=\"http://www.pubmed.org/?term=%22Retracted Publication%22[PTYP] AND %22' + escape(this.value) + '%22[JOUR]\" target=\"_blank\">' + this.value + '</a>'; } !#", useHTML = "true"))
+  hc$yAxis(title = list(text = "retracted publications"))
+  hc$legend(enabled = FALSE)
+  hc$tooltip(pointFormat = "{point.y} records")
+  return(hc)
+}
