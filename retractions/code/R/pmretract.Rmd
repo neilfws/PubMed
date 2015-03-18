@@ -12,6 +12,11 @@ output: html_document
 This is the latest report on retracted publications in the [PubMed database](http://www.pubmed.org). It was generated on `r 
 strftime(Sys.Date(), "%B %d %Y")`. This report replaces the application PMRetract, formerly hosted at [Heroku](https://www.heroku.com).
 
+Each section contains two charts. The first (blue) contains data about _retracted publications_. The second (orange) contains data about _retraction notices_. The PubMed search terms for these are, respectively:
+
+* "retracted publication"[PTYP]
+* "retraction of publication"[PTYP]
+
 ## 1. Timeline of retractions
 This chart shows the number of retracted publications per year. PubMed uses a variety of different dates; the year used here is the date that the record was created (CRDT).
 
@@ -53,7 +58,7 @@ hc2.1$show('inline', cdn = FALSE, include_assets = TRUE)
 ```{r chart2-2, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
 hc2.2 <- plotCumSumTimeline(doc.retOf, "retraction of publication")
 hc2.2$title(text = "Cumulative sum of retraction notices by year of Entrez record creation")
-hc2.2$yAxis(title = list(text = "retraction notices"))
+hc2.2$yAxis(title = list(text = "sum of retraction notices"))
 hc2.2$plotOptions(series = list(color = "#FFA500"))
 hc2.2$show('inline', cdn = FALSE, include_assets = TRUE)
 ```
@@ -82,7 +87,7 @@ hc3.2$plotOptions(series = list(color = "#FFA500"))
 hc3.2$show('inline', cdn = FALSE, include_assets = TRUE)
 ```
 
-## 4. Retractions by Journal
+## 4. Retractions by journal
 This chart shows the top 20 journals by number of retracted articles.
 
 Clicking on a journal name will open a new window at PubMed showing the retracted articles from that journal.
