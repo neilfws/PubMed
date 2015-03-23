@@ -2,7 +2,9 @@
 title: "PubMed retractions report"
 author: "Neil Saunders"
 date: "compiled `r Sys.time()`"
-output: html_document
+output:
+  html_document:
+    toc: yes
 ---
 
 ```{r echo=FALSE, ref.label="setup", message=FALSE}
