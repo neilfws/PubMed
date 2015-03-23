@@ -87,8 +87,8 @@ hc3.2$plotOptions(series = list(color = "#FFA500"))
 hc3.2$show('inline', cdn = FALSE, include_assets = TRUE)
 ```
 
-## 4. Retractions by journal
-This chart shows the top 20 journals by number of retracted articles. Ideally, these should be normalised to take into account the total number of articles per journal. However, this hardly seems worthwhile given the relatively-low number of retractions (tens) versus total publications (hundreds of thousands). Keep those issues in mind when interpreting these charts.
+## 4. Retractions by journal (absolute numbers)
+This chart shows the top 20 journals by number of retracted articles. See section 5 for journals ranked by retractions relative to total articles.
 
 Clicking on a journal name will open a new window at PubMed showing the retracted articles from that journal.
 
@@ -109,9 +109,33 @@ hc4.2$plotOptions(series = list(color = "#FFA500"))
 hc4.2$show('inline', cdn = FALSE, include_assets = TRUE)
 ```
 
-## 5. Functions
+## 5. Retractions by journal (normalised)
+This chart ranks the top 20 retractions by journal. For each journal, retractions (or retraction notices) per 100 000 publications from that journal are shown.
 
-### 5.1 Setup
+Clicking on a journal name will open a new window at PubMed showing the retracted articles from that journal.
+
+```{r echo=FALSE, ref.label="byjournalnorm", message=FALSE}
+```
+
+### 5.1 Retracted Publications
+```{r chart5-1, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
+hc5.1 <- plotByJournal(jour.retd, "retracted publication")
+hc5.1$show('inline', cdn = FALSE, include_assets = TRUE)
+```
+
+### 5.2 Retraction Notices
+```{r chart5-2, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
+hc5.2 <- plotByJournal(jour.retOf, "retraction of  publication")
+hc5.2$yAxis(title = list(text = "retraction notices / 100 000 publications"))
+hc5.2$tooltip(pointFormat = "{point.y} retraction notices / 100 000 publications")
+hc5.2$plotOptions(series = list(color = "#FFA500"))
+hc5.2$show('inline', cdn = FALSE, include_assets = TRUE)
+```
+
+
+## 6. Functions
+
+### 6.1 Setup
 This code loads required libraries and pre-saved data.
 
 ```{r setup, tidy=TRUE, warning=FALSE, eval=FALSE}
@@ -120,12 +144,14 @@ library(rentrez)
 library(XML)
 
 setwd("../../data")
-doc.retd <- xmlTreeParse("retracted.xml", useInternalNodes = TRUE)
-doc.retOf <- xmlTreeParse("retractionOf.xml", useInternalNodes = TRUE)
+doc.retd    <- xmlTreeParse("retracted.xml", useInternalNodes = TRUE)
+doc.retOf   <- xmlTreeParse("retractionOf.xml", useInternalNodes = TRUE)
 years.total <- read.csv("years.csv")
+jour.retd   <- read.csv("journals_retracted.csv")
+jour.retOf  <- read.csv("journals_retractionOf.csv")
 ```
 
-### 5.2 Timeline
+### 6.2 Timeline
 This code generates the timeline chart.
 
 ```{r timeline, tidy=TRUE, warning=FALSE, eval=FALSE}
@@ -143,7 +169,7 @@ plotTimeline <- function(d, term) {
 }
 ```
 
-### 5.3 Cumulative timeline
+### 6.3 Cumulative timeline
 This code generates the cumulative timeline chart.
 
 ```{r cumulative, tidy=TRUE, warning=FALSE, eval=FALSE}
@@ -161,7 +187,7 @@ plotCumSumTimeline <- function(d, term) {
 }
 ```
 
-### 5.4 By year
+### 6.4 By year
 This code generates the retraction rate by year chart.
 
 ```{r byyear, tidy=TRUE, warning=FALSE, eval=FALSE}
@@ -186,8 +212,8 @@ plotByYear <- function(d, total, term) {
 }
 ```
 
-### 5.5 By journal
-This code generates the retractions by journal chart.
+### 6.5 By journal
+This code generates the retractions by journal chart (absolute numbers).
 
 ```{r byjournal, tidy=TRUE, warning=FALSE, eval=FALSE}
 plotByJournal <- function(d, term) {
@@ -204,3 +230,21 @@ plotByJournal <- function(d, term) {
   hc$tooltip(pointFormat = "{point.y} records")
   return(hc)
 }
+```
+
+### 6.6 By journal normalised
+This code generates the retractions by journal chart (relative to total publications for each journal).
+```{r byjournalnorm, tidy=TRUE, warning=FALSE, eval=FALSE}
+plotByJournal <- function(d, term) {
+  d$idx <- as.numeric(sprintf("%.3f", (100000 / d$total) * d$count))
+  d <- head(d[order(d$idx, decreasing = TRUE),], 20)
+  hc <- Highcharts$new()
+  hc$chart(marginLeft = 220)
+  hc$series(data = d$idx, type = "bar")
+  hc$xAxis(categories = d$journal, labels = list(formatter = paste("#! function() { return '<a href=\"http://www.pubmed.org/?term=%22", term, "%22[PTYP] AND %22' + escape(this.value) + '%22[JOUR]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"))
+  hc$yAxis(title = list(text = "retracted publications / 100 000 publications"))
+  hc$legend(enabled = FALSE)
+  hc$tooltip(pointFormat = "{point.y} retractions / 100 000 publications")
+  return(hc)
+}
+```
