@@ -88,7 +88,7 @@ hc3.2$show('inline', cdn = FALSE, include_assets = TRUE)
 ```
 
 ## 4. Retractions by journal
-This chart shows the top 20 journals by number of retracted articles.
+This chart shows the top 20 journals by number of retracted articles. Ideally, these should be normalised to take into account the total number of articles per journal. However, this hardly seems worthwhile given the relatively-low number of retractions (tens) versus total publications (hundreds of thousands). Keep those issues in mind when interpreting these charts.
 
 Clicking on a journal name will open a new window at PubMed showing the retracted articles from that journal.
 
