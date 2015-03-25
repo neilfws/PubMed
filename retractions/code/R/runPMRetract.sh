@@ -11,6 +11,11 @@ echo "Fetching total publication counts by year..."
 Rscript $DIR/scripts/byyear.R
 echo "Finished."
 
+# normalise retraction counts by journal
+echo "Normalising retraction counts by journal..."
+Rscript $DIR/scripts/byjournal.R
+echo "Finished."
+
 # knit the Rmd document
 echo "Creating report..."
 IN=$DIR/pmretract.Rmd
