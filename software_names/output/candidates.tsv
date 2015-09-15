@@ -1,0 +1,204 @@
+4110726	ADaM	ADaM: augmenting existing approximate fast matching algorithms with efficient and exact range queries	adam
+3154873	ADAM	ADAM: Analysis of Discrete Models of Biological Systems Using Computer Algebra	adam
+3530912	ADAM	ADAM: automated data management for research datasets	adam
+2896143	ANCHOR	ANCHOR: a web server and database for analysis of protein–protein interaction binding pockets for drug discovery	anchor
+2759549	ANCHOR	ANCHOR: web server for predicting protein binding regions in disordered proteins	anchor
+3908709	APIS	APIS: The NIAAA Alcohol Policy Information System	apis
+2874803	APIS	APIS: accurate prediction of hot spots in protein interfaces by combining protrusion index with solvent accessibility	apis
+151184	Apollo	Apollo: a sequence annotation editor	apollo
+3106203	APOLLO	APOLLO: a quality assessment service for single and multiple protein models	apollo
+3113031	ARTEMIS	ARTEMIS: 192-week efficacy and safety of once-daily darunavir/ritonavir (DRV/r) vs lopinavir/r (LPV/r) in treatment-naïve HIV-1-infected adults	artemis
+3278759	Artemis	Artemis: an integrated platform for visualization and analysis of high-throughput sequence-based experimental data	artemis
+3541347	ASAP	ASAP: an environment for automated preprocessing of sequencing data	asap
+1347526	ASAP	ASAP: a resource for annotating, curating, comparing, and disseminating genomic data	asap
+3985307	ASD	 ASD: Biochemical Mechanisms behind Behavioral Disorders	asd
+1347394	ASD	ASD: a bioinformatics resource on alternative splicing	asd
+3013650	ASD	ASD: a comprehensive database of allosteric proteins and modulators	asd
+3112945	BEST	BEST: Better Equipped to Start Treatment	best
+4172027	BEST	BEST: Barcode Enabled Sequencing of Tetrads	best
+1698476	BISON	BISON: bio-interface for the semi-global analysis of network patterns	bison
+4287502	Bison	Bison: bisulfite alignment on nodes of a cluster	bison
+1526457	BLISS	BLISS: biding site level identification of shared signal-modules in DNA regulatory sequences	bliss
+3240458	BLISS	BLISS: an artificial language for learnability studies	bliss
+1174863	CAGER	CAGER: classification analysis of gene expression regulation using multiple information sources	cager
+4417143	CAGEr	 CAGEr: precise TSS data retrieval and high-resolution promoterome mining for integrative analyses	cager
+4409221	CCTop	CCTop: An Intuitive, Flexible and Reliable CRISPR/Cas9 Target Prediction Tool	cctop
+4489262	CCTOP	CCTOP: a Consensus Constrained TOPology prediction web server	cctop
+1643837	CGAT	CGAT: a comparative genome analysis tool for visualizing alignments in the analysis of complex evolutionary changes between closely related genomes	cgat
+3998125	CGAT	CGAT: computational genomics analysis toolkit	cgat
+4384009	CODEX	CODEX: a next-generation sequencing experiment database for the haematopoietic and embryonic stem cell communities	codex
+4381046	CODEX	CODEX: a normalization and copy number variation detection method for whole exome sequencing	codex
+3013729	COMBREX	COMBREX: a project to accelerate the functional annotation of prokaryotic genomes	combrex
+3064401	COMBREX	COMBREX: COMputational BRidge to EXperiments	combrex
+4531541	CoMEt	CoMEt: a statistical approach to identify combinations of mutually exclusive alterations in cancer	comet
+4422463	coMET	coMET: visualisation of regional epigenome-wide association scan results and DNA co-methylation patterns	comet
+4191385	COMET	COMET: adaptive context-based modeling for ultrafast HIV-1 subtype identification	comet
+4373771	Compass	Compass: Clinical Evaluation of a New Instrument for the Diagnosis of Glaucoma	compass
+3533091	CoMPASs	CoMPASs: IOn programme (Care Of Memory Problems in Advanced Stages of dementia: Improving Our Knowledge): protocol for a mixed methods study	compass
+2447729	ConTra	ConTra: a promoter alignment analysis tool for identification of transcription factor binding sites across species	contra
+3348560	CONTRA	CONTRA: copy number analysis for targeted resequencing	contra
+3576325	Coral	Coral: an integrated suite of visualizations for comparing clusterings	coral
+3737537	CoRAL	CoRAL: predicting non-coding RNAs from small RNA-sequencing data	coral
+2712342	CORAL	CORAL: aligning conserved core regions across domain families	coral
+4331793	COSMOS	COSMOS: cloud enabled NGS analysis	cosmos
+1395340	CoSMoS	CoSMoS: Conserved Sequence Motif Search in the proteome	cosmos
+4184253	COSMOS	COSMOS: Python library for massively parallel workflows	cosmos
+2722656	CSA	CSA: An efficient algorithm to improve circular DNA multiple alignment	csa
+3394275	CSA	CSA: comprehensive comparison of pairwise protein structure alignments	csa
+1160188	DIAL	DIAL: a web-based server for the automatic identification of structural domains in proteins	dial
+1933154	DIAL	DIAL: a web server for the pairwise alignment of two RNA three-dimensional structures using nucleotide, dihedral angle and base-pairing similarities	dial
+3576320	DISCOVER	DISCOVER: Dutch Iliac Stent trial: COVERed balloon-expandable versus uncovered balloon-expandable stents in the common iliac artery: study protocol for a randomized controlled trial	discover
+2687984	DISCOVER	DISCOVER: a feature-based discriminative method for motif search in complex genomes	discover
+4124145	ELM	ELM: enhanced lowest common ancestor based method for detecting a pathogenic virus from a large sequence dataset	elm
+2808914	ELM	ELM: the status of the 2010 eukaryotic linear motif resource	elm
+3146908	EXACT	EXACT: EXercise or Advice after ankle fraCTure. Design of a randomised controlled trial	exact
+2954855	ExaCT	ExaCT: automatic extraction of clinical trial characteristics from journal publications	exact
+2426692	FASH	FASH: A web application for nucleotides sequence search	fash
+3854911	FASH	FASH: Focused Assessment with Sonography for HIV/TB – A Practical Manual. Tom Heller, 2013, Munich, Germany	fash
+3386014	FAST	FAST: towards safe and effective subcutaneous immunotherapy of persistent life-threatening food allergies	fast
+4437040	FAST	FAST: FAST Analysis of Sequences Toolbox	fast
+4489278	FlyNet	FlyNet: a versatile network prioritization server for the Drosophila community	flynet
+2773252	Flynet	Flynet: a genomic resource for Drosophila melanogaster transcriptional regulatory networks	flynet
+4413800	F-MARC	F-MARC: the FIFA Sudden Death Registry (FIFA-SDR)	f-marc
+4413678	F-MARC	F-MARC: promoting the prevention and management of sudden cardiac arrest in football	f-marc
+1481545	GAIA	GAIA: An easy-to-use web-based application for interaction analysis of case-control data	gaia
+2648738	GAIA	GAIA: a gram-based interaction analysis tool – an approach for identifying interacting domains in yeast	gaia
+2413207	GALA	GALA: an international multicentre randomised trial comparing general anaesthesia versus local anaesthesia for carotid surgery	gala
+4404950	GALA	GALA: group analysis leads to accuracy, a novel approach for solving the inverse problem in exploratory analysis of group MEG recordings	gala
+1137029	GeMS	GeMS: an advanced software package for designing synthetic genes	gems
+1160230	GEMS	GEMS: a web server for biclustering analysis of expression data	gems
+4183485	GIANT	GIANT: A Cytoscape Plugin for Modular Networks	giant
+3897944	GIANT	GIANT: pattern analysis of molecular interactions in 3D structures of protein–small ligand complexes	giant
+2877064	GOAL	GOAL: What Have We Learned?	goal
+2873542	GOAL	GOAL: A software tool for assessing biological significance of genes groups	goal
+2636808	GRIP	GRIP: A web-based system for constructing Gold Standard datasets for protein-protein interaction prediction	grip
+3338021	GRiP	GRiP: a computational tool to simulate transcription factor binding in prokaryotes	grip
+3038436	Hal	Hal: an Automated Pipeline for Phylogenetic Analyses of Genomic Data	hal
+3654707	HAL	HAL: a hierarchical format for storing and analyzing multiple genome alignments	hal
+3469612	Harmony	Harmony: EEG/MEG Linear Inverse Source Reconstruction in the Anatomical Basis of Spherical Harmonics	harmony
+1538917	HARMONY	HARMONY: a server for the assessment of protein structures	harmony
+3814457	Harvest	Harvest: A Web-Based Biomedical Data Discovery and Reporting Application Development Platform	harvest
+3932456	Harvest	Harvest: an open platform for developing web-based biomedical data discovery and reporting applications	harvest
+2941693	Harvest	Harvest: an open-source tool for the validation and improvement of peptide identification metrics and fragmentation exploration	harvest
+2696453	Hydra	Hydra: software for tailored processing of H/D exchange data from MS or tandem MS analyses	hydra
+3538679	Hydra	Hydra: a scalable proteomic search engine which utilizes the Hadoop distributed computing framework	hydra
+4319104	IMp	IMp: The customizable LEGO® Pinned Insect Manipulator	imp
+3394282	IMP	IMP: a multi-species functional genomics portal for integration, visualization and prediction of protein functions and networks	imp
+2375030	InSite	InSite: a computational method for identifying protein-protein interaction binding sites on a proteome-wide scale	insite
+1562403	Insite	Insite: Canada's landmark safe injecting program at risk	insite
+139396	Integromics	Integromics: challenges in data integration	integromics
+2781751	integrOmics	integrOmics: an R package to unravel relationships between two omics datasets	integromics
+3026375	IView	IView: introgression library visualization and query tool	iview
+3936933	iview	iview: an interactive WebGL visualizer for protein-ligand complex	iview
+4108329	Medusa	Medusa: A Novel Gene Drive System for Confined Suppression of Insect Populations	medusa
+3197509	Medusa	Medusa: A tool for exploring and clustering biological networks	medusa
+1522028	MeMo	MeMo: a hybrid SQL/XML approach to metabolomic data management for functional genomics	memo
+1538891	MeMo	MeMo: a web tool for prediction of protein methylation modifications	memo
+1618866	MICA	MICA: desktop software for comprehensive searching of DNA databases	mica
+4423751	MICA	MICA: A fast short-read aligner that takes full advantage of Many Integrated Core Architecture (MIC)	mica
+2905367	MimoSA	MimoSA: a system for minimotif annotation	mimosa
+2826332	Mimosa	Mimosa: Mixture model of co-expression to detect modulators of regulatory interaction	mimosa
+1747179	MiST	MiST: a microbial signal transduction database	mist
+3763541	MiST	MiST: A new approach to variant detection in deep sequencing datasets	mist
+2607288	MOSAIC	MOSAIC: an online database dedicated to the comparative genomics of bacterial strains at the intra-species level	mosaic
+3389769	Mosaic	Mosaic: making biological sense of complex networks	mosaic
+517706	MUSCLE	MUSCLE: a multiple sequence alignment method with reduced time and space complexity	muscle
+4380028	MUSCLE	MUSCLE: automated multi-objective evolutionary optimization of targeted LC-MS/MS analysis	muscle
+2570521	NEAT	NEAT: National Epirubicin Adjuvant Trial – toxicity, delivered dose intensity and quality of life	neat
+2447721	NeAT	NeAT: a toolbox for the analysis of biological networks, clusters, classes and pathways	neat
+2990275	NEMO	NEMO: Extraction and normalization of organization names from PubMed affiliation strings	nemo
+3009535	NeMo	NeMo: Network Module identification in Cytoscape	nemo
+2148042	Nemo	Nemo: a computational tool for analyzing nematode locomotion	nemo
+3156233	OASIS	OASIS: Online Application for the Survival Analysis of Lifespan Assays Performed in Aging Research	oasis
+3526298	OASIS	OASIS: an automated program for global investigation of bacterial and archaeal insertion sequences	oasis
+4481843	Oasis	Oasis: online analysis of small RNA deep sequencing data	oasis
+3965123	OnTheFly	OnTheFly: a database of Drosophila melanogaster transcription factors and their binding sites	onthefly
+2660876	OnTheFly	OnTheFly: a tool for automated document-based text annotation, data linking and network generation	onthefly
+3358660	PAIR	PAIR: polymorphic Alu insertion recognition	pair
+3013789	PAIR	PAIR: the predicted Arabidopsis interactome resource	pair
+4078296	PaTH	PaTH: towards a learning health system in the Mid-Atlantic region	path
+2735673	Path	Path: a tool to facilitate pathway-based genetic association analysis	path
+4549836	PATHOS	PATHOS: a phase II/III trial of risk-stratified, reduced intensity adjuvant treatment in patients undergoing transoral surgery for Human papillomavirus (HPV) positive oropharyngeal cancer	pathos
+2329738	PATHOS	PATHOS: Pervasive at Home Sleep Monitoring	pathos
+3509215	Pathos	Pathos: A web facility that uses metabolic maps to display experimental changes in metabolites identified by mass spectrometry	pathos
+3542268	pAUL	pAUL: A Gateway-Based Vector System for Adaptive Expression and Flexible Tagging of Proteins in Arabidopsis	paul
+2764133	PAUL	PAUL: protein structural alignment using integer linear programming and Lagrangian relaxation	paul
+1539032	PDA	PDA: Pooled DNA analyzer	pda
+2709256	PDA	PDA: an automatic and comprehensive analysis program for protein-DNA complex structures	pda
+2840924	Peat	Peat: A Natural Source for Dermatocosmetics and Dermatotherapeutics	peat
+4331701	PEAT	PEAT: an intelligent and efficient paired-end sequencing adapter trimming algorithm	peat
+2896112	PINT	PINT: Pathways INtegration Tool	pint
+1347380	PINT	PINT: Protein–protein Interactions Thermodynamic Database	pint
+3280268	PIPS	PIPS: Pathogenicity Island Prediction Software	pips
+2686497	PIPs	PIPs: human protein–protein interaction prediction database	pips
+2808885	PMRD	PMRD: plant microRNA database	pmrd
+3607949	PMRD	PMRD: a curated database for genes and mutants involved in plant male reproduction	pmrd
+3159979	PREDICT	PREDICT: a method for inferring novel drug indications with application to personalized medicine	predict
+3019399	Predict	Predict: surveillance and prediction for emerging pathogens of wildlife	predict
+2880419	PREDICT	PREDICT: a new UK prognostic model that predicts survival following surgery for invasive breast cancer	predict
+4086120	PRISM	PRISM: a web server and repository for prediction of protein–protein interactions and modeling their 3D complexes	prism
+1160261	PRISM	PRISM: protein interactions by structural matching	prism
+3749118	PRISM	PRISM: A Novel Research Tool to Assess the Prevalence of Pseudobulbar Affect Symptoms across Neurological Conditions	prism
+3510211	PROSPER	PROSPER: An Integrated Feature-Based Tool for Predicting Protease Substrate Cleavage Sites	prosper
+3317141	PROSpER	PROSpER: PReferences for the Organisation of acute health Services for oldER people: protocol for a mixed methods study	prosper
+3806775	PSI	PSI: A Comprehensive and Integrative Approach for Accurate Plant Subcellular Localization Prediction	psi
+3041528	PSI	PSI: The Dutch Academic Infrastructure for shared biobanks for translational research	psi
+3965033	RADAR	RADAR: a rigorously annotated database of A-to-I RNA editing	radar
+1933136	RADAR	RADAR: a web server for RNA data analysis and research	radar
+3391298	ROCS	ROCS: Receiver Operating Characteristic Surface for Class-Skewed High-Throughput Data	rocs
+3854487	ROCS	ROCS: A reproducibility index and confidence score for interaction proteomics	rocs
+3880480	SCOPE	SCOPE: a scorecard for osteoporosis in Europe	scope
+3965108	SCOPe	SCOPe: Structural Classification of Proteins—extended, integrating SCOP and ASTRAL data and classification of new structures	scope
+1933170	SCOPE	SCOPE: a web server for practical de novo motif discovery	scope
+3167058	SEED	SEED: efficient clustering of next-generation sequences	seed
+4325548	Seed	Seed: a user-friendly tool for exploring and visualizing microbial community data	seed
+1468434	Sigma	Sigma: multiple alignment of weakly-conserved non-coding DNA sequence	sigma
+1764892	SIGMA	SIGMA: A System for Integrative Genomic Microarray Analysis of Cancer Genomes	sigma
+4287953	Sigma	Sigma: Strain-level inference of genomes from metagenomic analysis for biosurveillance	sigma
+1403802	SIMMAP	SIMMAP: Stochastic character mapping of discrete traits on phylogenies	simmap
+2896162	SiMMap	SiMMap: a web server for inferring site-moiety map to recognize interaction preferences between protein pockets and compound moieties	simmap
+4403840	SMART	SMART: physical activity and cerebral metabolism in older people: study protocol for a randomised controlled trial	smart
+3979766	SMART	SMART: Unique Splitting-While-Merging Framework for Gene Clustering	smart
+3900514	SMART	SMART: A Spatially Explicit Bio-Economic Model for Assessing and Managing Demersal Fisheries, with an Application to Italian Trawlers in the Strait of Sicily	smart
+240084	SMART	SMART: Self-Management of Anticoagulation, a Randomised Trial [ISRCTN19313375]	smart
+1751554	Snap	Snap: an integrated SNP annotation platform	snap
+1920242	SNAP	SNAP: predict effect of non-synonymous polymorphisms on function	snap
+2706822	SNEP	SNEP: Simultaneous detection of nucleotide and expression polymorphisms using Affymetrix GeneChip	snep
+4367434	SNeP	SNeP: a tool to estimate trends in recent effective population size trajectories using genome-wide SNP data	snep
+3218843	Sniper	Sniper: improved SNP discovery by multiply mapping deep sequenced reads	sniper
+1280925	SNiPer	SNiPer: Improved SNP genotype calling for Affymetrix 10K GeneChip microarray data	sniper
+2374713	SPACE	SPACE: an algorithm to predict and quantify alternatively spliced isoforms using microarrays	space
+1160159	SPACE	SPACE: a suite of tools for protein structure prediction and analysis based on complementarity and environment	space
+3845768	SPARC	 SPARC: A Multi-institutional Integrated Web Based Research Management System	sparc
+3495479	SPARC	SPARC: an integrated prehospital and hospital resuscitation tool to aid in the immediate care of sick and injured children	sparc
+2644677	STAMP	STAMP: Extensions to the STADEN sequence analysis package for high throughput interactive microsatellite marker design	stamp
+1933206	STAMP	STAMP: a web tool for exploring DNA-binding motif similarities	stamp
+1624854	STAR	STAR: predicting recombination sites from amino acid sequence	star
+2435548	StAR	StAR: a simple tool for the statistical comparison of ROC curves	star
+4461021	TACT	TACT: Research Partner involvement in a cancer clinical trials unit and academic research centre; evaluating its impact	tact
+1538819	TACT	TACT: Transcriptome Auto-annotation Conducting Tool of H-InvDB	tact
+2527826	tAnGo	tAnGo: a randomised phase III trial of gemcitabine in paclitaxel-containing, epirubicin/cyclophosphamide-based, adjuvant chemotherapy for early breast cancer: a prospective pulmonary, cardiac and hepatic function evaluation	tango
+3702251	TANGO	TANGO: a generic tool for high-throughput 3D image analysis for studying nuclear organization	tango
+1933159	taveRNA	taveRNA: a web suite for RNA algorithms and applications	taverna
+1538887	Taverna	Taverna: a tool for building and running workflows of services	taverna
+1766369	TaxMan	TaxMan: a taxonomic database manager	taxman
+3394339	TaxMan	TaxMan: a server to trim rRNA reference databases and inspect taxonomic coverage	taxman
+2848623	TiArA	TiArA: A Virtual Appliance for the Analysis of Tiling Array Data	tiara
+3013693	TIARA	TIARA: a database for accurate analysis of multiple personal genomes based on cross-technology	tiara
+3526431	TIGER	TIGER: tiled iterative genome assembler	tiger
+2438328	TiGER	TiGER: A database for tissue-specific gene expression and regulation	tiger
+4077039	TOPS	TOPS: a versatile software tool for statistical analysis and visualization of combinatorial gene-gene and gene-drug interaction screens	tops
+3374109	TOPS	TOPS: an internet-based system to prevent healthy subjects from over-volunteering for clinical trials	tops
+4387321	TRACER	TRACER: an ‘eye-opener’ to the patient experience across the transition of care in an internal medicine resident program	tracer
+3618316	TRACER	TRACER: a resource to study the regulatory architecture of the mouse genome	tracer
+2702334	T-REX	T-REX: software for the processing and analysis of T-RFLP data	t-rex
+3394261	T-REX	T-REX: a web server for inferring, validating and visualizing phylogenetic trees and networks	t-rex
+4445800	TRiP	TRiP: Tracking Rhythms in Plants, an automated leaf movement analysis program for circadian period estimation	trip
+3522042	TRIP	TRIP: a method for novel transcript reconstruction from paired-end RNA-seq reads	trip
+2921407	VIPR	VIPR: A probabilistic algorithm for analysis of microbial detection microarrays	vipr
+3245011	ViPR	ViPR: an open bioinformatics database and analysis resource for virology research	vipr
+3117388	vipR	vipR: variant identification in pooled DNA using R	vipr
+3837470	VIRGO	VIRGO: visualization of A-to-I RNA editing sites in genomic sequences	virgo
+1538839	VIRGO	VIRGO: computational prediction of gene functions	virgo
+3558967	VIROME	VIROME: a standard operating procedure for analysis of viral metagenome sequences	virome
+3712215	viRome	viRome: an R package for the visualization and analysis of viral small RNA sequence datasets	virome
