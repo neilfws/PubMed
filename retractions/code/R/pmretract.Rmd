@@ -169,7 +169,7 @@ plotTimeline <- function(d, term) {
   }
   hc$title(text = "Retracted publications by year of Entrez record creation")
   hc$series(data = da, type = "column")
-  hc$xAxis(type = "linear", labels = list(formatter = paste("#! function() { return '<a href=\"http://www.pubmed.org/?term=%22", term, "%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"), title = list(text = "year"))
+  hc$xAxis(type = "linear", labels = list(rotation = 90, formatter = paste("#! function() { return '<a href=\"http://www.pubmed.org/?term=%22", term, "%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"), title = list(text = "year"), tickInterval = 1)
   hc$yAxis(title = list(text = "retracted publications"))
   hc$legend(enabled = FALSE)
   hc$tooltip(pointFormat = "{point.y} records")
@@ -193,7 +193,7 @@ plotCumSumTimeline <- function(d, term) {
   }
   hc$title(text = "Cumulative sum of retracted publications by year of Entrez record creation")
   hc$series(data = da, type = "column")
-  hc$xAxis(type = "linear", labels = list(formatter = paste("#! function() { return '<a href=\"http://www.pubmed.org/?term=%22", term, "%22[PTYP] AND 1959:' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"), title = list(text = "year"))
+  hc$xAxis(type = "linear", labels = list(rotation = 90, formatter = paste("#! function() { return '<a href=\"http://www.pubmed.org/?term=%22", term, "%22[PTYP] AND 1959:' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"), title = list(text = "year"), tickInterval = 1)
   hc$yAxis(title = list(text = "sum of retracted publications"))
   hc$legend(enabled = FALSE)
   hc$tooltip(pointFormat = "{point.y} records since 1959")
@@ -218,7 +218,7 @@ plotByYear <- function(d, total, term) {
   hc <- Highcharts$new()
   hc$title(text = "Retracted publications per 100 000 publications by year of Entrez record creation")
   hc$series(data = as.numeric(sprintf("%.3f", (100000 / ydf$total) * ydf$retracted)), type = "column", events = list(click = "#! function() {window.open(this.options.url)} !#"))
-  hc$xAxis(categories = ydf$year, labels = list(formatter = paste("#! function() { return '<a href=\"http://www.pubmed.org/?term=%22", term, "%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"), title = list(text = "year"), tickInterval = 5)
+  hc$xAxis(categories = ydf$year, labels = list(rotation = 90, formatter = paste("#! function() { return '<a href=\"http://www.pubmed.org/?term=%22", term, "%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"), title = list(text = "year"), tickInterval = 1)
   hc$yAxis(title = list(text = "retracted publications per 100 000 publications"))
   hc$legend(enabled = FALSE)
   hc$tooltip(pointFormat = "{point.y} retracted records per 100 000 publication records")
