@@ -4,6 +4,7 @@ author: "Neil Saunders"
 date: "compiled `r Sys.time()`"
 output:
   html_document:
+    keep_md: yes
     toc: yes
 ---
 
