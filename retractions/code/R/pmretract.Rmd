@@ -161,9 +161,14 @@ plotTimeline <- function(d, term) {
   dates <- xpathSApply(d, "//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year", xmlValue)
   df1 <- as.data.frame(table(dates), stringsAsFactors = FALSE)
   hc <- Highcharts$new()
+  da <- list()
+  for(i in 1:nrow(df1)) {
+    da[i][1] <- as.numeric(df1$date[i])
+    da[[i]][2] <- as.numeric(df1$Freq[i])
+  }
   hc$title(text = "Retracted publications by year of Entrez record creation")
-  hc$series(data = df1$Freq, type = "column")
-  hc$xAxis(categories = df1$dates, labels = list(rotation = 90, formatter = paste("#! function() { return '<a href=\"http://www.pubmed.org/?term=%22", term, "%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"), title = list(text = "year"))
+  hc$series(data = da, type = "column")
+  hc$xAxis(type = "linear", labels = list(formatter = paste("#! function() { return '<a href=\"http://www.pubmed.org/?term=%22", term, "%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"), title = list(text = "year"))
   hc$yAxis(title = list(text = "retracted publications"))
   hc$legend(enabled = FALSE)
   hc$tooltip(pointFormat = "{point.y} records")
@@ -179,9 +184,15 @@ plotCumSumTimeline <- function(d, term) {
   dates <- xpathSApply(d, "//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year", xmlValue)
   df1 <- as.data.frame(table(dates), stringsAsFactors = FALSE)
   hc <- Highcharts$new()
+  da <- list()
+  cs <- cumsum(df1$Freq)
+  for(i in 1:nrow(df1)) {
+    da[i][1] <- as.numeric(df1$date[i])
+    da[[i]][2] <- cs[i]
+  }
   hc$title(text = "Cumulative sum of retracted publications by year of Entrez record creation")
-  hc$series(data = cumsum(df1$Freq), type = "column")
-  hc$xAxis(categories = df1$dates, labels = list(rotation = 90, formatter = paste("#! function() { return '<a href=\"http://www.pubmed.org/?term=%22", term, "%22[PTYP] AND 1959:' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"), title = list(text = "year"))
+  hc$series(data = da, type = "column")
+  hc$xAxis(type = "linear", labels = list(formatter = paste("#! function() { return '<a href=\"http://www.pubmed.org/?term=%22", term, "%22[PTYP] AND 1959:' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"), title = list(text = "year"))
   hc$yAxis(title = list(text = "sum of retracted publications"))
   hc$legend(enabled = FALSE)
   hc$tooltip(pointFormat = "{point.y} records since 1959")
@@ -206,7 +217,7 @@ plotByYear <- function(d, total, term) {
   hc <- Highcharts$new()
   hc$title(text = "Retracted publications per 100 000 publications by year of Entrez record creation")
   hc$series(data = as.numeric(sprintf("%.3f", (100000 / ydf$total) * ydf$retracted)), type = "column", events = list(click = "#! function() {window.open(this.options.url)} !#"))
-  hc$xAxis(categories = ydf$year, labels = list(rotation = 90, formatter = paste("#! function() { return '<a href=\"http://www.pubmed.org/?term=%22", term, "%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"), title = list(text = "year"))
+  hc$xAxis(categories = ydf$year, labels = list(formatter = paste("#! function() { return '<a href=\"http://www.pubmed.org/?term=%22", term, "%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"), title = list(text = "year"), tickInterval = 5)
   hc$yAxis(title = list(text = "retracted publications per 100 000 publications"))
   hc$legend(enabled = FALSE)
   hc$tooltip(pointFormat = "{point.y} retracted records per 100 000 publication records")
