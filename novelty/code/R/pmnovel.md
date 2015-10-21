@@ -75,3 +75,17 @@ How does that compare with "all time novelty"? This is simply the sum of novel d
 ```
 ## [1] 3.233286
 ```
+
+Finally, using a log scale for the y-axis (number of articles) gives an indication of how the rate of usage of the word "novel" is changing.
+
+
+```r
+ggplot(novel) + geom_point(aes(year, idx), color = "skyblue3") + theme_bw() + 
+    scale_x_continuous(breaks = seq(1845, 2015, 10)) + labs(y = "\"novel\" articles / 100 000 articles (log10 scale)", 
+    x = "year published [DP]", title = "PubMed articles containing \"novel\" in title or abstract 1845 - 2014") + 
+    scale_y_log10()
+```
+
+![](pmnovel_files/figure-html/plot2-1.png) 
+
+There may be hope; usage seems to have slowed from about 1995 onwards.
