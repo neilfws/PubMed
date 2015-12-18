@@ -17,8 +17,8 @@ Bio::NCBI.default_email = "me@me.com"
 ncbi = Bio::NCBI::REST.new
  
 1845.upto(2014) do |year|
-  all   = ncbi.esearch_count("#{year}[dp]", {"db" => "pubmed"})
-  novel = ncbi.esearch_count("novel[tiab] #{year}[dp]", {"db" => "pubmed"})
+  all   = ncbi.esearch_count("#{year}[dp] AND \"has abstract\"[FILT]", {"db" => "pubmed"})
+  novel = ncbi.esearch_count("novel[tiab] AND #{year}[dp] AND \"has abstract\"[FILT]", {"db" => "pubmed"})
   puts "#{year}\t#{all}\t#{novel}"
 end
 ```
@@ -52,6 +52,10 @@ ggplot(novel) + geom_point(aes(year, idx), color = "skyblue3") + theme_bw() +
     title = "PubMed articles containing \"novel\" in title or abstract 1845 - 2014")
 ```
 
+```
+## Warning: Removed 50 rows containing missing values (geom_point).
+```
+
 ![](pmnovel_files/figure-html/plot1-1.png) 
 
 Looks like novelty really took off around 1975. How much research was "novel" in 2014?
@@ -62,7 +66,7 @@ novel$idx[which(novel$year == 2014)]/1000
 ```
 
 ```
-## [1] 7.192845
+## [1] 8.179054
 ```
 
 How does that compare with "all time novelty"? This is simply the sum of novel divided by the sum of total, years 1845 - 2014.
@@ -73,7 +77,7 @@ How does that compare with "all time novelty"? This is simply the sum of novel d
 ```
 
 ```
-## [1] 3.233286
+## [1] 5.076052
 ```
 
 Finally, using a log scale for the y-axis (number of articles) gives an indication of how the rate of usage of the word "novel" is changing.
@@ -84,6 +88,10 @@ ggplot(novel) + geom_point(aes(year, idx), color = "skyblue3") + theme_bw() +
     scale_x_continuous(breaks = seq(1845, 2015, 10)) + labs(y = "\"novel\" articles / 100 000 articles (log10 scale)", 
     x = "year published [DP]", title = "PubMed articles containing \"novel\" in title or abstract 1845 - 2014") + 
     scale_y_log10()
+```
+
+```
+## Warning: Removed 50 rows containing missing values (geom_point).
 ```
 
 ![](pmnovel_files/figure-html/plot2-1.png) 
