@@ -5,7 +5,7 @@ compiled `r Sys.time()`
 
 
 ## Introduction
-This is the latest report on retracted publications in the [PubMed database](http://www.pubmed.org). It was generated on January 13 2016. This report replaces the application PMRetract, formerly hosted at [Heroku](https://www.heroku.com).
+This is the latest report on retracted publications in the [PubMed database](http://www.pubmed.org). It was generated on January 15 2016. This report replaces the application PMRetract, formerly hosted at [Heroku](https://www.heroku.com).
 
 Each section contains two charts. The first (blue) contains data about _retracted publications_. The second (orange) contains data about _retraction notices_. The PubMed search terms for these are, respectively:
 
@@ -33,12 +33,12 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
     height: 400px;
   }  
   </style>
-<div id = 'chart28733b78a395' class = 'rChart highcharts'></div>
+<div id = 'chart771ef718c30' class = 'rChart highcharts'></div>
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart28733b78a395",
+ "dom": "chart771ef718c30",
 "width":            800,
 "height":            400,
 "credits": {
@@ -103,7 +103,7 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
 [           2012,            283 ],
 [           2013,            262 ],
 [           2014,            263 ],
-[           2015,             80 ] 
+[           2015,             82 ] 
 ],
 "type": "column" 
 } 
@@ -128,9 +128,9 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
 "tooltip": {
  "pointFormat": "{point.y} records" 
 },
-"id": "chart28733b78a395",
+"id": "chart771ef718c30",
 "chart": {
- "renderTo": "chart28733b78a395" 
+ "renderTo": "chart771ef718c30" 
 } 
 });
         });
@@ -151,12 +151,12 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
     height: 400px;
   }  
   </style>
-<div id = 'chart287378a40ce2' class = 'rChart highcharts'></div>
+<div id = 'chart771e38361638' class = 'rChart highcharts'></div>
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart287378a40ce2",
+ "dom": "chart771e38361638",
 "width":            800,
 "height":            400,
 "credits": {
@@ -210,14 +210,14 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
 [           2006,            138 ],
 [           2007,            141 ],
 [           2008,            241 ],
-[           2009,            298 ],
+[           2009,            299 ],
 [           2010,            288 ],
 [           2011,            454 ],
 [           2012,            475 ],
 [           2013,            586 ],
 [           2014,            515 ],
-[           2015,            572 ],
-[           2016,              9 ] 
+[           2015,            576 ],
+[           2016,             13 ] 
 ],
 "type": "column" 
 } 
@@ -247,9 +247,9 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
  "color": "#FFA500" 
 } 
 },
-"id": "chart287378a40ce2",
+"id": "chart771e38361638",
 "chart": {
- "renderTo": "chart287378a40ce2" 
+ "renderTo": "chart771e38361638" 
 } 
 });
         });
@@ -277,12 +277,12 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
     height: 400px;
   }  
   </style>
-<div id = 'chart287364d7ecfe' class = 'rChart highcharts'></div>
+<div id = 'chart771e8930be' class = 'rChart highcharts'></div>
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart287364d7ecfe",
+ "dom": "chart771e8930be",
 "width":            800,
 "height":            400,
 "credits": {
@@ -347,7 +347,7 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
 [           2012,           3517 ],
 [           2013,           3779 ],
 [           2014,           4042 ],
-[           2015,           4122 ] 
+[           2015,           4124 ] 
 ],
 "type": "column" 
 } 
@@ -372,9 +372,9 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
 "tooltip": {
  "pointFormat": "{point.y} records since 1959" 
 },
-"id": "chart287364d7ecfe",
+"id": "chart771e8930be",
 "chart": {
- "renderTo": "chart287364d7ecfe" 
+ "renderTo": "chart771e8930be" 
 } 
 });
         });
@@ -395,12 +395,12 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
     height: 400px;
   }  
   </style>
-<div id = 'chart2873295a7bcf' class = 'rChart highcharts'></div>
+<div id = 'chart771ec01448' class = 'rChart highcharts'></div>
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart2873295a7bcf",
+ "dom": "chart771ec01448",
 "width":            800,
 "height":            400,
 "credits": {
@@ -454,14 +454,14 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
 [           2006,            746 ],
 [           2007,            887 ],
 [           2008,           1128 ],
-[           2009,           1426 ],
-[           2010,           1714 ],
-[           2011,           2168 ],
-[           2012,           2643 ],
-[           2013,           3229 ],
-[           2014,           3744 ],
-[           2015,           4316 ],
-[           2016,           4325 ] 
+[           2009,           1427 ],
+[           2010,           1715 ],
+[           2011,           2169 ],
+[           2012,           2644 ],
+[           2013,           3230 ],
+[           2014,           3745 ],
+[           2015,           4321 ],
+[           2016,           4334 ] 
 ],
 "type": "column" 
 } 
@@ -491,9 +491,9 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
  "color": "#FFA500" 
 } 
 },
-"id": "chart2873295a7bcf",
+"id": "chart771ec01448",
 "chart": {
- "renderTo": "chart2873295a7bcf" 
+ "renderTo": "chart771ec01448" 
 } 
 });
         });
@@ -521,12 +521,12 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
     height: 400px;
   }  
   </style>
-<div id = 'chart287350360488' class = 'rChart highcharts'></div>
+<div id = 'chart771e2420e8d8' class = 'rChart highcharts'></div>
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart287350360488",
+ "dom": "chart771e2420e8d8",
 "width":            800,
 "height":            400,
 "credits": {
@@ -604,8 +604,8 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
         30.447,
          29.73,
          25.45,
-        23.928,
-         7.148 
+        23.929,
+         7.328 
 ],
 "type": "column",
 "events": {
@@ -633,9 +633,9 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
 "tooltip": {
  "pointFormat": "{point.y} retracted records per 100 000 publication records" 
 },
-"id": "chart287350360488",
+"id": "chart771e2420e8d8",
 "chart": {
- "renderTo": "chart287350360488" 
+ "renderTo": "chart771e2420e8d8" 
 } 
 });
         });
@@ -656,12 +656,12 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
     height: 400px;
   }  
   </style>
-<div id = 'chart287331e1d89b' class = 'rChart highcharts'></div>
+<div id = 'chart771e5805c4e6' class = 'rChart highcharts'></div>
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart287331e1d89b",
+ "dom": "chart771e5805c4e6",
 "width":            800,
 "height":            400,
 "credits": {
@@ -727,13 +727,13 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
         19.788,
         19.421,
         31.481,
-        34.803,
+         34.92,
         27.105,
         47.665,
           49.9,
         56.923,
-        46.856,
-        51.108,
+        46.857,
+        51.477,
 null 
 ],
 "type": "column",
@@ -767,9 +767,9 @@ null
  "color": "#FFA500" 
 } 
 },
-"id": "chart287331e1d89b",
+"id": "chart771e5805c4e6",
 "chart": {
- "renderTo": "chart287331e1d89b" 
+ "renderTo": "chart771e5805c4e6" 
 } 
 });
         });
@@ -797,12 +797,12 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
     height: 400px;
   }  
   </style>
-<div id = 'chart28735270e350' class = 'rChart highcharts'></div>
+<div id = 'chart771e244cb3ab' class = 'rChart highcharts'></div>
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart28735270e350",
+ "dom": "chart771e244cb3ab",
 "width":            800,
 "height":            400,
 "credits": {
@@ -824,7 +824,7 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
 ],
 "chart": {
  "marginLeft":            220,
-"renderTo": "chart28735270e350" 
+"renderTo": "chart771e244cb3ab" 
 },
 "series": [
  {
@@ -837,7 +837,7 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
 48,
 39,
 39,
-38,
+39,
 32,
 32,
 31,
@@ -868,7 +868,7 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
 "tooltip": {
  "pointFormat": "{point.y} records" 
 },
-"id": "chart28735270e350" 
+"id": "chart771e244cb3ab" 
 });
         });
     })(jQuery);
@@ -888,12 +888,12 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
     height: 400px;
   }  
   </style>
-<div id = 'chart2873bbb4b8d' class = 'rChart highcharts'></div>
+<div id = 'chart771e6279b6d4' class = 'rChart highcharts'></div>
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart2873bbb4b8d",
+ "dom": "chart771e6279b6d4",
 "width":            800,
 "height":            400,
 "credits": {
@@ -915,7 +915,7 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
 ],
 "chart": {
  "marginLeft":            220,
-"renderTo": "chart2873bbb4b8d" 
+"renderTo": "chart771e6279b6d4" 
 },
 "series": [
  {
@@ -926,7 +926,7 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
 62,
 55,
 48,
-41,
+42,
 40,
 34,
 32,
@@ -964,7 +964,7 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
  "color": "#FFA500" 
 } 
 },
-"id": "chart2873bbb4b8d" 
+"id": "chart771e6279b6d4" 
 });
         });
     })(jQuery);
@@ -991,12 +991,12 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
     height: 400px;
   }  
   </style>
-<div id = 'chart28733c283894' class = 'rChart highcharts'></div>
+<div id = 'chart771efd2740a' class = 'rChart highcharts'></div>
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart28733c283894",
+ "dom": "chart771efd2740a",
 "width":            800,
 "height":            400,
 "credits": {
@@ -1018,28 +1018,28 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
 ],
 "chart": {
  "marginLeft":            220,
-"renderTo": "chart28733c283894" 
+"renderTo": "chart771efd2740a" 
 },
 "series": [
  {
  "data": [
        1236.749,
        927.948,
-       645.933,
+       644.699,
        595.474,
-       546.525,
+       546.372,
        478.706,
-       393.419,
-       370.763,
-       287.288,
+       392.577,
+       369.588,
+        287.15,
        281.938,
-       277.546,
-       272.063,
-       208.531,
+       277.316,
+       272.016,
+       208.491,
        176.593,
-       166.795,
-       149.869,
-        132.84,
+       166.709,
+       149.757,
+       132.879,
        130.693,
        127.256,
        125.112 
@@ -1062,7 +1062,7 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
 "tooltip": {
  "pointFormat": "{point.y} retractions / 100 000 publications" 
 },
-"id": "chart28733c283894" 
+"id": "chart771efd2740a" 
 });
         });
     })(jQuery);
@@ -1082,12 +1082,12 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
     height: 400px;
   }  
   </style>
-<div id = 'chart287340f11728' class = 'rChart highcharts'></div>
+<div id = 'chart771e66c0906e' class = 'rChart highcharts'></div>
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart287340f11728",
+ "dom": "chart771e66c0906e",
 "width":            800,
 "height":            400,
 "credits": {
@@ -1109,30 +1109,30 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
 ],
 "chart": {
  "marginLeft":            220,
-"renderTo": "chart287340f11728" 
+"renderTo": "chart771e66c0906e" 
 },
 "series": [
  {
  "data": [
         927.948,
-        693.78,
+       692.455,
        561.241,
-       560.538,
-       388.418,
-       311.228,
+       560.381,
+       387.188,
+       311.079,
        297.442,
-       289.066,
+       289.017,
        242.291,
        176.593,
        172.831,
-       166.795,
-       162.358,
+       166.709,
+       162.236,
        150.799,
        137.896,
        127.256,
        117.872,
-       117.723,
-       104.517,
+       117.697,
+       104.522,
         85.461 
 ],
 "type": "bar" 
@@ -1158,7 +1158,7 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
  "color": "#FFA500" 
 } 
 },
-"id": "chart287340f11728" 
+"id": "chart771e66c0906e" 
 });
         });
     })(jQuery);
