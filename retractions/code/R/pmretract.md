@@ -5,7 +5,7 @@ compiled `r Sys.time()`
 
 
 ## Introduction
-This is the latest report on retracted publications in the [PubMed database](http://www.pubmed.org). It was generated on January 31 2016. This report replaces the application PMRetract, formerly hosted at [Heroku](https://www.heroku.com).
+This is the latest report on retracted publications in the [PubMed database](http://www.pubmed.org). It was generated on February 06 2016. This report replaces the application PMRetract, formerly hosted at [Heroku](https://www.heroku.com).
 
 Each section contains two charts. The first (blue) contains data about _retracted publications_. The second (orange) contains data about _retraction notices_. The PubMed search terms for these are, respectively:
 
@@ -20,10 +20,10 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
 
 
 ### 1.1 Retracted Publications
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/jquery-1.9.1.min.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/highcharts.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/highcharts-more.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/exporting.js></script> 
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/jquery-1.9.1.min.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/highcharts.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/highcharts-more.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/exporting.js></script> 
  <style>
   .rChart {
     display: block;
@@ -33,12 +33,12 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
     height: 400px;
   }  
   </style>
-<div id = 'chart41226515bc8e' class = 'rChart highcharts'></div>
+<div id = 'chart10ccc65ccbc88' class = 'rChart highcharts'></div>
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart41226515bc8e",
+ "dom": "chart10ccc65ccbc88",
 "width":            800,
 "height":            400,
 "credits": {
@@ -77,7 +77,7 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
 [           1986,              8 ],
 [           1987,             12 ],
 [           1988,             13 ],
-[           1989,             27 ],
+[           1989,             28 ],
 [           1990,             38 ],
 [           1991,             32 ],
 [           1992,             28 ],
@@ -99,11 +99,11 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
 [           2008,            292 ],
 [           2009,            307 ],
 [           2010,            319 ],
-[           2011,            293 ],
+[           2011,            292 ],
 [           2012,            283 ],
-[           2013,            266 ],
-[           2014,            270 ],
-[           2015,             90 ] 
+[           2013,            267 ],
+[           2014,            272 ],
+[           2015,             89 ] 
 ],
 "type": "column" 
 } 
@@ -128,9 +128,9 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
 "tooltip": {
  "pointFormat": "{point.y} records" 
 },
-"id": "chart41226515bc8e",
+"id": "chart10ccc65ccbc88",
 "chart": {
- "renderTo": "chart41226515bc8e" 
+ "renderTo": "chart10ccc65ccbc88" 
 } 
 });
         });
@@ -138,10 +138,10 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
 </script>
 
 ### 1.2 Retraction Notices
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/jquery-1.9.1.min.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/highcharts.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/highcharts-more.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/exporting.js></script> 
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/jquery-1.9.1.min.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/highcharts.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/highcharts-more.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/exporting.js></script> 
  <style>
   .rChart {
     display: block;
@@ -151,12 +151,12 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
     height: 400px;
   }  
   </style>
-<div id = 'chart4122771b962c' class = 'rChart highcharts'></div>
+<div id = 'chart10ccc5f8844c4' class = 'rChart highcharts'></div>
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart4122771b962c",
+ "dom": "chart10ccc5f8844c4",
 "width":            800,
 "height":            400,
 "credits": {
@@ -210,14 +210,14 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
 [           2006,            138 ],
 [           2007,            141 ],
 [           2008,            241 ],
-[           2009,            299 ],
+[           2009,            300 ],
 [           2010,            290 ],
 [           2011,            454 ],
-[           2012,            475 ],
+[           2012,            474 ],
 [           2013,            586 ],
-[           2014,            515 ],
-[           2015,            587 ],
-[           2016,             32 ] 
+[           2014,            512 ],
+[           2015,            589 ],
+[           2016,             38 ] 
 ],
 "type": "column" 
 } 
@@ -247,9 +247,9 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
  "color": "#FFA500" 
 } 
 },
-"id": "chart4122771b962c",
+"id": "chart10ccc5f8844c4",
 "chart": {
- "renderTo": "chart4122771b962c" 
+ "renderTo": "chart10ccc5f8844c4" 
 } 
 });
         });
@@ -264,10 +264,10 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
 
 
 ### 2.1 Retracted Publications
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/jquery-1.9.1.min.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/highcharts.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/highcharts-more.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/exporting.js></script> 
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/jquery-1.9.1.min.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/highcharts.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/highcharts-more.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/exporting.js></script> 
  <style>
   .rChart {
     display: block;
@@ -277,12 +277,12 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
     height: 400px;
   }  
   </style>
-<div id = 'chart4122204d7ccd' class = 'rChart highcharts'></div>
+<div id = 'chart10ccc7901438a' class = 'rChart highcharts'></div>
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart4122204d7ccd",
+ "dom": "chart10ccc7901438a",
 "width":            800,
 "height":            400,
 "credits": {
@@ -321,33 +321,33 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
 [           1986,            106 ],
 [           1987,            118 ],
 [           1988,            131 ],
-[           1989,            158 ],
-[           1990,            196 ],
-[           1991,            228 ],
-[           1992,            256 ],
-[           1993,            278 ],
-[           1994,            317 ],
-[           1995,            360 ],
-[           1996,            403 ],
-[           1997,            448 ],
-[           1998,            515 ],
-[           1999,            597 ],
-[           2000,            690 ],
-[           2001,            813 ],
-[           2002,            937 ],
-[           2003,           1076 ],
-[           2004,           1262 ],
-[           2005,           1490 ],
-[           2006,           1751 ],
-[           2007,           2030 ],
-[           2008,           2322 ],
-[           2009,           2629 ],
-[           2010,           2948 ],
+[           1989,            159 ],
+[           1990,            197 ],
+[           1991,            229 ],
+[           1992,            257 ],
+[           1993,            279 ],
+[           1994,            318 ],
+[           1995,            361 ],
+[           1996,            404 ],
+[           1997,            449 ],
+[           1998,            516 ],
+[           1999,            598 ],
+[           2000,            691 ],
+[           2001,            814 ],
+[           2002,            938 ],
+[           2003,           1077 ],
+[           2004,           1263 ],
+[           2005,           1491 ],
+[           2006,           1752 ],
+[           2007,           2031 ],
+[           2008,           2323 ],
+[           2009,           2630 ],
+[           2010,           2949 ],
 [           2011,           3241 ],
 [           2012,           3524 ],
-[           2013,           3790 ],
-[           2014,           4060 ],
-[           2015,           4150 ] 
+[           2013,           3791 ],
+[           2014,           4063 ],
+[           2015,           4152 ] 
 ],
 "type": "column" 
 } 
@@ -372,9 +372,9 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
 "tooltip": {
  "pointFormat": "{point.y} records since 1959" 
 },
-"id": "chart4122204d7ccd",
+"id": "chart10ccc7901438a",
 "chart": {
- "renderTo": "chart4122204d7ccd" 
+ "renderTo": "chart10ccc7901438a" 
 } 
 });
         });
@@ -382,10 +382,10 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
 </script>
 
 ### 2.2 Retraction Notices
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/jquery-1.9.1.min.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/highcharts.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/highcharts-more.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/exporting.js></script> 
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/jquery-1.9.1.min.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/highcharts.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/highcharts-more.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/exporting.js></script> 
  <style>
   .rChart {
     display: block;
@@ -395,12 +395,12 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
     height: 400px;
   }  
   </style>
-<div id = 'chart412210a41cf1' class = 'rChart highcharts'></div>
+<div id = 'chart10ccc58c48730' class = 'rChart highcharts'></div>
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart412210a41cf1",
+ "dom": "chart10ccc58c48730",
 "width":            800,
 "height":            400,
 "credits": {
@@ -454,14 +454,14 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
 [           2006,            746 ],
 [           2007,            887 ],
 [           2008,           1128 ],
-[           2009,           1427 ],
-[           2010,           1717 ],
-[           2011,           2171 ],
+[           2009,           1428 ],
+[           2010,           1718 ],
+[           2011,           2172 ],
 [           2012,           2646 ],
 [           2013,           3232 ],
-[           2014,           3747 ],
-[           2015,           4334 ],
-[           2016,           4366 ] 
+[           2014,           3744 ],
+[           2015,           4333 ],
+[           2016,           4371 ] 
 ],
 "type": "column" 
 } 
@@ -491,9 +491,9 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
  "color": "#FFA500" 
 } 
 },
-"id": "chart412210a41cf1",
+"id": "chart10ccc58c48730",
 "chart": {
- "renderTo": "chart412210a41cf1" 
+ "renderTo": "chart10ccc58c48730" 
 } 
 });
         });
@@ -508,10 +508,10 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
 
 
 ### 3.1 Retracted Publications
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/jquery-1.9.1.min.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/highcharts.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/highcharts-more.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/exporting.js></script> 
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/jquery-1.9.1.min.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/highcharts.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/highcharts-more.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/exporting.js></script> 
  <style>
   .rChart {
     display: block;
@@ -521,12 +521,12 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
     height: 400px;
   }  
   </style>
-<div id = 'chart41227511b3af' class = 'rChart highcharts'></div>
+<div id = 'chart10ccc2fcd9dec' class = 'rChart highcharts'></div>
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart41227511b3af",
+ "dom": "chart10ccc2fcd9dec",
 "width":            800,
 "height":            400,
 "credits": {
@@ -579,7 +579,7 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
          2.327,
          3.324,
          3.427,
-         6.816,
+         7.068,
          9.432,
          7.905,
          6.843,
@@ -600,12 +600,12 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
          38.43,
         38.143,
         35.854,
-        30.023,
-        30.762,
+        30.024,
+        30.658,
          29.73,
-        25.839,
-        24.567,
-         8.049 
+        25.936,
+        24.749,
+         7.961 
 ],
 "type": "column",
 "events": {
@@ -633,9 +633,9 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
 "tooltip": {
  "pointFormat": "{point.y} retracted records per 100 000 publication records" 
 },
-"id": "chart41227511b3af",
+"id": "chart10ccc2fcd9dec",
 "chart": {
- "renderTo": "chart41227511b3af" 
+ "renderTo": "chart10ccc2fcd9dec" 
 } 
 });
         });
@@ -643,10 +643,10 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
 </script>
 
 ### 3.2 Retraction Notices
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/jquery-1.9.1.min.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/highcharts.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/highcharts-more.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/exporting.js></script> 
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/jquery-1.9.1.min.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/highcharts.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/highcharts-more.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/exporting.js></script> 
  <style>
   .rChart {
     display: block;
@@ -656,12 +656,12 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
     height: 400px;
   }  
   </style>
-<div id = 'chart4122149c7000' class = 'rChart highcharts'></div>
+<div id = 'chart10ccc5fead8b0' class = 'rChart highcharts'></div>
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart4122149c7000",
+ "dom": "chart10ccc5fead8b0",
 "width":            800,
 "height":            400,
 "credits": {
@@ -727,13 +727,13 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
         19.788,
         19.421,
         31.481,
-         34.92,
-        27.294,
-        47.665,
-          49.9,
+        35.037,
+        27.295,
+        47.667,
+        49.795,
         56.924,
-        46.859,
-        52.495,
+        46.586,
+        52.688,
 null 
 ],
 "type": "column",
@@ -767,9 +767,9 @@ null
  "color": "#FFA500" 
 } 
 },
-"id": "chart4122149c7000",
+"id": "chart10ccc5fead8b0",
 "chart": {
- "renderTo": "chart4122149c7000" 
+ "renderTo": "chart10ccc5fead8b0" 
 } 
 });
         });
@@ -784,10 +784,10 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
 
 
 ### 4.1 Retracted Publications
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/jquery-1.9.1.min.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/highcharts.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/highcharts-more.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/exporting.js></script> 
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/jquery-1.9.1.min.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/highcharts.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/highcharts-more.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/exporting.js></script> 
  <style>
   .rChart {
     display: block;
@@ -797,12 +797,12 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
     height: 400px;
   }  
   </style>
-<div id = 'chart412225662886' class = 'rChart highcharts'></div>
+<div id = 'chart10ccc45f1b2fc' class = 'rChart highcharts'></div>
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart412225662886",
+ "dom": "chart10ccc45f1b2fc",
 "width":            800,
 "height":            400,
 "credits": {
@@ -824,7 +824,7 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
 ],
 "chart": {
  "marginLeft":            220,
-"renderTo": "chart412225662886" 
+"renderTo": "chart10ccc45f1b2fc" 
 },
 "series": [
  {
@@ -868,17 +868,17 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
 "tooltip": {
  "pointFormat": "{point.y} records" 
 },
-"id": "chart412225662886" 
+"id": "chart10ccc45f1b2fc" 
 });
         });
     })(jQuery);
 </script>
 
 ### 4.2 Retraction Notices
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/jquery-1.9.1.min.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/highcharts.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/highcharts-more.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/exporting.js></script> 
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/jquery-1.9.1.min.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/highcharts.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/highcharts-more.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/exporting.js></script> 
  <style>
   .rChart {
     display: block;
@@ -888,12 +888,12 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
     height: 400px;
   }  
   </style>
-<div id = 'chart41221f236473' class = 'rChart highcharts'></div>
+<div id = 'chart10ccc2f1dde8' class = 'rChart highcharts'></div>
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart41221f236473",
+ "dom": "chart10ccc2f1dde8",
 "width":            800,
 "height":            400,
 "credits": {
@@ -915,7 +915,7 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
 ],
 "chart": {
  "marginLeft":            220,
-"renderTo": "chart41221f236473" 
+"renderTo": "chart10ccc2f1dde8" 
 },
 "series": [
  {
@@ -936,7 +936,7 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
 25,
 25,
 23,
-22,
+23,
 22,
 22,
 22 
@@ -946,7 +946,7 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
 ],
 "xAxis": [
  {
- "categories": [ "J. Biol. Chem.", "Proc. Natl. Acad. Sci. U.S.A.", "Science", "Nature", "Anesth. Analg.", "J. Immunol.", "PLoS ONE", "Can J Anaesth", "Mol. Biol. Rep.", "Blood", "Cell", "Biochem. Biophys. Res. Commun.", "Eur J Anaesthesiol", "J. Am. Chem. Soc.", "J. Clin. Invest.", "Mol. Cell. Biol.", "EMBO J.", "J. Neurosci.", "Obstet Gynecol", "Tumour Biol." ],
+ "categories": [ "J. Biol. Chem.", "Proc. Natl. Acad. Sci. U.S.A.", "Science", "Nature", "Anesth. Analg.", "J. Immunol.", "PLoS ONE", "Can J Anaesth", "Mol. Biol. Rep.", "Blood", "Cell", "Biochem. Biophys. Res. Commun.", "Eur J Anaesthesiol", "J. Am. Chem. Soc.", "J. Clin. Invest.", "Mol. Cell. Biol.", "Obstet Gynecol", "EMBO J.", "J. Neurosci.", "Tumour Biol." ],
 "labels": {
  "formatter":  function() { return '<a href=\"http://www.pubmed.org/?term=%22retraction of publication%22[PTYP] AND %22' + escape(this.value) + '%22[JOUR]\" target=\"_blank\">' + this.value + '</a>'; } ,
 "useHTML": "true" 
@@ -964,7 +964,7 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
  "color": "#FFA500" 
 } 
 },
-"id": "chart41221f236473" 
+"id": "chart10ccc2f1dde8" 
 });
         });
     })(jQuery);
@@ -978,10 +978,10 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
 
 
 ### 5.1 Retracted Publications
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/jquery-1.9.1.min.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/highcharts.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/highcharts-more.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/exporting.js></script> 
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/jquery-1.9.1.min.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/highcharts.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/highcharts-more.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/exporting.js></script> 
  <style>
   .rChart {
     display: block;
@@ -991,12 +991,12 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
     height: 400px;
   }  
   </style>
-<div id = 'chart4122742705fb' class = 'rChart highcharts'></div>
+<div id = 'chart10ccc232e99db' class = 'rChart highcharts'></div>
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart4122742705fb",
+ "dom": "chart10ccc232e99db",
 "width":            800,
 "height":            400,
 "credits": {
@@ -1018,31 +1018,31 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
 ],
 "chart": {
  "marginLeft":            220,
-"renderTo": "chart4122742705fb" 
+"renderTo": "chart10ccc232e99db" 
 },
 "series": [
  {
  "data": [
        1234.568,
-       927.948,
-       644.084,
-        593.12,
-        545.76,
-       478.548,
-       392.157,
-       363.071,
-        286.26,
-       281.591,
-       276.472,
-       271.739,
-       208.018,
-       176.085,
-       166.496,
-       149.124,
-       132.572,
-       130.653,
-       129.032,
-       127.138 
+       927.441,
+       643.163,
+       592.183,
+       545.073,
+       478.469,
+       391.598,
+       361.446,
+       285.987,
+       281.517,
+       275.482,
+       271.693,
+       207.979,
+       175.944,
+       166.368,
+       148.699,
+       132.534,
+       130.509,
+       129.017,
+       126.918 
 ],
 "type": "bar" 
 } 
@@ -1062,17 +1062,17 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
 "tooltip": {
  "pointFormat": "{point.y} retractions / 100 000 publications" 
 },
-"id": "chart4122742705fb" 
+"id": "chart10ccc232e99db" 
 });
         });
     })(jQuery);
 </script>
 
 ### 5.2 Retraction Notices
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/jquery-1.9.1.min.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/highcharts.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/highcharts-more.js></script>
-<script type='text/javascript' src=/home/neil/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/exporting.js></script> 
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/jquery-1.9.1.min.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/highcharts.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/highcharts-more.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/highcharts/js/exporting.js></script> 
  <style>
   .rChart {
     display: block;
@@ -1082,12 +1082,12 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
     height: 400px;
   }  
   </style>
-<div id = 'chart4122f28b095' class = 'rChart highcharts'></div>
+<div id = 'chart10ccc7f6d2a82' class = 'rChart highcharts'></div>
 <script type='text/javascript'>
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart4122f28b095",
+ "dom": "chart10ccc7f6d2a82",
 "width":            800,
 "height":            400,
 "credits": {
@@ -1109,38 +1109,38 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
 ],
 "chart": {
  "marginLeft":            220,
-"renderTo": "chart4122f28b095" 
+"renderTo": "chart10ccc7f6d2a82" 
 },
 "series": [
  {
  "data": [
-        927.948,
-       691.794,
-       559.754,
-       544.554,
-        380.36,
-       310.115,
-       296.033,
-       288.723,
-       241.992,
-       176.085,
-       172.712,
-       166.496,
-       161.551,
-       150.754,
-       137.569,
-       127.138,
-       117.641,
-       117.208,
-       104.465,
-        86.022 
+        927.441,
+       690.805,
+        559.05,
+       544.465,
+       378.657,
+       309.819,
+       295.683,
+       288.674,
+       241.928,
+       175.944,
+       172.652,
+       166.368,
+        161.09,
+       150.587,
+       137.431,
+       126.918,
+       117.628,
+       117.036,
+       104.432,
+       103.972 
 ],
 "type": "bar" 
 } 
 ],
 "xAxis": [
  {
- "categories": [ "Eur. J. Med. Res.", "Eur J Anaesthesiol", "Can J Anaesth", "Mol. Biol. Rep.", "Tumour Biol.", "Phytother Res", "Cancer Sci.", "J Pers Soc Psychol", "Anesth. Analg.", "Mol. Cell", "Mol. Endocrinol.", "Acta Anaesthesiol Scand", "Int. J. Syst. Evol. Microbiol.", "FASEB J.", "Arterioscler. Thromb. Vasc. Biol.", "Nat. Med.", "EMBO J.", "J. Hazard. Mater.", "Mol. Cell. Biol.", "Obstet Gynecol" ],
+ "categories": [ "Eur. J. Med. Res.", "Eur J Anaesthesiol", "Can J Anaesth", "Mol. Biol. Rep.", "Tumour Biol.", "Phytother Res", "Cancer Sci.", "J Pers Soc Psychol", "Anesth. Analg.", "Mol. Cell", "Mol. Endocrinol.", "Acta Anaesthesiol Scand", "Int. J. Syst. Evol. Microbiol.", "FASEB J.", "Arterioscler. Thromb. Vasc. Biol.", "Nat. Med.", "EMBO J.", "J. Hazard. Mater.", "Mol. Cell. Biol.", "Mol. Cell. Biochem." ],
 "labels": {
  "formatter":  function() { return '<a href=\"http://www.pubmed.org/?term=%22retraction of  publication%22[PTYP] AND %22' + escape(this.value) + '%22[JOUR]\" target=\"_blank\">' + this.value + '</a>'; } ,
 "useHTML": "true" 
@@ -1158,7 +1158,7 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
  "color": "#FFA500" 
 } 
 },
-"id": "chart4122f28b095" 
+"id": "chart10ccc7f6d2a82" 
 });
         });
     })(jQuery);
