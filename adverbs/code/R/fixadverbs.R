@@ -1,6 +1,6 @@
 # very ugly code to fix linebreaks in fields error
 
-setwd("~/Dropbox/projects/pubmed/adverbs")
+setwd("~/Dropbox/projects/github_projects/pubmed/adverbs")
 
 adverbs <- readLines("data/adverbs.csv")
 err     <- which(count.fields("data/adverbs.csv", sep = ",") != 7)

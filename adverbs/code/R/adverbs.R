@@ -1,4 +1,4 @@
-setwd("~/Dropbox/projects/pubmed/adverbs")
+setwd("~/Dropbox/projects/github_projects/pubmed/adverbs")
 adverbs.uniq <- read.table("data/adverbs.uniq.csv", sep = ",", header = T, stringsAsFactors = F)
 
 # function to count adverbs
