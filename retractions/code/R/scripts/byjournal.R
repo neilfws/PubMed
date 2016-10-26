@@ -17,7 +17,7 @@ journalsToCSV <- function(xmlfile) {
   return(journals.cnt)
 }
 
-setwd("~/Dropbox/projects/pubmed/retractions/data/")
+setwd("~/Dropbox/projects/github_projects/pubmed/retractions/data/")
 # retracted
 journals <- journalsToCSV("retracted.xml")
 write.csv(journals, file = "journals_retracted.csv", row.names = FALSE)
