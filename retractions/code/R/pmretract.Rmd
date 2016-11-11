@@ -75,7 +75,7 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
 ```
 
 ### 3.1 Retracted Publications
-```{r chart3-1, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
+```{r chart3-1, message=FALSE, echo=FALSE, results='asis', warning=TRUE}
 hc3.1 <- plotByYear(doc.retd, years.total, "retracted publication")
 hc3.1$show('inline', cdn = FALSE, include_assets = TRUE)
 ```
