@@ -1,0 +1,104 @@
+---
+title: "Growth in the OA subset of PubMed Central 2000-2013"
+author: "Neil Saunders"
+date: "28/11/2014"
+output: html_document
+---
+
+## 1. Introduction
+
+This document is a second response to [Contrary to what you read in Nature, Open Access has not caused the growth in science publishing](http://www.michaeleisen.org/blog/?p=1654).
+
+Brief summary: I agree with the conclusions, but still not with the numbers :)
+
+## 2. Data
+This time, we'll stick with PubMed Central.
+
+We search PMC between the years 2000-2013 as follows:
+
+* Total number of articles published in a year using the PDAT (date of publication) qualifier _e.g._ "2000[PDAT]"
+* Filter for the open access (OA) subset using the filter "open+access[FILT]"
+
+```{r message=FALSE}
+library(rentrez)
+library(ggplot2)
+library(reshape2)
+```
+
+```{r cache=TRUE}
+# create list to hold data
+d <- data.frame(year = NA, all = NA, free = NA)
+# count total and free articles for 2000-2013
+for(i in 1:14) {
+    e.all  <- entrez_search("pmc", paste(i+1999, "[PDAT]", sep = ""))
+    e.free <- entrez_search("pmc", paste(i+1999, "[PDAT] AND open+access[FILT]", sep = ""))
+    d[i, "year"] <- i+1999
+    d[i, "all"]  <- e.all$count
+    d[i, "free"] <- e.free$count
+}
+```
+
+Now we calculate the proportion of OA articles and the cumulative sum (year on year increase) of both all and OA articles.
+
+```{r cache=TRUE}
+d$prop    <- d$free / d$all
+d$all.cs  <- cumsum(d$all)
+d$free.cs <- cumsum(d$free)
+d
+```
+
+## 3. Analysis
+
+### 3.1 Free full text articles as proportion of all articles
+
+The OA subset articles rose steadily from around 11% of all articles (2000) to 59% (2013).
+
+```{r tidy=TRUE}
+ggplot(d) + geom_bar(aes(year, all), stat = "identity", fill = "blue") + geom_bar(aes(year, free), stat = "identity", fill = "orange") + theme_bw() + ylab("number of articles") + xlab("year") + scale_x_continuous(breaks = seq(2000, 2013, by = 2)) + labs(title = "Number of PMC articles per year 2000-2013\nblue = all; orange = OA subset")
+```
+
+### 3.2 Cumulative increase in free full text articles as proportion of cumulative increase in all articles
+
+42 171 PMC articles were published in 2000. The cumulative sum of all articles published between then and 2013 is 1 881 571.
+
+The yearly increase of OA articles is somewhat less than that of all articles.
+
+```{r tidy=TRUE}
+ggplot(d) + geom_bar(aes(year, all.cs), stat = "identity", fill = "blue") + geom_bar(aes(year, free.cs), stat = "identity", fill = "orange") + theme_bw() + ylab("cumulative sum of articles") + xlab("year") + scale_x_continuous(breaks = seq(2000, 2013, by = 2)) + labs(title = "Cumulative sum of PMC articles 2000-2013\nblue = all; orange = OA subset")
+```
+
+### 3.3 Cumulative increase in articles relative to start year
+
+The rate of accumulation of OA articles compared with the base year of 2000 is much higher than that for all articles.
+
+```{r tidy=TRUE, cache=TRUE}
+d2 <- data.frame(year = 2000:2013, all = d$all.cs / d$all.cs[1], free = d$free.cs / d$free.cs[1])
+d2.m <- melt(d2, id.vars = "year")
+ggplot(d2.m) + geom_point(aes(year, value, color = variable)) + theme_bw() + scale_color_manual(values = c("blue", "orange")) + scale_x_continuous(breaks = seq(2000, 2013, by = 2)) + ylab("cumulative sum of articles relative to 2000") + labs(title = "Cumulative sum of PMC articles 2000-2013 relative to 2000\nblue = all; orange = OA subset")
+```
+
+### 3.4 Change in number of articles as a proportion of previous year
+
+The year-on-year change in number of articles is not very informative, as there is a lot of unexplained fluctuation.
+
+```{r cache=TRUE, tidy=TRUE}
+d3 <- data.frame(year = NA, all = NA, free = NA)
+for(i in 1:13) {
+    d3[i, "year"] <- d[i+1, "year"]
+    d3[i, "all"]  <- (d[i+1, "all"] - d[i, "all"]) / d[i, "all"]
+    d3[i, "free"] <- (d[i+1, "free"] - d[i, "free"]) / d[i, "free"]
+}
+d3.m <- melt(d3, id.vars = "year")
+ggplot(d3.m) + geom_line(aes(year, value, color = variable)) + theme_bw() + scale_color_manual(values = c("blue", "orange")) + scale_x_continuous(breaks = seq(2000, 2013, by = 2)) + ylab("relative change in number of articles") + labs(title = "Change in number of PMC articles relative to previous year\nblue = all; orange = OA subset")
+```
+
+## 4. Conclusions
+
+From 2000-2013:
+
+* Total and open access articles in PMC rose rapidly
+* The proportion of OA articles rose from around 11% to 59%
+* Total articles accumulated at a slightly higher rate than OA articles
+* From 2005 onwards, OA articles accumulated at a much higher rate than total articles relative to a baseline year of 2000
+* Year-on-year changes in article numbers show no clear pattern
+* Definition of "open access" for this purpose is not easy :)
