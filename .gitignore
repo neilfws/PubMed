@@ -2,6 +2,7 @@ retractions/code/sinatra/database.yml
 retractions/scratch/*
 retractions/data/*.yml
 software_names/data/*
+turnaround/data/*
 .DS_Store
 *.log
 .Rhistory
