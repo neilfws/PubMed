@@ -4,3 +4,4 @@ retractions/data/*.yml
 software_names/data/*
 .DS_Store
 *.log
+.Rhistory
