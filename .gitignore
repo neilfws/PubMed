@@ -6,3 +6,4 @@ turnaround/data/*
 .DS_Store
 *.log
 .Rhistory
+*_cache
