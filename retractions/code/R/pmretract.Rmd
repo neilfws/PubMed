@@ -4,7 +4,9 @@ author: "Neil Saunders"
 date: "compiled `r Sys.time()`"
 output:
   html_document:
+    highlight: pygments
     keep_md: yes
+    theme: cerulean
     toc: yes
 ---
 
