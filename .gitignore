@@ -7,3 +7,4 @@ turnaround/data/*
 *.log
 .Rhistory
 *_cache
+**/rsconnect/*
