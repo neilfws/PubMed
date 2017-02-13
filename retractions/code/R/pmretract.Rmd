@@ -14,7 +14,7 @@ output:
 ```
 
 ## Introduction
-This is the latest report on retracted publications in the [PubMed database](http://www.pubmed.org). It was generated on `r 
+This is the latest report on retracted publications in the [PubMed database](http://www.pubmed.gov). It was generated on `r 
 strftime(Sys.Date(), "%B %d %Y")`. This report replaces the application PMRetract, formerly hosted at [Heroku](https://www.heroku.com).
 
 Each section contains two charts. The first (blue) contains data about _retracted publications_. The second (orange) contains data about _retraction notices_. The PubMed search terms for these are, respectively:
@@ -171,7 +171,7 @@ plotTimeline <- function(d, term) {
   }
   hc$title(text = "Retracted publications by year of Entrez record creation")
   hc$series(data = da, type = "column")
-  hc$xAxis(type = "linear", labels = list(rotation = 90, formatter = paste("#! function() { return '<a href=\"http://www.pubmed.org/?term=%22", term, "%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"), title = list(text = "year"), tickInterval = 1)
+  hc$xAxis(type = "linear", labels = list(rotation = 90, formatter = paste("#! function() { return '<a href=\"http://www.pubmed.gov/?term=%22", term, "%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"), title = list(text = "year"), tickInterval = 1)
   hc$yAxis(title = list(text = "retracted publications"))
   hc$legend(enabled = FALSE)
   hc$tooltip(pointFormat = "{point.y} records")
@@ -195,7 +195,7 @@ plotCumSumTimeline <- function(d, term) {
   }
   hc$title(text = "Cumulative sum of retracted publications by year of Entrez record creation")
   hc$series(data = da, type = "column")
-  hc$xAxis(type = "linear", labels = list(rotation = 90, formatter = paste("#! function() { return '<a href=\"http://www.pubmed.org/?term=%22", term, "%22[PTYP] AND 1959:' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"), title = list(text = "year"), tickInterval = 1)
+  hc$xAxis(type = "linear", labels = list(rotation = 90, formatter = paste("#! function() { return '<a href=\"http://www.pubmed.gov/?term=%22", term, "%22[PTYP] AND 1959:' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"), title = list(text = "year"), tickInterval = 1)
   hc$yAxis(title = list(text = "sum of retracted publications"))
   hc$legend(enabled = FALSE)
   hc$tooltip(pointFormat = "{point.y} records since 1959")
@@ -220,7 +220,7 @@ plotByYear <- function(d, total, term) {
   hc <- Highcharts$new()
   hc$title(text = "Retracted publications per 100 000 publications by year of Entrez record creation")
   hc$series(data = as.numeric(sprintf("%.3f", (100000 / ydf$total) * ydf$retracted)), type = "column", events = list(click = "#! function() {window.open(this.options.url)} !#"))
-  hc$xAxis(categories = ydf$year, labels = list(rotation = 90, formatter = paste("#! function() { return '<a href=\"http://www.pubmed.org/?term=%22", term, "%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"), title = list(text = "year"), tickInterval = 1)
+  hc$xAxis(categories = ydf$year, labels = list(rotation = 90, formatter = paste("#! function() { return '<a href=\"http://www.pubmed.gov/?term=%22", term, "%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"), title = list(text = "year"), tickInterval = 1)
   hc$yAxis(title = list(text = "retracted publications per 100 000 publications"))
   hc$legend(enabled = FALSE)
   hc$tooltip(pointFormat = "{point.y} retracted records per 100 000 publication records")
@@ -240,7 +240,7 @@ plotByJournal <- function(d, term) {
   hc <- Highcharts$new()
   hc$chart(marginLeft = 220)
   hc$series(data = j20$count, type = "bar")
-  hc$xAxis(categories = j20$journal, labels = list(formatter = paste("#! function() { return '<a href=\"http://www.pubmed.org/?term=%22", term, "%22[PTYP] AND %22' + escape(this.value) + '%22[JOUR]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"))
+  hc$xAxis(categories = j20$journal, labels = list(formatter = paste("#! function() { return '<a href=\"http://www.pubmed.gov/?term=%22", term, "%22[PTYP] AND %22' + escape(this.value) + '%22[JOUR]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"))
   hc$yAxis(title = list(text = "retracted publications"))
   hc$legend(enabled = FALSE)
   hc$tooltip(pointFormat = "{point.y} records")
@@ -257,7 +257,7 @@ plotByJournal <- function(d, term) {
   hc <- Highcharts$new()
   hc$chart(marginLeft = 220)
   hc$series(data = d$idx, type = "bar")
-  hc$xAxis(categories = d$journal, labels = list(formatter = paste("#! function() { return '<a href=\"http://www.pubmed.org/?term=%22", term, "%22[PTYP] AND %22' + escape(this.value) + '%22[JOUR]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"))
+  hc$xAxis(categories = d$journal, labels = list(formatter = paste("#! function() { return '<a href=\"http://www.pubmed.gov/?term=%22", term, "%22[PTYP] AND %22' + escape(this.value) + '%22[JOUR]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"))
   hc$yAxis(title = list(text = "retracted publications / 100 000 publications"))
   hc$legend(enabled = FALSE)
   hc$tooltip(pointFormat = "{point.y} retractions / 100 000 publications")
