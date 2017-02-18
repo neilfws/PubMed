@@ -1,7 +1,7 @@
 ---
 title: "Analysis of Contributions to PubMed Commons"
 author: "Neil Saunders"
-date: "28/11/2016"
+date: "`r Sys.time()`"
 output: 
   html_document: 
     fig_caption: yes
