@@ -31,20 +31,20 @@ Currently, Commons data is not available via [EUtils](https://www.ncbi.nlm.nih.g
 has_user_comments[Filter]
 ```
 
-However, a web search for [pubmed common api](https://www.google.com.au/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#newwindow=1&q=pubmed+commons+api) returns [this useful Gist](https://gist.github.com/hubgit/ed04da6ea8a2fca07583). It reveals a URL which returns Commons data for a given PMID in JSON format, for example:
+However, a web search for [pubmed commons api](https://www.google.com.au/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#newwindow=1&q=pubmed+commons+api) returns [this useful Gist](https://gist.github.com/hubgit/ed04da6ea8a2fca07583). It reveals a URL which returns Commons data for a given PMID in JSON format, for example:
 
 ```
 https://www.ncbi.nlm.nih.gov/myncbi/comments/?p$rq=CommL.CommServer:com&cmd=get&recid=27424783
 ```
 
-The value of the _comments_ key is the HTML-formatted list of comments found at the web page for that PMID. It's an unordered list with _id_ and _class_ of _comment\_list_.
+The value of the `comments` key is the HTML-formatted list of comments found at the web page for that PMID. It's an unordered list with `id` and `class` of `comment_list`.
 
 The Ruby code at the end of this document was used to generate a list of PMIDs for all articles with Commons comments, retrieve the comment data, parse it and save a summary in CSV format.
 
 ## Formatting & cleaning the data
-Now we can read the CSV file, parse and format the _date_ column as DateTime and count the up/down votes (if any) for each comment.
+Now we can read the CSV file, parse and format the `date` column as DateTime and count the up/down votes (if any) for each comment.
 
-The next issue is that not every list item of class _comm\_item_ (see the Ruby code) is a comment on the article. Some of the comments are notes, automatically-generated when the article URL is used in a comment elsewhere, or to indicate activity by a particular user. Others are moderated comments, where the comment text was deleted by the author or a moderator. So we'll label comments as "real" if they contain both an author name and comment text.
+The next issue is that not every list item of class `comm_item` (see the Ruby code) is a comment on the article. Some of the comments are notes, automatically-generated when the article URL is used in a comment elsewhere, or to indicate activity by a particular user. Others are moderated comments, where the comment text was deleted by the author or a moderator. So we'll label comments as "real" if they contain both an author name and comment text.
 
 ```{r get-data}
 commons <- read_csv("~/Dropbox/projects/github_projects/PubMed/commons/data/commons.csv", col_names = FALSE)
@@ -178,7 +178,7 @@ pmid.maxlike <- commons.real[which(commons.real$votes.up == max(commons.real$vot
 There are some clear outliers on this chart with a high number up votes and no down votes. Currently, the PubMed article with the most up-voted comment is [this one](`r paste("https://www.ncbi.nlm.nih.gov/pubmed/", pmid.maxlike, sep = "")`).
 
 ### Moderation
-Comments deemed inappropriate are wrapped in a _div_ with class = _not\_appr_. The text content of the _div_ indicates whether the comment was deleted by the author (user) or by a moderator. In our CSV file, the text is stored in the _moderated_ column.
+Comments deemed inappropriate are wrapped in a `div` with class = `not_appr`. The text content of the `div` indicates whether the comment was deleted by the author (user) or by a moderator. In our CSV file, the text is stored in the `moderated` column.
 
 ```{r comments-mod}
 commons.mod <- as.data.frame(table(commons$moderated), stringsAsFactors = FALSE)
