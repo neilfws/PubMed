@@ -19,6 +19,8 @@ library(stringr)
 library(dplyr)
 library(tidyr)
 library(ggplot2)
+
+theme_set(theme_bw())
 ```
 
 ## Introduction
@@ -80,38 +82,56 @@ Definitions:
 ```{r count-comments}
 # all comments
 commons.sum <- data.frame(`total records` = nrow(commons), `final dataset` = nrow(commons.real), moderated = nrow(commons[!is.na(commons$moderated), ]), `unique articles` = length(unique(commons.real$pmid)), `unique authors` = length(unique(commons.real$author.name)), stringsAsFactors = FALSE)
-commons.sum.tidy <- gather(commons.sum, key, value)
-ggplot(commons.sum.tidy, aes(reorder(key, value, max), value)) + geom_bar(stat = "identity", fill = "#336699", width = 0.4) + theme_bw() + geom_text(aes(label = value), vjust = -0.2) + scale_y_continuous(breaks = seq(0, 7000, 1000), limits = c(0, 7000)) + labs(y = "total", x = "category", title = "Total PubMed Commons Comments By Sub-categories")
+commons.sum %>% 
+  gather(key, value) %>% 
+  ggplot(aes(reorder(key, value, max), value)) + geom_col(fill = "#336699", width = 0.4) + 
+    geom_text(aes(label = value), vjust = -0.2) + scale_y_continuous(breaks = seq(0, 7000, 1000), limits = c(0, 7000)) + 
+    labs(y = "total", x = "category", title = "Total PubMed Commons Comments By Sub-categories")
 ```
 
 ### Comments by date
 First, let's look at comments by year. The low number for 2013 reflects the launch dates: the service began as a closed pilot about halfway through the year, opening more widely in October. 2015 saw a decline in comments relative to the previous year, but comments are on the rise again in 2016.
 
 ```{r comments-year}
-commons.y <- commons.real %>% mutate(year = year(datetime)) %>% group_by(year) %>% summarise(total = n())
-ggplot(commons.y, aes(year, total)) + geom_bar(stat = "identity", fill = "#336699", width = 0.4) + theme_bw() + labs(y = "comments", title = "Total PubMed Commons Comments By Year") + geom_text(aes(label = total), vjust = -0.2)
+commons.real %>% 
+  mutate(year = year(datetime)) %>% 
+  group_by(year) %>% 
+  summarise(total = n()) %>% 
+  ggplot(aes(year, total)) + geom_col(fill = "#336699", width = 0.4) + 
+    labs(y = "comments", title = "Total PubMed Commons Comments By Year") + 
+    geom_text(aes(label = total), vjust = -0.2)
 ```
 
 Comments by month gives us more detail. The October 2013 service opening date is apparent. Following initial enthusiasm there was a marked decline in comments until the end of 2014, after which monthly totals became more consistent. There are also peaks worthy of further investigation in late 2014 and in August 2016.
 
 ```{r comments-month-year}
-commons.my <- commons.real %>% mutate(month = month(datetime), year = year(datetime)) %>% group_by(month, year) %>% summarise(total = n())
-ggplot(commons.my, aes(month, total)) + geom_bar(stat = "identity", fill = "#336699") + facet_grid(year ~ .) + theme_bw() + scale_x_continuous(breaks = seq(1, 12, 1)) + labs(y = "comments", title = "Total PubMed Commons Comments By Year & Month")
+commons.real %>% 
+  mutate(month = month(datetime), year = year(datetime)) %>% 
+  group_by(month, year) %>% 
+  summarise(total = n()) %>% 
+  ggplot(aes(month, total)) + geom_col(fill = "#336699") + 
+    facet_grid(year ~ .) + scale_x_continuous(breaks = seq(1, 12, 1)) + 
+    labs(y = "comments", title = "Total PubMed Commons Comments By Year & Month")
 ```
 
 Comments by day provides perhaps too much information to be resolved at the scale of this small static chart. However, the events in late 2014 and August 2016 are again apparent.
 
 ```{r comments-day-year}
-ggplot(commons.real, aes(yday(datetime))) + geom_bar(fill = "#336699") + theme_bw() + facet_grid(year(datetime) ~ .) + labs(x = "day", y = "comments", title = "PubMed Commons Comments By Day & Year")
+commons.real %>% 
+  ggplot(aes(yday(datetime))) + geom_bar(fill = "#336699") + facet_grid(year(datetime) ~ .) + 
+    labs(x = "day", y = "comments", title = "PubMed Commons Comments By Day & Year")
 ```
 
 Here are the top 5 days for comments posted.
 
 ```{r comments-days-top5}
-commons.days <- as.data.frame(table(as.Date(commons.real$datetime)), stringsAsFactors = FALSE)
-commons.days <- commons.days[order(commons.days$Freq, decreasing = TRUE), ]
-colnames(commons.days) <- c("date", "comments")
-kable(head(commons.days, 5), row.names = FALSE)
+commons.real %>% 
+  mutate(date_new = as.Date(datetime)) %>%
+  count(date_new) %>%
+  arrange(desc(n)) %>%
+  select(date = date_new, comments = n) %>%
+  slice(1:5) %>%
+  kable()
 ```
 
 ### Comments by year of article publication
@@ -124,7 +144,10 @@ high <- max(commons.real$pubyear, na.rm = TRUE)
 # earliest PMID with a comment
 pmid.first <- commons.real[which(commons.real$pubyear == min(commons.real$pubyear, na.rm = TRUE)), "pmid"]
 
-ggplot(commons.real, aes(pubyear)) + geom_bar(fill = "#336699") + theme_bw() + scale_x_continuous(breaks = seq(low, high, 10)) + labs(x = "year of publication", y = "comments", title = "Total PubMed Commons Comments By Year Of Article Publication")
+commons.real %>%
+  ggplot(aes(pubyear)) + geom_bar(fill = "#336699") + 
+    scale_x_continuous(breaks = seq(low, high, 10)) + 
+    labs(x = "year of publication", y = "comments", title = "Total PubMed Commons Comments By Year Of Article Publication")
 ```
 
 This is even clearer when we plot the distribution of article publication year against year when comments were authored.
@@ -132,12 +155,16 @@ This is even clearer when we plot the distribution of article publication year a
 Currently, the earliest PubMed article with a comment is [this one](`r paste("https://www.ncbi.nlm.nih.gov/pubmed/", pmid.first, sep = "")`).
 
 ```{r comments-article-date_dist}
-ggplot(commons.real, aes(factor(year(datetime)), pubyear)) + geom_jitter(color = "#336699", alpha = 0.5) + theme_bw() + labs(x = "year comment posted", y = "year article published", title = "Distribution Of Publication Year For PubMed Articles With Comments") + geom_violin(alpha = 0) + scale_y_continuous(breaks = seq(low, high, 10))
+commons.real %>% 
+  ggplot(aes(factor(year(datetime)), pubyear)) + geom_jitter(color = "#336699", alpha = 0.5) + 
+    labs(x = "year comment posted", y = "year article published", title = "Distribution Of Publication Year For PubMed Articles With Comments") + 
+    geom_violin(alpha = 0) + scale_y_continuous(breaks = seq(low, high, 10))
 ```
 
 ### Comments per article
 ```{r comments-article}
-commons.pmid <- commons.real %>% group_by(pmid) %>% summarise(count = n())
+commons.pmid <- commons.real %>% 
+  group_by(pmid) %>% summarise(count = n())
 
 # PMID with most comments
 pmid.max <- commons.pmid[commons.pmid$count == max(commons.pmid$count), "pmid"]
@@ -148,19 +175,25 @@ Unsurprisingly, by far the commonest number of comments per article is one. This
 Currently, the PubMed article with the most comments is [this one](`r paste("https://www.ncbi.nlm.nih.gov/pubmed/", pmid.max, sep = "")`).
 
 ```{r comments-article-plot}
-ggplot(commons.pmid, aes(count)) + geom_density(color = "#336699", fill = "#336699") + theme_bw() + labs(x = "comments", title = "Distribution Of PubMed Commons Comments Per Article")
+commons.pmid %>% 
+  ggplot(aes(count)) + geom_density(color = "#336699", fill = "#336699") + 
+    labs(x = "comments", title = "Distribution Of PubMed Commons Comments Per Article")
 ```
 
 ### Comments per author
 ```{r comments-author}
-commons.auth <- commons.real %>% group_by(author.name) %>% summarise(count = n())
+commons.auth <- commons.real %>% 
+  group_by(author.name) %>% 
+  summarise(count = n())
 ```
 
 Once again, the most frequent number of comments per author is one, although a respectable proportion of authors have made more than one comment. Currently, the most comments by one author is `r max(commons.auth$count)`.
 
 
 ```{r comments-author-plot}
-ggplot(commons.auth, aes(count)) + geom_density(color = "#336699", fill = "#336699") + theme_bw() + labs(x = "comments", title = "Distribution Of PubMed Commons Comments Per Author")
+commons.auth %>% 
+  ggplot(aes(count)) + geom_density(color = "#336699", fill = "#336699") + 
+    labs(x = "comments", title = "Distribution Of PubMed Commons Comments Per Author")
 ```
 
 ### Up/down votes
@@ -169,7 +202,9 @@ PubMed Commons has a form of voting for comments, allowing users to vote "yes" o
 One way to visualise the votes is simply to plot down votes versus up votes, adding a heatmap of bin counts to deal with overplotting (multiple points with the same values). The plot shows that where comments have votes (currently `r length(na.omit(commons.real$votes.total))` / `r nrow(commons.real)`), the most frequent case is one upvote ("1 of 1 people found this helpful"), followed by 2 or 3 upvotes, no down votes.
 
 ```{r votes-density}
-ggplot(commons.real, aes(votes.down, votes.up)) + geom_bin2d(bins = 50) + theme_bw() + scale_fill_gradient(low = "yellow", high = "red")
+commons.real %>% 
+  ggplot(aes(votes.down, votes.up)) + geom_bin2d(bins = 50) + 
+    scale_fill_gradient(low = "yellow", high = "red")
 
 # PMID with most-liked comment
 pmid.maxlike <- commons.real[which(commons.real$votes.up == max(commons.real$votes.up, na.rm = TRUE)), "pmid"]
@@ -182,7 +217,13 @@ Comments deemed inappropriate are wrapped in a `div` with class = `not_appr`. Th
 
 ```{r comments-mod}
 commons.mod <- as.data.frame(table(commons$moderated), stringsAsFactors = FALSE)
-ggplot(commons.mod, aes(Var1, Freq)) + geom_bar(stat = "identity", fill = "#336699", width = 0.4) + theme_bw() + geom_text(aes(label = Freq), vjust = -0.2) + labs(x = "removed by", y = "comments", title = "Moderation Of PubMed Commons Comments")
+
+commons %>%
+  count(moderated) %>%
+  filter(!is.na(moderated)) %>% 
+  ggplot(aes(moderated, n)) + geom_col(fill = "#336699", width = 0.4) + 
+  geom_text(aes(label = n), vjust = -0.2) + 
+  labs(x = "removed by", y = "comments", title = "Moderation Of PubMed Commons Comments")
 ```
 
 ## Not yet analysed
