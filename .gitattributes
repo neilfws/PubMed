@@ -3,3 +3,4 @@ novelty/code/R/*.html linguist-documentation
 oa_growth/output/*.html linguist-documentation
 retractions/code/R/*.html linguist-documentation
 retractions/data/*.html linguist-documentation
+retractions/data/*.xml linguist-vendored=false
