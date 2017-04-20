@@ -6,6 +6,7 @@ output:
   html_document: 
     fig_caption: yes
     highlight: pygments
+    keep_md: yes
     theme: flatly
     toc: yes
 ---
