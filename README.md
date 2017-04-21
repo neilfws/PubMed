@@ -1,6 +1,6 @@
 # PubMed
 
-Code and data for analysis of data from [NCBI PubMed](http://www.pubmed.org).
+Code and data for analysis of data from [NCBI PubMed](http://www.pubmed.gov).
 
 ## Current contents
 
