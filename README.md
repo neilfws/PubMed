@@ -5,6 +5,7 @@ Code and data for analysis of data from [NCBI PubMed](http://www.pubmed.org).
 ## Current contents
 
 1. [adverbs](https://github.com/neilfws/PubMed/tree/master/adverbs): code and data for the blog post [Interestingly: the sentence adverbs of PubMed Central](http://nsaunders.wordpress.com/2013/07/16/interestingly-the-sentence-adverbs-of-pubmed-central/)
+1. [commons](https://github.com/neilfws/PubMed/tree/master/commons): code and data for the blog post [An analysis of contributions to PubMed Commons](https://nsaunders.wordpress.com/2016/12/02/an-analysis-of-contributions-to-pubmed-commons/)
 1. [novelty](https://github.com/neilfws/PubMed/tree/master/novelty): code and data for the blog post [Novelty: an update](https://nsaunders.wordpress.com/2015/10/21/novelty-an-update/)
 1. [omics](https://github.com/neilfws/PubMed/tree/master/omics): code and data for the blog post [-omics in 2013](http://nsaunders.wordpress.com/2013/06/25/omics-in-2013/)
 1. [retractions](https://github.com/neilfws/PubMed/tree/master/retractions): code and data for my [retracted article report](http://rpubs.com/neilfws/65778) 
