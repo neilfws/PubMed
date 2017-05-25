@@ -65,7 +65,7 @@ Here are the top 5 days for comments posted.
 date          comments
 -----------  ---------
 2014-12-10         113
-2016-08-23         102
+2016-08-23         104
 2013-10-31          48
 2014-11-23          43
 2014-01-07          40
@@ -93,7 +93,7 @@ Currently, the PubMed article with the most comments is [this one](https://www.n
 ### Comments per author
 
 
-Once again, the most frequent number of comments per author is one, although a respectable proportion of authors have made more than one comment. Currently, the most comments by one author is 198.
+Once again, the most frequent number of comments per author is one, although a respectable proportion of authors have made more than one comment. Currently, the most comments by one author is 215.
 
 
 ![](../../output/comments-author-plot-1.png)<!-- -->
@@ -101,7 +101,7 @@ Once again, the most frequent number of comments per author is one, although a r
 ### Up/down votes
 PubMed Commons has a form of voting for comments, allowing users to vote "yes" or "no" to the question "Was this helpful?"
 
-One way to visualise the votes is simply to plot down votes versus up votes, adding a heatmap of bin counts to deal with overplotting (multiple points with the same values). The plot shows that where comments have votes (currently 2845 / 6403), the most frequent case is one upvote ("1 of 1 people found this helpful"), followed by 2 or 3 upvotes, no down votes.
+One way to visualise the votes is simply to plot down votes versus up votes, adding a heatmap of bin counts to deal with overplotting (multiple points with the same values). The plot shows that where comments have votes (currently 2925 / 6590), the most frequent case is one upvote ("1 of 1 people found this helpful"), followed by 2 or 3 upvotes, no down votes.
 
 ![](../../output/votes-density-1.png)<!-- -->
 
