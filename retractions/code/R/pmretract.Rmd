@@ -8,7 +8,6 @@ output:
     keep_md: yes
     theme: cerulean
     toc: yes
-    toc_float: yes
 ---
 
 ```{r echo=FALSE, ref.label="setup", message=FALSE}
