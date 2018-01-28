@@ -1,83 +1,84 @@
 "journal","count","total"
-"ACS Appl Mater Interfaces",10,19828
-"Acta Anaesthesiol Scand",13,8124
-"Anaesthesia",13,88932
-"Anesth. Analg.",56,24282
-"Anesthesiology",13,156317
-"Ann. Thorac. Surg.",16,33851
-"Arterioscler. Thromb. Vasc. Biol.",12,8641
-"Biochem. Biophys. Res. Commun.",40,83301
-"Biochem. J.",11,55223
-"Biochemistry",14,545423
-"Biochim. Biophys. Acta",12,100591
-"Biomed Res Int",17,12870
-"Blood",31,3514789
-"Brain Res.",11,58999
-"Can J Anaesth",40,7683
-"Cancer Res.",24,53463
-"Cancer Sci.",11,3912
-"Cell",35,4143727
-"Circ. Res.",13,16851
-"Circulation",11,330305
-"Clin. Cancer Res.",18,16651
-"Diabetes",24,583024
-"Diagn Pathol",35,1564
-"EMBO J.",23,19179
-"Environ Monit Assess",11,9418
-"Eur J Anaesthesiol",30,4510
-"Eur Rev Med Pharmacol Sci",15,4885
-"Eur. J. Med. Res.",20,1928
-"Eur. J. Pharmacol.",11,33174
-"FASEB J.",17,10876
-"FEBS Lett.",11,49345
+"ACS Appl Mater Interfaces",10,20123
+"Acta Anaesthesiol Scand",13,8150
+"Anaesthesia",13,89178
+"Anesth. Analg.",56,24326
+"Anesthesiology",13,157064
+"Ann. Thorac. Surg.",16,33909
+"Arterioscler. Thromb. Vasc. Biol.",12,8663
+"Biochem. Biophys. Res. Commun.",41,83415
+"Biochem. J.",11,55236
+"Biochemistry",15,547783
+"Biochim. Biophys. Acta",12,100671
+"Biomed Res Int",18,12979
+"Blood",31,3521797
+"Brain Res.",11,59017
+"Can J Anaesth",40,7689
+"Cancer Res.",24,53544
+"Cancer Sci.",11,3929
+"Cell",35,4155844
+"Circ. Res.",13,16881
+"Circulation",11,330934
+"Clin. Cancer Res.",18,16690
+"Diabetes",24,585198
+"Diagn Pathol",35,1568
+"EMBO J.",23,19192
+"Environ Monit Assess",11,9457
+"Eur J Anaesthesiol",30,4512
+"Eur Rev Med Pharmacol Sci",15,4920
+"Eur. J. Med. Res.",20,1933
+"Eur. J. Pharmacol.",11,33202
+"FASEB J.",17,10874
+"FEBS Lett.",11,49369
 "Genet. Mol. Res.",13,7545
-"Infect. Immun.",18,31043
-"Int. J. Cancer",15,23383
-"Int. J. Cardiol.",12,23929
+"Infect. Immun.",18,31073
+"Int. J. Cancer",15,23421
+"Int. J. Cardiol.",12,23981
 "Int. J. Syst. Evol. Microbiol.",13,9685
-"J Pain Symptom Manage",29,4838
-"J Pers Soc Psychol",17,6106
-"J. Am. Chem. Soc.",28,56287
-"J. Bacteriol.",13,52511
-"J. Biol. Chem.",216,176990
-"J. Cell Biol.",11,21680
-"J. Cell. Physiol.",11,12596
-"J. Cell. Sci.",17,14942
-"J. Clin. Invest.",28,30112
-"J. Clin. Oncol.",11,23175
-"J. Exp. Med.",10,23153
-"J. Hazard. Mater.",17,15352
-"J. Immunol.",50,64705
-"J. Neurochem.",12,26357
-"J. Neurosci.",24,35523
-"J. Org. Chem.",11,30799
-"J. Pharmacol. Exp. Ther.",14,28776
-"J. Virol.",16,44662
-"JAMA",11,88581
-"Lancet",16,158773
-"Langmuir",11,39556
-"Leuk. Lymphoma",11,10567
-"Life Sci.",12,25928
-"Mol. Biol. Rep.",34,6248
-"Mol. Cell",12,7090
-"Mol. Cell. Biochem.",11,10240
-"Mol. Cell. Biol.",26,22445
+"J Orthop Surg Res",10,1091
+"J Pain Symptom Manage",29,4849
+"J Pers Soc Psychol",17,6111
+"J. Am. Chem. Soc.",28,56415
+"J. Bacteriol.",13,52532
+"J. Biol. Chem.",216,177090
+"J. Cell Biol.",11,21708
+"J. Cell. Physiol.",11,12664
+"J. Cell. Sci.",17,14978
+"J. Clin. Invest.",31,30142
+"J. Clin. Oncol.",11,23233
+"J. Exp. Med.",10,23170
+"J. Hazard. Mater.",17,15396
+"J. Immunol.",50,64771
+"J. Neurochem.",12,26379
+"J. Neurosci.",24,35568
+"J. Org. Chem.",11,30914
+"J. Pharmacol. Exp. Ther.",14,28792
+"J. Virol.",16,44724
+"JAMA",11,88874
+"Lancet",16,158934
+"Langmuir",11,39690
+"Leuk. Lymphoma",11,10596
+"Life Sci.",12,25949
+"Mol. Biol. Rep.",34,6256
+"Mol. Cell",12,7112
+"Mol. Cell. Biochem.",11,10262
+"Mol. Cell. Biol.",26,22449
 "Mol. Endocrinol.",12,5856
-"Mol. Neurobiol.",16,3388
-"N. Engl. J. Med.",18,76176
-"Nat. Med.",11,9181
-"Nat. Prod. Res.",10,4809
-"Nature",68,489200
-"Neuroscience",13,243586
-"Nucleic Acids Res.",10,43747
-"Obstet Gynecol",22,26795
-"Onco Targets Ther",13,2444
-"Org. Lett.",15,26502
-"Phys. Rev. Lett.",11,82303
-"Phytother Res",13,4603
-"PLoS ONE",78,189003
-"Proc. Natl. Acad. Sci. U.S.A.",92,131072
-"Science",74,1521639
-"ScientificWorldJournal",18,9294
+"Mol. Neurobiol.",16,3430
+"N. Engl. J. Med.",18,76272
+"Nat. Med.",11,9197
+"Nat. Prod. Res.",11,4860
+"Nature",68,490817
+"Neuroscience",13,245434
+"Nucleic Acids Res.",10,43813
+"Obstet Gynecol",22,26830
+"Onco Targets Ther",14,2461
+"Org. Lett.",15,26641
+"Phys. Rev. Lett.",11,82544
+"Phytother Res",13,4616
+"PLoS ONE",79,190045
+"Proc. Natl. Acad. Sci. U.S.A.",97,131297
+"Science",74,1533188
+"ScientificWorldJournal",18,9295
 "Toxicol Ind Health",11,2193
-"Tumour Biol.",39,7112
+"Tumour Biol.",39,7117
