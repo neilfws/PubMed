@@ -1,6 +1,15 @@
-# Analysis of Contributions to PubMed Commons
-Neil Saunders  
-`r Sys.time()`  
+---
+title: "Analysis of Contributions to PubMed Commons"
+author: "Neil Saunders"
+date: "2018-02-24 20:22:39"
+output: 
+  html_document: 
+    fig_caption: yes
+    highlight: pygments
+    keep_md: yes
+    theme: flatly
+    toc: yes
+---
 
 
 
@@ -93,7 +102,7 @@ Currently, the PubMed article with the most comments is [this one](https://www.n
 ### Comments per author
 
 
-Once again, the most frequent number of comments per author is one, although a respectable proportion of authors have made more than one comment. Currently, the most comments by one author is 215.
+Once again, the most frequent number of comments per author is one, although a respectable proportion of authors have made more than one comment. Currently, the most comments by one author is 245.
 
 
 ![](../../output/comments-author-plot-1.png)<!-- -->
@@ -101,7 +110,7 @@ Once again, the most frequent number of comments per author is one, although a r
 ### Up/down votes
 PubMed Commons has a form of voting for comments, allowing users to vote "yes" or "no" to the question "Was this helpful?"
 
-One way to visualise the votes is simply to plot down votes versus up votes, adding a heatmap of bin counts to deal with overplotting (multiple points with the same values). The plot shows that where comments have votes (currently 2925 / 6590), the most frequent case is one upvote ("1 of 1 people found this helpful"), followed by 2 or 3 upvotes, no down votes.
+One way to visualise the votes is simply to plot down votes versus up votes, adding a heatmap of bin counts to deal with overplotting (multiple points with the same values). The plot shows that where comments have votes (currently 3340 / 7619), the most frequent case is one upvote ("1 of 1 people found this helpful"), followed by 2 or 3 upvotes, no down votes.
 
 ![](../../output/votes-density-1.png)<!-- -->
 
