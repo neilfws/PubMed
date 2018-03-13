@@ -1,7 +1,7 @@
 ---
 title: "Analysis of Contributions to PubMed Commons"
 author: "Neil Saunders"
-date: "2018-02-25 19:49:07"
+date: "2018-03-13 22:09:52"
 output: 
   html_document: 
     fig_caption: yes
@@ -43,7 +43,7 @@ The next issue is that not every list item of class `comm_item` (see the Ruby co
 ## Analysis
 ### Totals
 
-The first chart looks at various "totals". It's not a great chart since it combines unrelated metrics (comments, authors and articles), but it is useful as a summary.
+The first summary combines several unrelated unrelated metrics (counts for comments, authors and articles).
 
 Definitions:
 
@@ -53,7 +53,20 @@ Definitions:
 * unique.authors - total unique authors who wrote at least one comment
 * moderated - total comments deleted by author or a moderator
 
-![](../../output/count-comments-1.png)<!-- -->
+
+-------------------------
+category            count
+----------------- -------
+total.records        8373
+
+final.dataset        7619
+
+moderated             236
+
+unique.articles      6011
+
+unique.authors       1912
+-------------------------
 
 ### Comments by date
 First, let's look at comments by year. The low number for 2013 reflects the launch dates: the service began as a closed pilot about halfway through the year, opening more widely in October. 2015 saw a decline in comments relative to the previous year, but comments are on the rise again in 2016.

@@ -20,6 +20,8 @@ library(stringr)
 library(dplyr)
 library(tidyr)
 library(ggplot2)
+library(pander)
+library(tibble)
 
 theme_set(theme_bw())
 ```
@@ -70,7 +72,7 @@ commons.real <- subset(commons, real == 1)
 ## Analysis
 ### Totals
 
-The first chart looks at various "totals". It's not a great chart since it combines unrelated metrics (comments, authors and articles), but it is useful as a summary.
+The first summary combines several unrelated unrelated metrics (counts for comments, authors and articles).
 
 Definitions:
 
@@ -82,13 +84,23 @@ Definitions:
 
 ```{r count-comments}
 # all comments
-commons.sum <- data.frame(`total records` = nrow(commons), `final dataset` = nrow(commons.real), moderated = nrow(commons[!is.na(commons$moderated), ]), `unique articles` = length(unique(commons.real$pmid)), `unique authors` = length(unique(commons.real$author.name)), stringsAsFactors = FALSE)
-ymax <- round(nrow(commons)+5, -1)
-commons.sum %>% 
-  gather(key, value) %>% 
-  ggplot(aes(reorder(key, value, max), value)) + geom_col(fill = "#336699", width = 0.4) + 
-    geom_text(aes(label = value), vjust = -0.2) + scale_y_continuous(breaks = seq(0, ymax, 1000), limits = c(0, ymax)) + 
-    labs(y = "total", x = "category", title = "Total PubMed Commons Comments By Sub-categories")
+commons.sum <- data.frame(`total records` = nrow(commons), 
+                          `final dataset` = nrow(commons.real), 
+                          moderated = nrow(commons[!is.na(commons$moderated), ]), 
+                          `unique articles` = length(unique(commons.real$pmid)), 
+                          `unique authors` = length(unique(commons.real$author.name)), 
+                          stringsAsFactors = FALSE)
+#ymax <- round(nrow(commons)+5, -1)
+#commons.sum %>% 
+#  gather(key, value) %>% 
+#  ggplot(aes(reorder(key, value, max), value)) + geom_col(fill = "#336699", width = 0.4) + 
+#    geom_text(aes(label = value), vjust = -0.2) + scale_y_continuous(breaks = seq(0, ymax, 1000), limits = c(0, ymax)) + 
+#    labs(y = "total", x = "category", title = "Total PubMed Commons Comments By Sub-categories")
+
+commons.sum %>%
+  gather(category, count) %>%
+  as.tibble() %>%
+  pander(justify = c("left", "right"))
 ```
 
 ### Comments by date
