@@ -3,11 +3,7 @@ title: "Analysis of Contributions to PubMed Commons"
 author: "Neil Saunders"
 date: "`r Sys.time()`"
 output: 
-  html_document: 
-    fig_caption: yes
-    highlight: pygments
-    keep_md: yes
-    theme: flatly
+  github_document: 
     toc: yes
 ---
 
@@ -52,7 +48,7 @@ Now we can read the CSV file, parse and format the `date` column as DateTime and
 The next issue is that not every list item of class `comm_item` (see the Ruby code) is a comment on the article. Some of the comments are notes, automatically-generated when the article URL is used in a comment elsewhere, or to indicate activity by a particular user. Others are moderated comments, where the comment text was deleted by the author or a moderator. So we'll label comments as "real" if they contain both an author name and comment text.
 
 ```{r get-data}
-commons <- read_csv("~/Dropbox/projects/github_projects/PubMed/commons/data/commons.csv", col_names = FALSE)
+commons <- read_csv("../../data/commons.csv", col_names = FALSE)
 colnames(commons) <- c("pmid", "pubdate", "cmid", "date", "author.name", "author.href", "votes", "permalink", "text", "moderated")
 
 # extract and format dates
