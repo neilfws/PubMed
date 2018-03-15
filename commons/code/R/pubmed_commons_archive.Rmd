@@ -1,0 +1,90 @@
+---
+title: "The PubMed Commons archive file"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      fig.path = "../../output/archive/",
+                      message = FALSE)
+library(tidyverse)
+library(lubridate)
+library(pander)
+library(tidytext)
+library(wordcloud)
+theme_set(theme_bw())
+options(scipen = 999)
+
+commons_archive <- read_csv("../../data/commons_archive.csv",
+                            col_types = cols(DateCreated = col_datetime(format = "%Y-%m-%d %H:%M:%S")))
+
+```
+
+# Introduction
+Some ways to extract information from the NCBI's archived PubMed Commons file.
+
+# Analysis
+
+## Comments by year
+```{r by-year}
+commons_archive %>%
+  mutate(Date = as_date(DateCreated),
+         Year = year(Date)) %>%
+  count(Year) %>%
+  ggplot(aes(Year, n)) +
+    geom_col(fill = "skyblue3") +
+    labs(y = "Comments",
+         title = "PubMed Commons comments by year") +
+    scale_x_continuous(breaks = 2013:2018)
+```
+
+## Comments by year, month
+```{r by-year-month}
+commons_archive %>%
+  mutate(Date = as_date(DateCreated),
+         Year = year(Date),
+         Month = month(Date)) %>%
+  count(Year, Month) %>%
+  ggplot(aes(Month, n)) +
+    geom_col(fill = "skyblue3") +
+    facet_grid(Year ~ .) +
+    labs(y = "Comments",
+         title = "PubMed Commons comments by year and month") +
+    scale_x_continuous(breaks = 1:12)
+```
+
+## Comments by article
+Top 10.
+```{r by-article}
+commons_archive %>%
+  count(PubmedId) %>%
+  top_n(10) %>%
+  arrange(desc(n)) %>%
+  pander(justify = c("left", "right"))
+```
+
+## Comments by author
+Assuming FirstName + LastName is unique.
+
+Top 10.
+```{r by-author}
+commons_archive %>%
+  mutate(Name = paste(FirstName, LastName)) %>% 
+  count(Name) %>%
+  top_n(10) %>%
+  arrange(desc(n)) %>%
+  pander(justify = c("left", "right"))
+```
+
+## Comment text words
+Top 100 words used three or more times.
+```{r comment-words}
+commons_archive %>% 
+  select(Content) %>% 
+  unnest_tokens(word, Content) %>% 
+  anti_join(stop_words) %>% 
+  filter(!word %in% c("http", "https", "nbsp", "pmid", "al", "doi", "www.ncbi.nlm.nih.gov", "pubmed", "e.g"), 
+         !grepl("^\\d+$", word)) %>% 
+  count(word) %>% 
+  with(wordcloud(word, n, max.words = 100, min.freq = 3, scale = c(3, .5), colors = brewer.pal(8, "Dark2")))
+```
