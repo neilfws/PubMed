@@ -34,7 +34,7 @@ end
 First, read the tab-delimited output from the PubMed query into R.
 
 ```{r read-tsv, tidy=TRUE}
-novel <- read.table("~/Dropbox/projects/pubmed/novelty/data/pmnovel.tsv", sep = "\t", stringsAsFactors = FALSE, header = FALSE)
+novel <- read.table("../../data/pmnovel.tsv", sep = "\t", stringsAsFactors = FALSE, header = FALSE)
 colnames(novel) <- c("year", "total", "novel")
 ```
 
