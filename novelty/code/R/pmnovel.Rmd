@@ -10,6 +10,14 @@ output:
     toc: yes
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+library(tidyverse)
+
+theme_set(theme_bw())
+```
+
+
 ## Introduction
 This document analyses usage of the word "novel" in journal article titles or abstracts, from the year of its first occurrence (1845) to the present day.
 
@@ -49,8 +57,14 @@ Note that dividing _idx_ by 1000 gives the percentage of "novel" articles for th
 Now we can plot by year.
 
 ```{r plot1, tidy=TRUE}
-library(ggplot2)
-ggplot(novel) + geom_point(aes(year, idx), color = "skyblue3") + theme_bw() + scale_x_continuous(breaks = seq(1845, 2015, 10)) + scale_y_continuous(breaks = seq(0, 8000, 1000)) + labs(y = "\"novel\" articles / 100 000 articles", x = "year published [DP]", title = "PubMed articles containing \"novel\" in title or abstract 1845 - 2014")
+novel %>%
+  ggplot() + 
+    geom_point(aes(year, idx), color = "skyblue3") + 
+    scale_x_continuous(breaks = seq(1845, 2015, 10)) + 
+    scale_y_continuous(breaks = seq(0, 8000, 1000)) + 
+    labs(y = "\"novel\" articles / 100 000 articles",
+         x = "year published [DP]",
+         title = "PubMed articles containing \"novel\" in title or abstract 1845 - 2014")
 ```
 
 Looks like novelty really took off around 1975. How much research was "novel" in 2014?
@@ -68,7 +82,14 @@ How does that compare with "all time novelty"? This is simply the sum of novel d
 Finally, using a log scale for the y-axis (number of articles) gives an indication of how the rate of usage of the word "novel" is changing.
 
 ```{r plot2, tidy=TRUE}
-ggplot(novel) + geom_point(aes(year, idx), color = "skyblue3") + theme_bw() + scale_x_continuous(breaks = seq(1845, 2015, 10))  + labs(y = "\"novel\" articles / 100 000 articles (log10 scale)", x = "year published [DP]", title = "PubMed articles containing \"novel\" in title or abstract 1845 - 2014") + scale_y_log10()
+novel %>%
+  ggplot() + 
+    geom_point(aes(year, idx), color = "skyblue3") + 
+    scale_x_continuous(breaks = seq(1845, 2015, 10)) + 
+    labs(y = "\"novel\" articles / 100 000 articles (log10 scale)", 
+         x = "year published [DP]",
+         title = "PubMed articles containing \"novel\" in title or abstract 1845 - 2014") +
+    scale_y_log10()
 ```
 
 There may be hope; usage seems to have slowed from about 1995 onwards.
