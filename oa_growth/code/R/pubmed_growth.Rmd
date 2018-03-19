@@ -9,13 +9,13 @@ output:
     toc: yes
 ---
 
-# 1. Introduction
+# Introduction
 
 This document is in response to [Contrary to what you read in Nature, Open Access has not caused the growth in science publishing](http://www.michaeleisen.org/blog/?p=1654).
 
 **Note:** I made an error in this analysis by assuming that the PubMed "freetext" filter was a good approximation for open-access. This is not the case; I should have used the OA subset of PubMed Central and did so in a second report, also available here.
 
-# 2. Data
+# Data
 
 We search PubMed between the years 2000-2013 as follows:
 
@@ -57,9 +57,9 @@ d$free.cs <- cumsum(d$free)
 d
 ```
 
-# 3. Analysis
+# Analysis
 
-## 3.1 Free full text articles as proportion of all articles
+## Free full text articles as proportion of all articles
 
 The "freetext" articles rose steadily from around 21% of all articles (2000) to 33% (2013).
 
@@ -67,7 +67,7 @@ The "freetext" articles rose steadily from around 21% of all articles (2000) to 
 ggplot(d) + geom_bar(aes(year, all), stat = "identity", fill = "blue") + geom_bar(aes(year, free), stat = "identity", fill = "orange") + theme_bw() + ylab("number of articles") + xlab("year") + scale_x_continuous(breaks = seq(2000, 2013, by = 2)) + labs(title = "Number of PubMed articles per year 2000-2013\nblue = all; orange = freetext")
 ```
 
-## 3.2 Cumulative increase in free full text articles as proportion of cumulative increase in all articles
+## Cumulative increase in free full text articles as proportion of cumulative increase in all articles
 
 529 860 PubMed articles were published in 2000. The cumulative sum of all articles published between then and 2013 is 10 934 738.
 
@@ -77,7 +77,7 @@ It is clear from this chart that the yearly increase of freetext articles is muc
 ggplot(d) + geom_bar(aes(year, all.cs), stat = "identity", fill = "blue") + geom_bar(aes(year, free.cs), stat = "identity", fill = "orange") + theme_bw() + ylab("cumulative sum of articles") + xlab("year") + scale_x_continuous(breaks = seq(2000, 2013, by = 2)) + labs(title = "Cumulative sum of PubMed articles 2000-2013\nblue = all; orange = freetext")
 ```
 
-## 3.3 Cumulative increase in articles relative to start year
+## Cumulative increase in articles relative to start year
 
 The rate of accumulation of free full text articles compared with the base year of 2000 is somewhat higher than that for all articles.
 
@@ -87,7 +87,7 @@ d2.m <- melt(d2, id.vars = "year")
 ggplot(d2.m) + geom_point(aes(year, value, color = variable)) + theme_bw() + scale_color_manual(values = c("blue", "orange")) + scale_x_continuous(breaks = seq(2000, 2013, by = 2)) + ylab("cumulative sum of articles relative to 2000") + labs(title = "Cumulative sum of PubMed articles 2000-2013 relative to 2000\nblue = all; orange = freetext")
 ```
 
-## 3.4 Change in number of articles as a proportion of previous year
+## Change in number of articles as a proportion of previous year
 
 The year-on-year change in number of articles is not very informative, as there is a lot of unexplained fluctuation.
 
@@ -102,7 +102,7 @@ d3.m <- melt(d3, id.vars = "year")
 ggplot(d3.m) + geom_line(aes(year, value, color = variable)) + theme_bw() + scale_color_manual(values = c("blue", "orange")) + scale_x_continuous(breaks = seq(2000, 2013, by = 2)) + ylab("relative change in number of articles") + labs(title = "Change in number of PubMed articles relative to previous year\nblue = all; orange = freetext")
 ```
 
-# 4. Conclusions
+# Conclusions
 
 From 2000-2013:
 

@@ -3,24 +3,24 @@ Growth in free and closed scientific publications 2000-2013
 Neil Saunders
 28/11/2014
 
--   [1. Introduction](#introduction)
--   [2. Data](#data)
--   [3. Analysis](#analysis)
-    -   [3.1 Free full text articles as proportion of all articles](#free-full-text-articles-as-proportion-of-all-articles)
-    -   [3.2 Cumulative increase in free full text articles as proportion of cumulative increase in all articles](#cumulative-increase-in-free-full-text-articles-as-proportion-of-cumulative-increase-in-all-articles)
-    -   [3.3 Cumulative increase in articles relative to start year](#cumulative-increase-in-articles-relative-to-start-year)
-    -   [3.4 Change in number of articles as a proportion of previous year](#change-in-number-of-articles-as-a-proportion-of-previous-year)
--   [4. Conclusions](#conclusions)
+-   [Introduction](#introduction)
+-   [Data](#data)
+-   [Analysis](#analysis)
+    -   [Free full text articles as proportion of all articles](#free-full-text-articles-as-proportion-of-all-articles)
+    -   [Cumulative increase in free full text articles as proportion of cumulative increase in all articles](#cumulative-increase-in-free-full-text-articles-as-proportion-of-cumulative-increase-in-all-articles)
+    -   [Cumulative increase in articles relative to start year](#cumulative-increase-in-articles-relative-to-start-year)
+    -   [Change in number of articles as a proportion of previous year](#change-in-number-of-articles-as-a-proportion-of-previous-year)
+-   [Conclusions](#conclusions)
 
-1. Introduction
-===============
+Introduction
+============
 
 This document is in response to [Contrary to what you read in Nature, Open Access has not caused the growth in science publishing](http://www.michaeleisen.org/blog/?p=1654).
 
 **Note:** I made an error in this analysis by assuming that the PubMed "freetext" filter was a good approximation for open-access. This is not the case; I should have used the OA subset of PubMed Central and did so in a second report, also available here.
 
-2. Data
-=======
+Data
+====
 
 We search PubMed between the years 2000-2013 as follows:
 
@@ -83,11 +83,11 @@ d
     ## 13 2012 1085936 396841 0.3654368  9861096 2691865
     ## 14 2013 1146110 441956 0.3856139 11007206 3133821
 
-3. Analysis
-===========
+Analysis
+========
 
-3.1 Free full text articles as proportion of all articles
----------------------------------------------------------
+Free full text articles as proportion of all articles
+-----------------------------------------------------
 
 The "freetext" articles rose steadily from around 21% of all articles (2000) to 33% (2013).
 
@@ -99,8 +99,8 @@ ggplot(d) + geom_bar(aes(year, all), stat = "identity", fill = "blue") + geom_ba
 
 ![](pubmed_growth_files/figure-markdown_github/unnamed-chunk-5-1.png)
 
-3.2 Cumulative increase in free full text articles as proportion of cumulative increase in all articles
--------------------------------------------------------------------------------------------------------
+Cumulative increase in free full text articles as proportion of cumulative increase in all articles
+---------------------------------------------------------------------------------------------------
 
 529 860 PubMed articles were published in 2000. The cumulative sum of all articles published between then and 2013 is 10 934 738.
 
@@ -115,8 +115,8 @@ ggplot(d) + geom_bar(aes(year, all.cs), stat = "identity", fill = "blue") +
 
 ![](pubmed_growth_files/figure-markdown_github/unnamed-chunk-6-1.png)
 
-3.3 Cumulative increase in articles relative to start year
-----------------------------------------------------------
+Cumulative increase in articles relative to start year
+------------------------------------------------------
 
 The rate of accumulation of free full text articles compared with the base year of 2000 is somewhat higher than that for all articles.
 
@@ -130,8 +130,8 @@ ggplot(d2.m) + geom_point(aes(year, value, color = variable)) + theme_bw() +
 
 ![](pubmed_growth_files/figure-markdown_github/unnamed-chunk-7-1.png)
 
-3.4 Change in number of articles as a proportion of previous year
------------------------------------------------------------------
+Change in number of articles as a proportion of previous year
+-------------------------------------------------------------
 
 The year-on-year change in number of articles is not very informative, as there is a lot of unexplained fluctuation.
 
@@ -150,8 +150,8 @@ ggplot(d3.m) + geom_line(aes(year, value, color = variable)) + theme_bw() +
 
 ![](pubmed_growth_files/figure-markdown_github/unnamed-chunk-8-1.png)
 
-4. Conclusions
-==============
+Conclusions
+===========
 
 From 2000-2013:
 
