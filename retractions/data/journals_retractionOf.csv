@@ -1,84 +1,89 @@
 "journal","count","total"
-"ACS Appl Mater Interfaces",12,20991
-"Acta Anaesthesiol Scand",13,8191
-"Anaesthesia",13,89996
-"Anesth. Analg.",56,24457
-"Anesthesiology",13,159781
-"Ann. Thorac. Surg.",16,34189
-"Arterioscler. Thromb. Vasc. Biol.",12,8726
-"Biochem. Biophys. Res. Commun.",49,83933
-"Biochem. J.",11,55283
-"Biochemistry",15,555521
-"Biochim. Biophys. Acta",13,100991
-"Biomed Res Int",18,13281
-"Blood",31,3546119
-"Brain Res.",11,59112
-"Can J Anaesth",40,7731
-"Cancer Res.",24,53824
-"Cancer Sci.",12,4013
-"Cell",35,4197129
-"Circ. Res.",13,16955
-"Circulation",11,332858
-"Clin. Cancer Res.",18,16841
-"Diabetes",24,592910
+"ACS Appl Mater Interfaces",12,21150
+"Acta Anaesthesiol Scand",13,8195
+"Anaesthesia",14,90198
+"Anesth. Analg.",56,24413
+"Anesthesiology",13,160221
+"Ann. Thorac. Surg.",16,34228
+"Arterioscler. Thromb. Vasc. Biol.",12,8733
+"Biochem. Biophys. Res. Commun.",49,84033
+"Biochem. J.",11,55296
+"Biochemistry",15,556793
+"Biochim. Biophys. Acta",14,101063
+"Biomed Res Int",18,13320
+"Blood",31,3550032
+"Brain Res.",11,59128
+"Can J Anaesth",40,7735
+"Cancer Lett.",11,13247
+"Cancer Res.",24,53848
+"Cancer Sci.",12,4030
+"Cell",36,4203507
+"Circ. Res.",13,16970
+"Circulation",11,333209
+"Clin. Cancer Res.",18,16859
+"Diabetes",24,594267
 "Diagn Pathol",35,1587
-"EMBO J.",23,19240
-"Environ Monit Assess",11,9625
-"Eur J Anaesthesiol",30,4554
-"Eur Rev Med Pharmacol Sci",15,5092
-"Eur. J. Med. Res.",20,1943
-"Eur. J. Pharmacol.",11,33326
-"Evid Based Complement Alternat Med",10,6373
-"FASEB J.",20,11070
-"FEBS Lett.",12,49425
+"EMBO J.",23,19249
+"Environ Monit Assess",11,9643
+"Eur J Anaesthesiol",30,4568
+"Eur Rev Med Pharmacol Sci",18,5141
+"Eur. J. Med. Res.",20,1944
+"Eur. J. Pharmacol.",11,33341
+"Evid Based Complement Alternat Med",10,6390
+"FASEB J.",20,11077
+"FEBS Lett.",12,49434
 "Genet. Mol. Res.",13,7545
-"Infect. Immun.",18,31140
-"Int. J. Cancer",15,23555
-"Int. J. Cardiol.",12,24362
-"Int. J. Syst. Evol. Microbiol.",13,9876
-"J Orthop Surg Res",10,1145
+"Infect. Immun.",18,31152
+"Int. J. Cancer",17,23579
+"Int. J. Cardiol.",12,24459
+"Int. J. Syst. Evol. Microbiol.",13,9874
+"J Orthop Surg Res",10,1161
 "J Pers Soc Psychol",17,6137
-"J. Am. Chem. Soc.",30,56855
-"J. Bacteriol.",13,52607
-"J. Biol. Chem.",223,177435
-"J. Cell Biol.",11,21768
-"J. Cell. Physiol.",11,12714
-"J. Cell. Sci.",17,15062
-"J. Clin. Invest.",31,30248
-"J. Clin. Oncol.",11,23351
-"J. Exp. Med.",10,23218
-"J. Hazard. Mater.",17,15522
-"J. Immunol.",50,64915
-"J. Neurochem.",12,26408
-"J. Neurosci.",24,35720
-"J. Org. Chem.",11,31206
-"J. Pharmacol. Exp. Ther.",14,28849
-"J. Virol.",17,44878
-"JAMA",11,90003
-"Lancet",16,160061
-"Langmuir",11,40210
-"Leuk. Lymphoma",11,10676
-"Life Sci.",12,26057
-"Mol. Biol. Rep.",34,6278
-"Mol. Cell",12,7188
-"Mol. Cell. Biochem.",11,10319
-"Mol. Cell. Biol.",28,22492
+"J. Am. Chem. Soc.",30,56912
+"J. Bacteriol.",13,52623
+"J. Biol. Chem.",223,177489
+"J. Cell Biol.",11,21780
+"J. Cell. Biochem.",12,9598
+"J. Cell. Physiol.",11,12741
+"J. Cell. Sci.",17,15082
+"J. Clin. Invest.",31,30270
+"J. Clin. Oncol.",11,23362
+"J. Exp. Med.",10,23224
+"J. Hazard. Mater.",17,15545
+"J. Immunol.",50,64945
+"J. Neurochem.",16,26412
+"J. Neurosci.",24,35744
+"J. Org. Chem.",11,31257
+"J. Pharmacol. Exp. Ther.",14,28861
+"J. Virol.",17,44897
+"JAMA",11,90083
+"Lancet",16,160229
+"Langmuir",11,40288
+"Leuk. Lymphoma",11,10677
+"Life Sci.",13,26077
+"Mol. Biol. Rep.",34,6286
+"Mol. Cell",12,7210
+"Mol. Cell. Biochem.",11,10325
+"Mol. Cell. Biol.",28,22497
 "Mol. Endocrinol.",12,5856
-"Mol. Neurobiol.",16,3575
-"N. Engl. J. Med.",18,76577
-"Nat. Med.",11,9239
-"Nat. Prod. Res.",11,5030
-"Nature",69,496865
-"Neuroscience",13,251625
-"Nucleic Acids Res.",10,44002
-"Obstet Gynecol",22,26914
-"Onco Targets Ther",14,2610
-"Org. Lett.",15,26982
+"Mol. Neurobiol.",16,3596
+"N. Engl. J. Med.",18,76609
+"Nat. Med.",11,9263
+"Nat. Prod. Res.",11,5047
+"Nature",69,497785
+"Neuroscience",13,252580
+"Nucleic Acids Res.",10,44022
+"Obstet Gynecol",22,26939
+"Onco Targets Ther",13,2620
+"Org. Lett.",15,27042
+"Paediatr Anaesth",10,5024
 "Phys. Rev. Lett.",11,83082
-"Phytother Res",13,4668
-"PLoS ONE",88,193630
-"Proc. Natl. Acad. Sci. U.S.A.",99,132138
-"Science",74,1573314
-"ScientificWorldJournal",18,9304
-"Toxicol Ind Health",11,2218
-"Tumour Biol.",39,7128
+"Phytother Res",13,4673
+"PLoS ONE",89,194201
+"Proc. Natl. Acad. Sci. U.S.A.",99,132208
+"Sci Rep",11,70781
+"Science",74,1579667
+"ScientificWorldJournal",18,9307
+"Toxicol Ind Health",11,2219
+"Toxicology",10,170946
+"Tumour Biol.",39,7131
