@@ -21,7 +21,7 @@ echo "Creating report..."
 IN=$DIR/pmretract.Rmd
 OUT="$DIR/../../docs/"
 Rscript -e "library(rmarkdown); render('$IN', 'html_document')"
-mv $DIR/pmretract.html $OUT/index.html
+mv $DIR/pmretract.html $OUT
 echo "Finished."
 
 # git
