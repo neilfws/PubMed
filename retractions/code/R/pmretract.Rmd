@@ -8,259 +8,296 @@ output:
     keep_md: yes
     theme: cerulean
     toc: yes
+    toc_float: yes
 ---
 
-```{r echo=FALSE, ref.label="setup", message=FALSE}
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      message = FALSE)
+
+library(tidyverse)
+library(highcharter)
+library(xml2)
+
+doc.retd    <- read_xml("../../data/retracted.xml")
+doc.retOf   <- read_xml("../../data/retractionOf.xml")
+years.total <- read_csv("../../data/years.csv")
+jour.retd   <- read_csv("../../data/journals_retracted.csv")
+jour.retOf  <- read_csv("../../data/journals_retractionOf.csv")
 ```
 
-## Introduction
+# Introduction
 This is the latest report on retracted publications in the [PubMed database](http://www.pubmed.gov). It was generated on `r 
-strftime(Sys.Date(), "%B %d %Y")`. This report replaces the application PMRetract, formerly hosted at [Heroku](https://www.heroku.com).
+strftime(Sys.Date(), "%B %d %Y")`.
 
 Each section contains two charts. The first (blue) contains data about _retracted publications_. The second (orange) contains data about _retraction notices_. The PubMed search terms for these are, respectively:
 
 * "retracted publication"[PTYP]
 * "retraction of publication"[PTYP]
 
-## 1. Timeline of retractions
+# Timeline of retractions
 This chart shows the number of retracted publications per year. PubMed uses a variety of different dates; the year used here is the date that the record was created (CRDT).
 
 Clicking on a year will open a new window at PubMed showing the retracted articles for that year.
 
-```{r echo=FALSE, ref.label="timeline", message=FALSE}
+## Retracted Publications
+```{r chart1-1}
+# create data frame
+dat <- doc.retd %>% 
+  xml_find_all("//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year") %>% 
+  xml_text() %>% 
+  as.tibble() %>% 
+  mutate(year = as.numeric(value)) %>% 
+  count(year) %>% 
+  right_join(tibble(year = min(.$year):max(.$year)))
+
+# plot chart
+highchart() %>% 
+  hc_add_series(dat, "column", hcaes(x = year, y = n)) %>%
+  hc_legend(enabled = FALSE) %>%
+  hc_title(text = "Retracted publications by year of Entrez record creation") %>%
+  hc_xAxis(title = list(text = "year"),
+           labels = list(rotation = 90,
+                         formatter = JS("function() { return '<a href=\"http://www.pubmed.gov/?term=%22retracted%20publication%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; }"),
+                         useHTML = TRUE),
+           tickInterval = 1,
+           type = "linear") %>%
+  hc_yAxis(title = list(text = "retracted publications")) %>%
+  hc_tooltip(pointFormat = '{point.y} records')
 ```
 
-### 1.1 Retracted Publications
-```{r chart1-1, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
-hc1.1 <- plotTimeline(doc.retd, "retracted publication")
-hc1.1$show('inline', cdn = FALSE, include_assets = TRUE)
+## Retraction Notices
+```{r chart1-2}
+# create data frame
+dat <- doc.retOf %>% 
+  xml_find_all("//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year") %>% 
+  xml_text() %>% 
+  as.tibble() %>% 
+  mutate(year = as.numeric(value)) %>% 
+  count(year) %>% 
+  right_join(tibble(year = min(.$year):max(.$year)))
+
+# plot chart
+highchart() %>% 
+  hc_add_series(dat, "column", hcaes(x = year, y = n)) %>%
+  hc_legend(enabled = FALSE) %>%
+  hc_title(text = "Retraction notices by year of Entrez record creation") %>%
+  hc_xAxis(title = list(text = "year"),
+           labels = list(rotation = 90,
+                         formatter = JS("function() { return '<a href=\"http://www.pubmed.gov/?term=%22retraction%20of%20publication%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; }"),
+                         useHTML = TRUE),
+           tickInterval = 1,
+           type = "linear") %>%
+  hc_yAxis(title = list(text = "retraction notices")) %>%
+  hc_tooltip(pointFormat = '{point.y} records') %>%
+  hc_plotOptions(series = list(color = "#FFA500"))
 ```
 
-### 1.2 Retraction Notices
-```{r chart1-2, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
-hc1.2 <- plotTimeline(doc.retOf, "retraction of publication")
-hc1.2$title(text = "Retraction notices by year of Entrez record creation")
-hc1.2$yAxis(title = list(text = "retraction notices"))
-hc1.2$plotOptions(series = list(color = "#FFA500"))
-hc1.2$show('inline', cdn = FALSE, include_assets = TRUE)
-```
-
-## 2. Cumulative timeline of retractions
+# Cumulative timeline of retractions
 This chart shows the cumulative sum of retracted publications per year. The year used here is the date that the record was created (CRDT).
 
 Clicking on a year will open a new window at PubMed showing the retracted articles from 1959 up to and including that year.
 
-```{r echo=FALSE, ref.label="cumulative", message=FALSE}
+## Retracted Publications
+```{r chart2-1}
+# create data frame
+dat <- doc.retd %>% 
+  xml_find_all("//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year") %>% 
+  xml_text() %>% 
+  as.tibble() %>% 
+  mutate(year = as.numeric(value)) %>% 
+  count(year) %>% 
+  right_join(tibble(year = min(.$year):max(.$year))) %>%
+  replace_na(list(n = 0)) %>%
+    mutate(cs = cumsum(n))
+
+# plot chart
+highchart() %>% 
+  hc_add_series(dat, "column", hcaes(x = year, y = cs)) %>%
+  hc_legend(enabled = FALSE) %>%
+  hc_title(text = "Cumulative sum of retracted publications by year of Entrez record creation") %>%
+  hc_xAxis(title = list(text = "year"),
+           labels = list(rotation = 90,
+                         formatter = JS("function() { return '<a href=\"http://www.pubmed.gov/?term=%22retracted%20publication%22[PTYP] AND 1959:' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; }"),
+                         useHTML = TRUE),
+           tickInterval = 1,
+           type = "linear") %>%
+  hc_yAxis(title = list(text = "sum of retracted publications")) %>%
+  hc_tooltip(pointFormat = '{point.y} records since 1959')
 ```
 
-### 2.1 Retracted Publications
-```{r chart2-1, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
-hc2.1 <- plotCumSumTimeline(doc.retd, "retracted publication")
-hc2.1$show('inline', cdn = FALSE, include_assets = TRUE)
+## Retraction Notices
+```{r chart2-2}
+# create data frame
+dat <- doc.retOf %>% 
+  xml_find_all("//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year") %>% 
+  xml_text() %>% 
+  as.tibble() %>% 
+  mutate(year = as.numeric(value)) %>% 
+  count(year) %>% 
+  right_join(tibble(year = min(.$year):max(.$year))) %>%
+  replace_na(list(n = 0)) %>%
+    mutate(cs = cumsum(n))
+
+# plot chart
+highchart() %>% 
+  hc_add_series(dat, "column", hcaes(x = year, y = cs)) %>%
+  hc_legend(enabled = FALSE) %>%
+  hc_title(text = "Cumulative sum of retraction notices by year of Entrez record creation") %>%
+  hc_xAxis(title = list(text = "year"),
+           labels = list(rotation = 90,
+                         formatter = JS("function() { return '<a href=\"http://www.pubmed.gov/?term=%22retraction%20of%20publication%22[PTYP] AND 1959:' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; }"),
+                         useHTML = TRUE),
+           tickInterval = 1,
+           type = "linear") %>%
+  hc_yAxis(title = list(text = "sum of retraction notices")) %>%
+  hc_tooltip(pointFormat = '{point.y} records since 1959') %>%
+  hc_plotOptions(series = list(color = "#FFA500"))
 ```
 
-### 2.2 Retraction Notices
-```{r chart2-2, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
-hc2.2 <- plotCumSumTimeline(doc.retOf, "retraction of publication")
-hc2.2$title(text = "Cumulative sum of retraction notices by year of Entrez record creation")
-hc2.2$yAxis(title = list(text = "sum of retraction notices"))
-hc2.2$plotOptions(series = list(color = "#FFA500"))
-hc2.2$show('inline', cdn = FALSE, include_assets = TRUE)
-```
-
-## 3. Retraction rate by year
+# Retraction rate by year
 This chart shows the rate of retracted publications per year, as retractions per 100 000 publications. The year used here is the date that the record was created (CRDT).
 
 Clicking on a year will open a new window at PubMed showing the retracted articles for that year.
 
-```{r echo=FALSE, ref.label="byyear", message=FALSE}
+## Retracted Publications
+```{r chart3-1}
+# create data frame
+dat <- doc.retd %>% 
+  xml_find_all("//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year") %>% 
+  xml_text() %>% 
+  as.tibble() %>% 
+  mutate(year = as.numeric(value)) %>% 
+  count(year) %>% 
+  right_join(tibble(year = min(.$year):max(.$year))) %>% 
+  right_join(years.total) %>% 
+  mutate(rate = round((100000/total) * n, 3))
+
+# plot chart
+highchart() %>% 
+  hc_add_series(dat, "column", hcaes(x = year, y = rate)) %>%
+  hc_legend(enabled = FALSE) %>%
+  hc_title(text = "Retracted publications per 100 000 publications by year of Entrez record creation") %>%
+  hc_xAxis(labels = list(rotation = 90,
+                         formatter = JS("function() { return '<a href=\"http://www.pubmed.gov/?term=%22retracted%20publication%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; }"),
+                         useHTML = "true"),
+           title = list(text = "year"),
+           tickInterval = 1) %>%
+  hc_yAxis(title = list(text = "retracted publications/100 000 publications")) %>%
+  hc_tooltip(pointFormat = "{point.y} retracted records per 100 000 publication records")
 ```
 
-### 3.1 Retracted Publications
-```{r chart3-1, message=FALSE, echo=FALSE, results='asis', warning=TRUE}
-hc3.1 <- plotByYear(doc.retd, years.total, "retracted publication")
-hc3.1$show('inline', cdn = FALSE, include_assets = TRUE)
+## Retraction Notices
+```{r chart3-2}
+# create data frame
+dat <- doc.retOf %>% 
+  xml_find_all("//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year") %>% 
+  xml_text() %>% 
+  as.tibble() %>% 
+  mutate(year = as.numeric(value)) %>% 
+  count(year) %>% 
+  right_join(tibble(year = min(.$year):max(.$year))) %>% 
+  right_join(years.total) %>% 
+  mutate(rate = round((100000/total) * n, 3))
+
+# plot chart
+highchart() %>% 
+  hc_add_series(dat, "column", hcaes(x = year, y = rate)) %>%
+  hc_legend(enabled = FALSE) %>%
+  hc_title(text = "Retraction notices per 100 000 publications by year of Entrez record creation") %>%
+  hc_xAxis(labels = list(rotation = 90,
+                         formatter = JS("function() { return '<a href=\"http://www.pubmed.gov/?term=%22retraction%20of%20publication%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; }"),
+                         useHTML = "true"), 
+           title = list(text = "year"),
+           tickInterval = 1) %>%
+  hc_yAxis(title = list(text = "retraction notices/100 000 publications")) %>%
+  hc_tooltip(pointFormat = "{point.y} retraction notices per 100 000 publication records") %>%
+  hc_plotOptions(series = list(color = "#FFA500"))
 ```
 
-### 3.2 Retraction Notices
-```{r chart3-2, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
-hc3.2 <- plotByYear(doc.retOf, years.total, "retraction of publication")
-hc3.2$title(text = "Retraction notices per 100 000 publications by year of Entrez record creation")
-hc3.2$yAxis(title = list(text = "retraction notices per 100 000 publications"))
-hc3.2$tooltip(pointFormat = "{point.y} retraction notices per 100 000 publication records")
-hc3.2$plotOptions(series = list(color = "#FFA500"))
-hc3.2$show('inline', cdn = FALSE, include_assets = TRUE)
-```
-
-## 4. Retractions by journal (absolute numbers)
+# Retractions by journal (absolute numbers)
 This chart shows the top 20 journals by number of retracted articles. See section 5 for journals ranked by retractions relative to total articles.
 
 Clicking on a journal name will open a new window at PubMed showing the retracted articles from that journal.
 
-```{r echo=FALSE, ref.label="byjournal", message=FALSE}
+## Retracted Publications
+```{r chart4-1}
+# create data frame
+dat <- jour.retd %>%
+  top_n(20) %>% 
+  arrange(desc(count))
+
+# plot chart
+highchart() %>% 
+  hc_add_series(dat, "bar", hcaes(x = journal, y = count)) %>%
+  hc_legend(enabled = FALSE) %>%
+  hc_yAxis(title = list(text = "retractions")) %>%
+  hc_xAxis(categories = dat$journal,
+           labels = list(formatter = JS("function() { return '<a href=\"http://www.pubmed.gov/?term=%22retracted%20publication%22[PTYP] AND %22' + escape(this.value) + '%22[JOUR]\" target=\"_blank\">' + this.value + '</a>'; }"),
+                         useHTML = "true")) %>%
+  hc_tooltip(pointFormat = "{point.y} records")
 ```
 
-### 4.1 Retracted Publications
-```{r chart4-1, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
-hc4.1 <- plotByJournal(doc.retd, "retracted publication")
-hc4.1$show('inline', cdn = FALSE, include_assets = TRUE)
+## Retraction Notices
+```{r chart4-2}
+# create data frame
+dat <- jour.retOf %>%
+  top_n(20) %>% 
+  arrange(desc(count))
+
+# plot chart
+highchart() %>% 
+  hc_add_series(dat, "bar", hcaes(x = journal, y = count)) %>%
+  hc_legend(enabled = FALSE) %>%
+  hc_yAxis(title = list(text = "retraction notices")) %>%
+  hc_xAxis(categories = dat$journal,
+           labels = list(formatter = JS("function() { return '<a href=\"http://www.pubmed.gov/?term=%22retraction%20of%20publication%22[PTYP] AND %22' + escape(this.value) + '%22[JOUR]\" target=\"_blank\">' + this.value + '</a>'; }"),
+                         useHTML = "true")) %>%
+  hc_tooltip(pointFormat = "{point.y} records") %>%
+  hc_plotOptions(series = list(color = "#FFA500"))
 ```
 
-### 4.2 Retraction Notices
-```{r chart4-2, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
-hc4.2 <- plotByJournal(doc.retOf, "retraction of publication")
-hc4.2$yAxis(title = list(text = "retraction notices"))
-hc4.2$plotOptions(series = list(color = "#FFA500"))
-hc4.2$show('inline', cdn = FALSE, include_assets = TRUE)
-```
-
-## 5. Retractions by journal (normalised)
+# Retractions by journal (normalised)
 This chart ranks the top 20 retractions by journal. For each journal, retractions (or retraction notices) per 100 000 publications from that journal are shown.
 
 Clicking on a journal name will open a new window at PubMed showing the retracted articles from that journal.
 
-```{r echo=FALSE, ref.label="byjournalnorm", message=FALSE}
+## Retracted Publications
+```{r chart5-1}
+# create data frame
+dat <- jour.retd %>%
+  mutate(rate = round((100000/total) * count, 3)) %>%
+  top_n(20) %>% 
+  arrange(desc(rate))
+
+# plot chart
+highchart() %>% 
+  hc_add_series(dat, "bar", hcaes(x = journal, y = rate)) %>%
+  hc_legend(enabled = FALSE) %>%
+  hc_yAxis(title = list(text = "retractions")) %>%
+  hc_xAxis(categories = dat$journal,
+           labels = list(formatter = JS("function() { return '<a href=\"http://www.pubmed.gov/?term=%22retracted%20publication%22[PTYP] AND %22' + escape(this.value) + '%22[JOUR]\" target=\"_blank\">' + this.value + '</a>'; }"), 
+                         useHTML = "true")) %>%
+  hc_tooltip(pointFormat = "{point.y} retractions / 100 000 publications")
 ```
 
-### 5.1 Retracted Publications
-```{r chart5-1, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
-hc5.1 <- plotByJournal(jour.retd, "retracted publication")
-hc5.1$show('inline', cdn = FALSE, include_assets = TRUE)
-```
+## Retraction Notices
+```{r chart5-2}
+# create data frame
+dat <- jour.retOf %>%
+  mutate(rate = round((100000/total) * count, 3)) %>%
+  top_n(20) %>% 
+  arrange(desc(rate))
 
-### 5.2 Retraction Notices
-```{r chart5-2, message=FALSE, echo=FALSE, results='asis', warning=FALSE}
-hc5.2 <- plotByJournal(jour.retOf, "retraction of  publication")
-hc5.2$yAxis(title = list(text = "retraction notices / 100 000 publications"))
-hc5.2$tooltip(pointFormat = "{point.y} retraction notices / 100 000 publications")
-hc5.2$plotOptions(series = list(color = "#FFA500"))
-hc5.2$show('inline', cdn = FALSE, include_assets = TRUE)
-```
-
-
-## 6. Functions
-
-### 6.1 Setup
-This code loads required libraries and pre-saved data.
-
-```{r setup, tidy=TRUE, warning=FALSE, eval=FALSE}
-library(rCharts)
-library(rentrez)
-library(XML)
-
-setwd("../../data")
-doc.retd    <- xmlTreeParse("retracted.xml", useInternalNodes = TRUE)
-doc.retOf   <- xmlTreeParse("retractionOf.xml", useInternalNodes = TRUE)
-years.total <- read.csv("years.csv")
-jour.retd   <- read.csv("journals_retracted.csv")
-jour.retOf  <- read.csv("journals_retractionOf.csv")
-```
-
-### 6.2 Timeline
-This code generates the timeline chart.
-
-```{r timeline, tidy=TRUE, warning=FALSE, eval=FALSE}
-plotTimeline <- function(d, term) {
-  dates <- xpathSApply(d, "//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year", xmlValue)
-  df1 <- as.data.frame(table(dates), stringsAsFactors = FALSE)
-  hc <- Highcharts$new()
-  da <- list()
-  for(i in 1:nrow(df1)) {
-    da[i][1] <- as.numeric(df1$date[i])
-    da[[i]][2] <- as.numeric(df1$Freq[i])
-  }
-  hc$title(text = "Retracted publications by year of Entrez record creation")
-  hc$series(data = da, type = "column")
-  hc$xAxis(type = "linear", labels = list(rotation = 90, formatter = paste("#! function() { return '<a href=\"http://www.pubmed.gov/?term=%22", term, "%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"), title = list(text = "year"), tickInterval = 1)
-  hc$yAxis(title = list(text = "retracted publications"))
-  hc$legend(enabled = FALSE)
-  hc$tooltip(pointFormat = "{point.y} records")
-  return(hc)
-}
-```
-
-### 6.3 Cumulative timeline
-This code generates the cumulative timeline chart.
-
-```{r cumulative, tidy=TRUE, warning=FALSE, eval=FALSE}
-plotCumSumTimeline <- function(d, term) {
-  dates <- xpathSApply(d, "//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year", xmlValue)
-  df1 <- as.data.frame(table(dates), stringsAsFactors = FALSE)
-  hc <- Highcharts$new()
-  da <- list()
-  cs <- cumsum(df1$Freq)
-  for(i in 1:nrow(df1)) {
-    da[i][1] <- as.numeric(df1$date[i])
-    da[[i]][2] <- cs[i]
-  }
-  hc$title(text = "Cumulative sum of retracted publications by year of Entrez record creation")
-  hc$series(data = da, type = "column")
-  hc$xAxis(type = "linear", labels = list(rotation = 90, formatter = paste("#! function() { return '<a href=\"http://www.pubmed.gov/?term=%22", term, "%22[PTYP] AND 1959:' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"), title = list(text = "year"), tickInterval = 1)
-  hc$yAxis(title = list(text = "sum of retracted publications"))
-  hc$legend(enabled = FALSE)
-  hc$tooltip(pointFormat = "{point.y} records since 1959")
-  return(hc)
-}
-```
-
-### 6.4 By year
-This code generates the retraction rate by year chart.
-
-```{r byyear, tidy=TRUE, warning=FALSE, eval=FALSE}
-plotByYear <- function(d, total, term) {
-  dates <- xpathSApply(d, "//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year", xmlValue)
-  years <- as.numeric(dates)
-  ydf <- data.frame(year = min(years):max(years), total = NA, retracted = NA)
-  years.cnt <- as.data.frame(table(years), stringsAsFactors = FALSE)
-  m <- match(ydf$year, years.cnt$years)
-  ydf$retracted <- years.cnt[m, "Freq"]
-  ydf$retracted <- ifelse(is.na(ydf$retracted), 0, ydf$retracted)
-  m <- match(ydf$year, total$year)
-  ydf$total <- total[m, "total"]  
-  hc <- Highcharts$new()
-  hc$title(text = "Retracted publications per 100 000 publications by year of Entrez record creation")
-  hc$series(data = as.numeric(sprintf("%.3f", (100000 / ydf$total) * ydf$retracted)), type = "column", events = list(click = "#! function() {window.open(this.options.url)} !#"))
-  hc$xAxis(categories = ydf$year, labels = list(rotation = 90, formatter = paste("#! function() { return '<a href=\"http://www.pubmed.gov/?term=%22", term, "%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"), title = list(text = "year"), tickInterval = 1)
-  hc$yAxis(title = list(text = "retracted publications per 100 000 publications"))
-  hc$legend(enabled = FALSE)
-  hc$tooltip(pointFormat = "{point.y} retracted records per 100 000 publication records")
-  return(hc)
-}
-```
-
-### 6.5 By journal
-This code generates the retractions by journal chart (absolute numbers).
-
-```{r byjournal, tidy=TRUE, warning=FALSE, eval=FALSE}
-plotByJournal <- function(d, term) {
-  journals <- xpathSApply(d, "//MedlineCitation/Article/Journal/ISOAbbreviation", xmlValue)
-  journals.cnt <- as.data.frame(table(journals), stringsAsFactors = FALSE)
-  colnames(journals.cnt) <- c("journal", "count")
-  j20 <- head(journals.cnt[order(journals.cnt$count, decreasing = TRUE),], 20)
-  hc <- Highcharts$new()
-  hc$chart(marginLeft = 220)
-  hc$series(data = j20$count, type = "bar")
-  hc$xAxis(categories = j20$journal, labels = list(formatter = paste("#! function() { return '<a href=\"http://www.pubmed.gov/?term=%22", term, "%22[PTYP] AND %22' + escape(this.value) + '%22[JOUR]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"))
-  hc$yAxis(title = list(text = "retracted publications"))
-  hc$legend(enabled = FALSE)
-  hc$tooltip(pointFormat = "{point.y} records")
-  return(hc)
-}
-```
-
-### 6.6 By journal normalised
-This code generates the retractions by journal chart (relative to total publications for each journal).
-```{r byjournalnorm, tidy=TRUE, warning=FALSE, eval=FALSE}
-plotByJournal <- function(d, term) {
-  d$idx <- as.numeric(sprintf("%.3f", (100000 / d$total) * d$count))
-  d <- head(d[order(d$idx, decreasing = TRUE),], 20)
-  hc <- Highcharts$new()
-  hc$chart(marginLeft = 220)
-  hc$series(data = d$idx, type = "bar")
-  hc$xAxis(categories = d$journal, labels = list(formatter = paste("#! function() { return '<a href=\"http://www.pubmed.gov/?term=%22", term, "%22[PTYP] AND %22' + escape(this.value) + '%22[JOUR]\" target=\"_blank\">' + this.value + '</a>'; } !#", sep = ""), useHTML = "true"))
-  hc$yAxis(title = list(text = "retracted publications / 100 000 publications"))
-  hc$legend(enabled = FALSE)
-  hc$tooltip(pointFormat = "{point.y} retractions / 100 000 publications")
-  return(hc)
-}
+# plot chart
+highchart() %>% 
+  hc_add_series(dat, "bar", hcaes(x = journal, y = rate)) %>%
+  hc_legend(enabled = FALSE) %>%
+  hc_yAxis(title = list(text = "retraction notices")) %>%
+  hc_xAxis(categories = dat$journal,
+           labels = list(formatter = JS("function() { return '<a href=\"http://www.pubmed.gov/?term=%22retraction%20of%20publication%22[PTYP] AND %22' + escape(this.value) + '%22[JOUR]\" target=\"_blank\">' + this.value + '</a>'; }"), 
+                         useHTML = "true")) %>%
+  hc_tooltip(pointFormat = "{point.y} retraction notices / 100 000 publications") %>%
+  hc_plotOptions(series = list(color = "#FFA500"))
 ```
