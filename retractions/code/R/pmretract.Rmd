@@ -183,7 +183,8 @@ highchart() %>%
                          formatter = JS("function() { return '<a href=\"http://www.pubmed.gov/?term=%22retracted%20publication%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; }"),
                          useHTML = "true"),
            title = list(text = "year"),
-           tickInterval = 1) %>%
+           tickInterval = 1,
+           type = "linear") %>%
   hc_yAxis(title = list(text = "retracted publications/100 000 publications")) %>%
   hc_tooltip(pointFormat = "{point.y} retracted records per 100 000 publication records")
 ```
@@ -210,7 +211,8 @@ highchart() %>%
                          formatter = JS("function() { return '<a href=\"http://www.pubmed.gov/?term=%22retraction%20of%20publication%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; }"),
                          useHTML = "true"), 
            title = list(text = "year"),
-           tickInterval = 1) %>%
+           tickInterval = 1,
+           type = "linear") %>%
   hc_yAxis(title = list(text = "retraction notices/100 000 publications")) %>%
   hc_tooltip(pointFormat = "{point.y} retraction notices per 100 000 publication records") %>%
   hc_plotOptions(series = list(color = "#FFA500"))
