@@ -1,10 +1,18 @@
 yearsToCSV <- function(xmlfile) {
-  require(XML)
+  require(xml2)
   require(rentrez)
-  doc <- xmlTreeParse(xmlfile, useInternalNodes = TRUE)
-  dates <- xpathSApply(doc, "//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year", xmlValue)
-  years <- as.numeric(dates)
-  ydf <- data.frame(year = min(years):max(years), total = NA)
+  require(dplyr)
+  require(tidyr)
+  
+  ydf <- read_xml(xmlfile) %>% 
+    xml_find_all("//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year") %>% 
+    xml_text() %>% 
+    as.tibble() %>% 
+    distinct() %>% 
+    mutate(value = as.numeric(value)) %>% 
+    expand(value = full_seq(value, 1)) %>% 
+    mutate(total = NA)
+  
   for(y in min(years):max(years)) {
     total <- entrez_search("pubmed", paste(y, "[CRDT]", sep = ""))
     Sys.sleep(3)
