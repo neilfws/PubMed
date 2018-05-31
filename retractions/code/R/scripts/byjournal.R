@@ -1,26 +1,30 @@
 journalsToCSV <- function(xmlfile) {
-  require(XML)
   require(rentrez)
-  doc <- xmlTreeParse(xmlfile, useInternalNodes = TRUE)
-  journals <- xpathSApply(doc, "//MedlineCitation/Article/Journal/ISOAbbreviation", xmlValue)
-  journals.cnt <- as.data.frame(table(journals), stringsAsFactors = FALSE)
-  colnames(journals.cnt) <- c("journal", "count")
-  journals.cnt$total <- NA
-  journals.cnt <- subset(journals.cnt, count > 9)
+  require(xml2)
+  require(dplyr)
+
+    journals_cnt <- read_xml(xmlfile) %>% 
+    xml_find_all("//MedlineCitation/Article/Journal/ISOAbbreviation") %>% 
+    xml_text() %>% 
+    as.tibble() %>% 
+    count(value) %>% 
+    filter(n > 9) %>% 
+    rename(journal = value, count = n) %>% 
+    mutate(total = NA)
   
-  for(j in 1:length(journals.cnt$journal)) {
-    total <- entrez_search("pubmed", paste("\"", journals.cnt$journal[j], "\"", sep = ""))
-    journals.cnt$total[j] <- as.numeric(total$count)
+  for(j in 1:length(journals_cnt$journal)) {
+    total <- entrez_search("pubmed", paste("\"", journals_cnt$journal[j], "\"", sep = ""))
+    journals_cnt$total[j] <- as.numeric(total$count)
     Sys.sleep(3)
-    cat(journals.cnt$journal[j], journals.cnt$total[j], "\n")
+    cat(journals_cnt$journal[j], journals_cnt$total[j], "\n")
   }
-  return(journals.cnt)
+  return(journals_cnt)
 }
 
-setwd("~/Dropbox/projects/github_projects/pubmed/retractions/data/")
 # retracted
-journals <- journalsToCSV("retracted.xml")
-write.csv(journals, file = "journals_retracted.csv", row.names = FALSE)
+journals <- journalsToCSV("~/Dropbox/projects/github_projects/pubmed/retractions/data/retracted.xml")
+write.csv(journals, file = "~/Dropbox/projects/github_projects/pubmed/retractions/data/journals_retracted.csv", row.names = FALSE)
+
 # retractionOf
-journals <- journalsToCSV("retractionOf.xml")
-write.csv(journals, file = "journals_retractionOf.csv", row.names = FALSE)
+journals <- journalsToCSV("~/Dropbox/projects/github_projects/pubmed/retractions/data/retractionOf.xml")
+write.csv(journals, file = "~/Dropbox/projects/github_projects/pubmed/retractions/data/journals_retractionOf.csv", row.names = FALSE)
