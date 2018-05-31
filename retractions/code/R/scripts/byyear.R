@@ -14,5 +14,5 @@ yearsToCSV <- function(xmlfile) {
   return(ydf)
 }
 
-years <- yearsToCSV("retracted.xml")
+years <- yearsToCSV("~/Dropbox/projects/github_projects/pubmed/retractions/data/retracted.xml")
 write.csv(years, file = "~/Dropbox/projects/github_projects/PubMed/retractions/data/years.csv", row.names = FALSE)
