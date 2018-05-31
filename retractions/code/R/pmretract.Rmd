@@ -7,6 +7,7 @@ output:
     highlight: pygments
     keep_md: yes
     theme: cerulean
+    number_sections: yes
     toc: yes
     toc_float: yes
 ---
@@ -60,9 +61,10 @@ highchart() %>%
   hc_xAxis(title = list(text = "year"),
            labels = list(rotation = 90,
                          formatter = JS("function() { return '<a href=\"http://www.pubmed.gov/?term=%22retracted%20publication%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; }"),
-                         useHTML = TRUE),
+                         useHTML = TRUE,
+                         style = list(fontSize = "10px")),
            tickInterval = 1,
-           type = "linear") %>%
+           type = "datetime") %>%
   hc_yAxis(title = list(text = "retracted publications")) %>%
   hc_tooltip(pointFormat = '{point.y} records')
 ```
@@ -86,9 +88,10 @@ highchart() %>%
   hc_xAxis(title = list(text = "year"),
            labels = list(rotation = 90,
                          formatter = JS("function() { return '<a href=\"http://www.pubmed.gov/?term=%22retraction%20of%20publication%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; }"),
-                         useHTML = TRUE),
+                         useHTML = TRUE,
+                         style = list(fontSize = "10px")),
            tickInterval = 1,
-           type = "linear") %>%
+           type = "datetime") %>%
   hc_yAxis(title = list(text = "retraction notices")) %>%
   hc_tooltip(pointFormat = '{point.y} records') %>%
   hc_plotOptions(series = list(color = "#FFA500"))
@@ -120,9 +123,10 @@ highchart() %>%
   hc_xAxis(title = list(text = "year"),
            labels = list(rotation = 90,
                          formatter = JS("function() { return '<a href=\"http://www.pubmed.gov/?term=%22retracted%20publication%22[PTYP] AND 1959:' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; }"),
-                         useHTML = TRUE),
+                         useHTML = TRUE,
+                         style = list(fontSize = "10px")),
            tickInterval = 1,
-           type = "linear") %>%
+           type = "datetime") %>%
   hc_yAxis(title = list(text = "sum of retracted publications")) %>%
   hc_tooltip(pointFormat = '{point.y} records since 1959')
 ```
@@ -148,9 +152,10 @@ highchart() %>%
   hc_xAxis(title = list(text = "year"),
            labels = list(rotation = 90,
                          formatter = JS("function() { return '<a href=\"http://www.pubmed.gov/?term=%22retraction%20of%20publication%22[PTYP] AND 1959:' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; }"),
-                         useHTML = TRUE),
+                         useHTML = TRUE,
+                         style = list(fontSize = "10px")),
            tickInterval = 1,
-           type = "linear") %>%
+           type = "datetime") %>%
   hc_yAxis(title = list(text = "sum of retraction notices")) %>%
   hc_tooltip(pointFormat = '{point.y} records since 1959') %>%
   hc_plotOptions(series = list(color = "#FFA500"))
@@ -181,10 +186,11 @@ highchart() %>%
   hc_title(text = "Retracted publications per 100 000 publications by year of Entrez record creation") %>%
   hc_xAxis(labels = list(rotation = 90,
                          formatter = JS("function() { return '<a href=\"http://www.pubmed.gov/?term=%22retracted%20publication%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; }"),
-                         useHTML = "true"),
+                         useHTML = "true",
+                         style = list(fontSize = "10px")),
            title = list(text = "year"),
            tickInterval = 1,
-           type = "linear") %>%
+           type = "datetime") %>%
   hc_yAxis(title = list(text = "retracted publications/100 000 publications")) %>%
   hc_tooltip(pointFormat = "{point.y} retracted records per 100 000 publication records")
 ```
@@ -209,10 +215,11 @@ highchart() %>%
   hc_title(text = "Retraction notices per 100 000 publications by year of Entrez record creation") %>%
   hc_xAxis(labels = list(rotation = 90,
                          formatter = JS("function() { return '<a href=\"http://www.pubmed.gov/?term=%22retraction%20of%20publication%22[PTYP] AND ' + escape(this.value) + '[CRDT]\" target=\"_blank\">' + this.value + '</a>'; }"),
-                         useHTML = "true"), 
+                         useHTML = "true",
+                         style = list(fontSize = "10px")), 
            title = list(text = "year"),
            tickInterval = 1,
-           type = "linear") %>%
+           type = "datetime") %>%
   hc_yAxis(title = list(text = "retraction notices/100 000 publications")) %>%
   hc_tooltip(pointFormat = "{point.y} retraction notices per 100 000 publication records") %>%
   hc_plotOptions(series = list(color = "#FFA500"))
@@ -237,7 +244,8 @@ highchart() %>%
   hc_yAxis(title = list(text = "retractions")) %>%
   hc_xAxis(categories = dat$journal,
            labels = list(formatter = JS("function() { return '<a href=\"http://www.pubmed.gov/?term=%22retracted%20publication%22[PTYP] AND %22' + escape(this.value) + '%22[JOUR]\" target=\"_blank\">' + this.value + '</a>'; }"),
-                         useHTML = "true")) %>%
+                         useHTML = "true",
+                         style = list(fontSize = "10px"))) %>%
   hc_tooltip(pointFormat = "{point.y} records")
 ```
 
@@ -255,7 +263,8 @@ highchart() %>%
   hc_yAxis(title = list(text = "retraction notices")) %>%
   hc_xAxis(categories = dat$journal,
            labels = list(formatter = JS("function() { return '<a href=\"http://www.pubmed.gov/?term=%22retraction%20of%20publication%22[PTYP] AND %22' + escape(this.value) + '%22[JOUR]\" target=\"_blank\">' + this.value + '</a>'; }"),
-                         useHTML = "true")) %>%
+                         useHTML = "true",
+                         style = list(fontSize = "10px"))) %>%
   hc_tooltip(pointFormat = "{point.y} records") %>%
   hc_plotOptions(series = list(color = "#FFA500"))
 ```
@@ -280,7 +289,8 @@ highchart() %>%
   hc_yAxis(title = list(text = "retractions")) %>%
   hc_xAxis(categories = dat$journal,
            labels = list(formatter = JS("function() { return '<a href=\"http://www.pubmed.gov/?term=%22retracted%20publication%22[PTYP] AND %22' + escape(this.value) + '%22[JOUR]\" target=\"_blank\">' + this.value + '</a>'; }"), 
-                         useHTML = "true")) %>%
+                         useHTML = "true",
+                         style = list(fontSize = "10px"))) %>%
   hc_tooltip(pointFormat = "{point.y} retractions / 100 000 publications")
 ```
 
@@ -299,7 +309,8 @@ highchart() %>%
   hc_yAxis(title = list(text = "retraction notices")) %>%
   hc_xAxis(categories = dat$journal,
            labels = list(formatter = JS("function() { return '<a href=\"http://www.pubmed.gov/?term=%22retraction%20of%20publication%22[PTYP] AND %22' + escape(this.value) + '%22[JOUR]\" target=\"_blank\">' + this.value + '</a>'; }"), 
-                         useHTML = "true")) %>%
+                         useHTML = "true",
+                         style = list(fontSize = "10px"))) %>%
   hc_tooltip(pointFormat = "{point.y} retraction notices / 100 000 publications") %>%
   hc_plotOptions(series = list(color = "#FFA500"))
 ```
