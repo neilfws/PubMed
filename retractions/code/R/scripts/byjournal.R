@@ -3,6 +3,7 @@ journalsToCSV <- function(xmlfile) {
   require(xml2)
   require(dplyr)
   require(tibble)
+  require(readr)
 
     journals_cnt <- read_xml(xmlfile) %>% 
     xml_find_all("//MedlineCitation/Article/Journal/ISOAbbreviation") %>% 
@@ -24,8 +25,8 @@ journalsToCSV <- function(xmlfile) {
 
 # retracted
 journals <- journalsToCSV("~/Dropbox/projects/github_projects/pubmed/retractions/data/retracted.xml")
-write.csv(journals, file = "~/Dropbox/projects/github_projects/pubmed/retractions/data/journals_retracted.csv", row.names = FALSE)
+write_csv(journals, file = "~/Dropbox/projects/github_projects/pubmed/retractions/data/journals_retracted.csv")
 
 # retractionOf
 journals <- journalsToCSV("~/Dropbox/projects/github_projects/pubmed/retractions/data/retractionOf.xml")
-write.csv(journals, file = "~/Dropbox/projects/github_projects/pubmed/retractions/data/journals_retractionOf.csv", row.names = FALSE)
+write_csv(journals, file = "~/Dropbox/projects/github_projects/pubmed/retractions/data/journals_retractionOf.csv")

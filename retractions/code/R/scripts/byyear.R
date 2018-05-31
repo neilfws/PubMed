@@ -3,6 +3,7 @@ yearsToCSV <- function(xmlfile) {
   require(rentrez)
   require(dplyr)
   require(tidyr)
+  require(readr)
   
   ydf <- read_xml(xmlfile) %>% 
     xml_find_all("//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year") %>% 
@@ -23,4 +24,4 @@ yearsToCSV <- function(xmlfile) {
 }
 
 years <- yearsToCSV("~/Dropbox/projects/github_projects/pubmed/retractions/data/retracted.xml")
-write.csv(years, file = "~/Dropbox/projects/github_projects/PubMed/retractions/data/years.csv", row.names = FALSE)
+write_csv(years, file = "~/Dropbox/projects/github_projects/PubMed/retractions/data/years.csv")
