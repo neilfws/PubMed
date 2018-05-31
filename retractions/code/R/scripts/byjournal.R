@@ -2,6 +2,7 @@ journalsToCSV <- function(xmlfile) {
   require(rentrez)
   require(xml2)
   require(dplyr)
+  require(tibble)
 
     journals_cnt <- read_xml(xmlfile) %>% 
     xml_find_all("//MedlineCitation/Article/Journal/ISOAbbreviation") %>% 
