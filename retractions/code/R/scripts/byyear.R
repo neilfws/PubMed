@@ -1,9 +1,7 @@
 yearsToCSV <- function(xmlfile) {
   require(xml2)
   require(rentrez)
-  require(dplyr)
-  require(tidyr)
-  require(readr)
+  require(tidyverse)
   
   ydf <- read_xml(xmlfile) %>% 
     xml_find_all("//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year") %>% 
