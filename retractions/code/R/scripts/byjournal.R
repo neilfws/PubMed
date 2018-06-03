@@ -25,8 +25,8 @@ journalsToCSV <- function(xmlfile) {
 
 # retracted
 journals <- journalsToCSV("~/Dropbox/projects/github_projects/pubmed/retractions/data/retracted.xml")
-write_csv(journals, file = "~/Dropbox/projects/github_projects/pubmed/retractions/data/journals_retracted.csv")
+write_csv(journals, "~/Dropbox/projects/github_projects/pubmed/retractions/data/journals_retracted.csv")
 
 # retractionOf
 journals <- journalsToCSV("~/Dropbox/projects/github_projects/pubmed/retractions/data/retractionOf.xml")
-write_csv(journals, file = "~/Dropbox/projects/github_projects/pubmed/retractions/data/journals_retractionOf.csv")
+write_csv(journals, "~/Dropbox/projects/github_projects/pubmed/retractions/data/journals_retractionOf.csv")
