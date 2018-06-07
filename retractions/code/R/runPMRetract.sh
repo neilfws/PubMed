@@ -19,7 +19,7 @@ echo "Finished."
 # knit the Rmd document
 echo "Creating report..."
 IN=$DIR/pmretract.Rmd
-OUT="$DIR/../../docs/pmretract/"
+OUT="$DIR/../../../docs/pmretract/"
 Rscript -e "library(rmarkdown); render('$IN', 'html_document')"
 mv $DIR/pmretract.html $OUT
 echo "Finished."
