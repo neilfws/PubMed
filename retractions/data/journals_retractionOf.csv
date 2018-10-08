@@ -1,103 +1,106 @@
 journal,count,total
-ACS Appl Mater Interfaces,13,23219
-Acta Anaesthesiol Scand,13,8310
-Anaesthesia,14,91859
-Anesth. Analg.,56,24738
-Anesthesiology,13,166211
-Ann. Thorac. Surg.,16,34618
-Anticancer Res.,10,20672
-Arterioscler. Thromb. Vasc. Biol.,12,8826
-Biochem. Biophys. Res. Commun.,52,84932
-Biochem. J.,11,55384
-Biochemistry,14,573512
-Biochim. Biophys. Acta,14,101590
-Biomed Res Int,22,14529
-Blood,32,3603585
-Br. J. Pharmacol.,10,23899
-Brain Res.,13,59336
-Can J Anaesth,40,7820
-Cancer Lett.,11,13453
-Cancer Res.,44,54551
-Cancer Sci.,12,4192
-Carcinogenesis,12,97770
-Cell,37,4291821
+ACS Appl Mater Interfaces,14,23515
+Acta Anaesthesiol Scand,13,8316
+Anaesthesia,14,92076
+Anesth. Analg.,56,24776
+Anesthesiology,13,167047
+Ann. Thorac. Surg.,16,34692
+Anticancer Res.,11,20730
+Arterioscler. Thromb. Vasc. Biol.,12,8824
+Biochem. Biophys. Res. Commun.,52,85059
+Biochem. J.,11,55396
+Biochemistry,16,575991
+Biochim. Biophys. Acta,12,98310
+Biomed Res Int,22,14624
+Blood,32,3611846
+Br. J. Pharmacol.,10,23915
+Brain Res.,14,59362
+Can J Anaesth,40,7827
+Cancer Lett.,12,13469
+Cancer Res.,45,54657
+Cancer Sci.,12,4220
+Carcinogenesis,12,98128
+Cell,37,4304936
 Circ. Res.,13,17084
-Circulation,11,337358
-Clin. Cancer Res.,19,17179
-Diabetes,24,610824
-Diagn Pathol,40,1635
-EMBO J.,23,19367
-Environ Monit Assess,11,9948
-Eur J Anaesthesiol,30,4637
-Eur Rev Med Pharmacol Sci,18,5606
-Eur. J. Med. Res.,20,1968
-Eur. J. Pharmacol.,11,33564
-Evid Based Complement Alternat Med,12,6806
-Exp Ther Med,10,6513
-FASEB J.,20,11396
-FEBS Lett.,12,49612
+Circulation,11,337910
+Clin Oral Implants Res,16,3343
+Clin. Cancer Res.,19,17219
+Diabetes,24,613400
+Diagn Pathol,40,1640
+EMBO J.,23,19382
+Environ Monit Assess,11,9990
+Eur J Anaesthesiol,30,4646
+Eur Rev Med Pharmacol Sci,18,5708
+Eur. J. Med. Res.,20,1973
+Eur. J. Pharmacol.,11,33583
+Evid Based Complement Alternat Med,12,6843
+Exp Ther Med,10,6599
+FASEB J.,20,11443
+FEBS Lett.,12,49625
 Genet. Mol. Res.,13,7545
-Infect. Immun.,19,31290
+Infect. Immun.,19,31309
 Int J Clin Exp Med,19,4105
 Int J Clin Exp Pathol,16,3952
-Int. J. Cancer,17,23855
-Int. J. Cardiol.,13,25168
-Int. J. Dev. Neurosci.,85,2841
-Int. J. Syst. Evol. Microbiol.,13,10114
-J Orthop Surg Res,12,1309
-J Pers Soc Psychol,17,6193
-J. Am. Chem. Soc.,30,57840
-J. Bacteriol.,14,52736
-J. Biol. Chem.,238,178228
-J. Cell Biol.,11,21917
-J. Cell. Biochem.,12,10053
-J. Cell. Physiol.,12,13204
-J. Cell. Sci.,17,15186
-J. Clin. Invest.,32,30486
-J. Clin. Oncol.,11,23635
-J. Exp. Med.,10,23312
-J. Hazard. Mater.,17,15964
-J. Immunol.,50,65236
-J. Neurochem.,17,26511
-J. Neurosci.,24,36114
-J. Org. Chem.,11,31922
-J. Pharmacol. Exp. Ther.,14,28951
-J. Virol.,18,45267
-JAMA,11,92405
-Lancet,18,162465
-Langmuir,11,41703
-Leuk. Lymphoma,11,10807
-Life Sci.,12,26372
-Medicine (Baltimore),15,14570
-Mol Med Rep,10,9484
-Mol. Biol. Rep.,34,6459
-Mol. Cell,13,7402
-Mol. Cell. Biochem.,11,10418
-Mol. Cell. Biol.,30,22566
+Int. J. Cancer,17,23907
+Int. J. Cardiol.,14,25298
+Int. J. Dev. Neurosci.,85,2846
+Int. J. Syst. Evol. Microbiol.,13,10149
+J Orthop Surg Res,12,1322
+J Pers Soc Psychol,17,6202
+J. Am. Chem. Soc.,30,58023
+J. Bacteriol.,14,52755
+J. Biol. Chem.,241,178336
+J. Cell Biol.,11,21933
+J. Cell. Biochem.,12,10191
+J. Cell. Physiol.,12,13300
+J. Cell. Sci.,17,15187
+J. Clin. Invest.,32,30526
+J. Clin. Oncol.,11,23657
+J. Exp. Med.,10,23323
+J. Hazard. Mater.,17,16029
+J. Immunol.,50,65272
+J. Neurochem.,17,26524
+J. Neurosci.,24,36167
+J. Org. Chem.,11,32008
+J. Pharmacol. Exp. Ther.,14,28961
+J. Virol.,18,45313
+JAMA,12,92558
+Lancet,19,162761
+Langmuir,11,41891
+Leuk. Lymphoma,11,10845
+Life Sci.,13,26409
+Medicine (Baltimore),15,14928
+Mol Med Rep,10,9588
+Mol. Biol. Rep.,34,6494
+Mol. Cancer Ther.,10,4643
+Mol. Cell,13,7428
+Mol. Cell. Biochem.,11,10423
+Mol. Cell. Biol.,30,22575
 Mol. Endocrinol.,12,5857
-Mol. Neurobiol.,16,3882
-Mol. Pharmacol.,11,11452
-N. Engl. J. Med.,19,77246
-Nat. Cell Biol.,10,4233
-Nat. Med.,11,9443
-Nat. Prod. Res.,11,5218
-Nature,71,511045
-Neuroscience,14,266012
-Nucleic Acids Res.,10,44598
-Obstet Gynecol,24,27249
-Onco Targets Ther,14,2965
-Oncogene,14,240999
-Org. Lett.,15,27814
-Paediatr Anaesth,10,5118
-Phys. Rev. Lett.,11,84412
-Phytother Res,13,4766
-Plant Physiol.,10,31142
-PLoS ONE,113,201770
-Proc. Natl. Acad. Sci. U.S.A.,102,133817
-Sci Rep,22,78582
-Science,74,1671062
-ScientificWorldJournal,20,9649
-Talanta,10,21286
-Toxicol Ind Health,11,2254
-Toxicology,10,175861
-Tumour Biol.,39,7161
+Mol. Neurobiol.,16,3909
+Mol. Pharmacol.,11,11460
+N. Engl. J. Med.,19,77356
+Nat. Cell Biol.,10,4246
+Nat. Med.,11,9459
+Nat. Prod. Res.,11,5232
+Nature,71,512976
+Neuroscience,14,267893
+Nucleic Acids Res.,10,44675
+Obstet Gynecol,24,27281
+Onco Targets Ther,14,3053
+Oncogene,14,241679
+Org. Lett.,15,27917
+Paediatr Anaesth,10,5130
+Phys. Rev. Lett.,11,84559
+Phytother Res,13,4782
+Plant Physiol.,10,31162
+PLoS ONE,118,202898
+Proc. Natl. Acad. Sci. U.S.A.,102,134070
+Sci Rep,22,79605
+Science,74,1686251
+ScientificWorldJournal,20,9657
+Spectrochim Acta A Mol Biomol Spectrosc,12,13823
+Talanta,10,21356
+Toxicol Ind Health,11,2260
+Toxicology,10,176570
+Tumour Biol.,39,7166
