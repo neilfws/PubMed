@@ -234,7 +234,7 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
 ```{r chart4-1}
 # create data frame
 dat <- jour.retd %>%
-  top_n(20) %>% 
+  top_n(20, wt = count) %>% 
   arrange(desc(count))
 
 # plot chart
@@ -253,7 +253,7 @@ highchart() %>%
 ```{r chart4-2}
 # create data frame
 dat <- jour.retOf %>%
-  top_n(20) %>% 
+  top_n(20, wt = count) %>% 
   arrange(desc(count))
 
 # plot chart
@@ -279,7 +279,7 @@ Clicking on a journal name will open a new window at PubMed showing the retracte
 # create data frame
 dat <- jour.retd %>%
   mutate(rate = round((100000/total) * count, 3)) %>%
-  top_n(20) %>% 
+  top_n(20, wt = rate) %>% 
   arrange(desc(rate))
 
 # plot chart
@@ -299,7 +299,7 @@ highchart() %>%
 # create data frame
 dat <- jour.retOf %>%
   mutate(rate = round((100000/total) * count, 3)) %>%
-  top_n(20) %>% 
+  top_n(20, wt = rate) %>% 
   arrange(desc(rate))
 
 # plot chart
