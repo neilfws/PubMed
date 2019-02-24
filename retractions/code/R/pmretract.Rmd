@@ -48,7 +48,7 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
 dat <- doc.retd %>% 
   xml_find_all("//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year") %>% 
   xml_text() %>% 
-  as.tibble() %>% 
+  as_tibble() %>% 
   mutate(year = as.numeric(value)) %>% 
   count(year) %>% 
   right_join(tibble(year = min(.$year):max(.$year)))
@@ -75,7 +75,7 @@ highchart() %>%
 dat <- doc.retOf %>% 
   xml_find_all("//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year") %>% 
   xml_text() %>% 
-  as.tibble() %>% 
+  as_tibble() %>% 
   mutate(year = as.numeric(value)) %>% 
   count(year) %>% 
   right_join(tibble(year = min(.$year):max(.$year)))
@@ -108,7 +108,7 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
 dat <- doc.retd %>% 
   xml_find_all("//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year") %>% 
   xml_text() %>% 
-  as.tibble() %>% 
+  as_tibble() %>% 
   mutate(year = as.numeric(value)) %>% 
   count(year) %>% 
   right_join(tibble(year = min(.$year):max(.$year))) %>%
@@ -137,7 +137,7 @@ highchart() %>%
 dat <- doc.retOf %>% 
   xml_find_all("//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year") %>% 
   xml_text() %>% 
-  as.tibble() %>% 
+  as_tibble() %>% 
   mutate(year = as.numeric(value)) %>% 
   count(year) %>% 
   right_join(tibble(year = min(.$year):max(.$year))) %>%
@@ -172,7 +172,7 @@ Clicking on a year will open a new window at PubMed showing the retracted articl
 dat <- doc.retd %>% 
   xml_find_all("//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year") %>% 
   xml_text() %>% 
-  as.tibble() %>% 
+  as_tibble() %>% 
   mutate(year = as.numeric(value)) %>% 
   count(year) %>% 
   right_join(tibble(year = min(.$year):max(.$year))) %>% 
@@ -201,7 +201,7 @@ highchart() %>%
 dat <- doc.retOf %>% 
   xml_find_all("//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year") %>% 
   xml_text() %>% 
-  as.tibble() %>% 
+  as_tibble() %>% 
   mutate(year = as.numeric(value)) %>% 
   count(year) %>% 
   right_join(tibble(year = min(.$year):max(.$year))) %>% 
