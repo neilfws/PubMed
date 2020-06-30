@@ -6,12 +6,12 @@ yearsToCSV <- function(xmlfile) {
   ydf <- read_xml(xmlfile) %>% 
     xml_find_all("//PubmedData/History/PubMedPubDate[@PubStatus='entrez']/Year") %>% 
     xml_text() %>% 
-    as.tibble() %>% 
+    as_tibble() %>% 
     distinct() %>% 
     mutate(value = as.numeric(value)) %>% 
     expand(value = full_seq(value, 1)) %>% 
     rename(year = value) %>% 
-    mutate(total = NA)
+    mutate(total = NA_integer_)
   
   for(y in min(ydf$year):max(ydf$year)) {
     total <- entrez_search("pubmed", paste(y, "[CRDT]", sep = ""))

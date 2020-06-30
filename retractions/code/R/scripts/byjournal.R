@@ -8,11 +8,11 @@ journalsToCSV <- function(xmlfile) {
     journals_cnt <- read_xml(xmlfile) %>% 
     xml_find_all("//MedlineCitation/Article/Journal/ISOAbbreviation") %>% 
     xml_text() %>% 
-    as.tibble() %>% 
+    as_tibble() %>% 
     count(value) %>% 
     filter(n > 9) %>% 
     rename(journal = value, count = n) %>% 
-    mutate(total = NA)
+    mutate(total = NA_integer_)
   
   for(j in 1:length(journals_cnt$journal)) {
     total <- entrez_search("pubmed", paste("\"", journals_cnt$journal[j], "\"", sep = ""))
