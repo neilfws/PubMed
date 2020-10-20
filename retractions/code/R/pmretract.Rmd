@@ -51,7 +51,8 @@ dat <- doc.retd %>%
   as_tibble() %>% 
   mutate(year = as.numeric(value)) %>% 
   count(year) %>% 
-  right_join(tibble(year = min(.$year):max(.$year)))
+  right_join(tibble(year = min(.$year):max(.$year))) %>% 
+  arrange(year)
 
 # plot chart
 highchart() %>% 
@@ -78,7 +79,8 @@ dat <- doc.retOf %>%
   as_tibble() %>% 
   mutate(year = as.numeric(value)) %>% 
   count(year) %>% 
-  right_join(tibble(year = min(.$year):max(.$year)))
+  right_join(tibble(year = min(.$year):max(.$year))) %>% 
+  arrange(year)
 
 # plot chart
 highchart() %>% 
@@ -111,9 +113,10 @@ dat <- doc.retd %>%
   as_tibble() %>% 
   mutate(year = as.numeric(value)) %>% 
   count(year) %>% 
-  right_join(tibble(year = min(.$year):max(.$year))) %>%
+  right_join(tibble(year = min(.$year):max(.$year))) %>% 
+  arrange(year) %>% 
   replace_na(list(n = 0)) %>%
-    mutate(cs = cumsum(n))
+  mutate(cs = cumsum(n))
 
 # plot chart
 highchart() %>% 
@@ -140,9 +143,10 @@ dat <- doc.retOf %>%
   as_tibble() %>% 
   mutate(year = as.numeric(value)) %>% 
   count(year) %>% 
-  right_join(tibble(year = min(.$year):max(.$year))) %>%
+  right_join(tibble(year = min(.$year):max(.$year))) %>% 
+  arrange(year) %>% 
   replace_na(list(n = 0)) %>%
-    mutate(cs = cumsum(n))
+  mutate(cs = cumsum(n))
 
 # plot chart
 highchart() %>% 
@@ -177,7 +181,8 @@ dat <- doc.retd %>%
   count(year) %>% 
   right_join(tibble(year = min(.$year):max(.$year))) %>% 
   right_join(years.total) %>% 
-  mutate(rate = round((100000/total) * n, 3))
+  mutate(rate = round((100000/total) * n, 3)) %>% 
+  arrange(year)
 
 # plot chart
 highchart() %>% 
@@ -206,7 +211,8 @@ dat <- doc.retOf %>%
   count(year) %>% 
   right_join(tibble(year = min(.$year):max(.$year))) %>% 
   right_join(years.total) %>% 
-  mutate(rate = round((100000/total) * n, 3))
+  mutate(rate = round((100000/total) * n, 3)) %>% 
+  arrange(year)
 
 # plot chart
 highchart() %>% 
