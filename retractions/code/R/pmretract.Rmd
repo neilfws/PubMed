@@ -65,7 +65,7 @@ highchart() %>%
                          useHTML = TRUE,
                          style = list(fontSize = "10px")),
            tickInterval = 1,
-           type = "datetime") %>%
+           type = "linear") %>%
   hc_yAxis(title = list(text = "retracted publications")) %>%
   hc_tooltip(pointFormat = '{point.y} records')
 ```
@@ -93,7 +93,7 @@ highchart() %>%
                          useHTML = TRUE,
                          style = list(fontSize = "10px")),
            tickInterval = 1,
-           type = "datetime") %>%
+           type = "linear") %>%
   hc_yAxis(title = list(text = "retraction notices")) %>%
   hc_tooltip(pointFormat = '{point.y} records') %>%
   hc_plotOptions(series = list(color = "#FFA500"))
@@ -129,9 +129,9 @@ highchart() %>%
                          useHTML = TRUE,
                          style = list(fontSize = "10px")),
            tickInterval = 1,
-           type = "datetime") %>%
+           type = "linear") %>%
   hc_yAxis(title = list(text = "sum of retracted publications")) %>%
-  hc_tooltip(pointFormat = '{point.y} records since 1959')
+  hc_tooltip(pointFormat = '{point.y} records')
 ```
 
 ## Retraction Notices
@@ -159,9 +159,9 @@ highchart() %>%
                          useHTML = TRUE,
                          style = list(fontSize = "10px")),
            tickInterval = 1,
-           type = "datetime") %>%
+           type = "linear") %>%
   hc_yAxis(title = list(text = "sum of retraction notices")) %>%
-  hc_tooltip(pointFormat = '{point.y} records since 1959') %>%
+  hc_tooltip(pointFormat = '{point.y} records') %>%
   hc_plotOptions(series = list(color = "#FFA500"))
 ```
 
@@ -195,7 +195,7 @@ highchart() %>%
                          style = list(fontSize = "10px")),
            title = list(text = "year"),
            tickInterval = 1,
-           type = "datetime") %>%
+           type = "linear") %>%
   hc_yAxis(title = list(text = "retracted publications/100 000 publications")) %>%
   hc_tooltip(pointFormat = "{point.y} retracted records per 100 000 publication records")
 ```
@@ -225,7 +225,7 @@ highchart() %>%
                          style = list(fontSize = "10px")), 
            title = list(text = "year"),
            tickInterval = 1,
-           type = "datetime") %>%
+           type = "linear") %>%
   hc_yAxis(title = list(text = "retraction notices/100 000 publications")) %>%
   hc_tooltip(pointFormat = "{point.y} retraction notices per 100 000 publication records") %>%
   hc_plotOptions(series = list(color = "#FFA500"))
