@@ -1321,7 +1321,9 @@ articles about a particular topic.
 
 ![](https://github.com/neilfws/PubMed/raw/master/retractions/data/retracted_pmids_subgraph.png) We can zoom into the graph,
 with some difficulty as it is large. This shows just how connected a
-retracted articles can be. PMID 19524507 is an article titled [A
+retracted article can be. 
+
+PMID 19524507 is an article titled [A
 pleiotropically acting microRNA, miR-31, inhibits breast cancer
 metastasis](https://pubmed.ncbi.nlm.nih.gov/19524507/). This article
 [was retracted](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4414313/)
