@@ -199,7 +199,9 @@ First, the largest connected subgraph. Vertices are coloured by modularity class
 Not sure we can conclude much from this, other than that there are several highly-connected areas of the graph which presumably relate to articles about a particular topic.
 
 ![](../../data/retracted_pmids_subgraph.png)
-We can zoom into the graph, with some difficulty as it is large. This shows just how connected a retracted articles can be. PMID 19524507 is an article titled [A pleiotropically acting microRNA, miR-31, inhibits breast cancer metastasis](https://pubmed.ncbi.nlm.nih.gov/19524507/). This article [was retracted](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4414313/) due to concerns regarding statistical analysis and data presentation.
+We can zoom into the graph, with some difficulty as it is large. This shows just how connected a retracted article can be. 
+
+PMID 19524507 is an article titled [A pleiotropically acting microRNA, miR-31, inhibits breast cancer metastasis](https://pubmed.ncbi.nlm.nih.gov/19524507/). This article [was retracted](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4414313/) due to concerns regarding statistical analysis and data presentation.
 
 ![](../../data/retracted_pmids_subgraph_cropped.png)
 
