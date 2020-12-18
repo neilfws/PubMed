@@ -1319,7 +1319,7 @@ Not sure we can conclude much from this, other than that there are
 several highly-connected areas of the graph which presumably relate to
 articles about a particular topic.
 
-![](../../data/retracted_pmids_subgraph.png) We can zoom into the graph,
+![](https://github.com/neilfws/PubMed/raw/master/retractions/data/retracted_pmids_subgraph.png) We can zoom into the graph,
 with some difficulty as it is large. This shows just how connected a
 retracted articles can be. PMID 19524507 is an article titled [A
 pleiotropically acting microRNA, miR-31, inhibits breast cancer
@@ -1327,7 +1327,7 @@ metastasis](https://pubmed.ncbi.nlm.nih.gov/19524507/). This article
 [was retracted](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4414313/)
 due to concerns regarding statistical analysis and data presentation.
 
-![](../../data/retracted_pmids_subgraph_cropped.png)
+![](https://github.com/neilfws/PubMed/raw/master/retractions/data/retracted_pmids_subgraph_cropped.png)
 
 ### 5.3.2 Retracted-only PMIDs subgraph
 
@@ -1338,7 +1338,7 @@ read.
 Vertices are again coloured by modularity class, and vertex size
 reflects “authority” - a measure of informational importance.
 
-![](../../data/onlyretracted_pmids_subgraph.png)
+![](https://github.com/neilfws/PubMed/raw/master/retractions/data/onlyretracted_pmids_subgraph.png)
 
 Zooming in allows inspection of connected articles.
 
@@ -1350,4 +1350,4 @@ for [somewhat mysterious
 reasons](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6375757/) related
 to a figure (2E) in the article.
 
-![](../../data/onlyretracted_pmids_subgraph_cropped.png)
+![](https://github.com/neilfws/PubMed/raw/master/retractions/data/onlyretracted_pmids_subgraph_cropped.png)
