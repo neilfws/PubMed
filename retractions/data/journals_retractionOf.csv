@@ -1,177 +1,183 @@
 journal,count,total
-ACS Appl Mater Interfaces,26,38694
-ACS Nano,10,16191
-Acta Anaesthesiol Scand,14,8873
-Acta Biomater,12,7333
-Am J Cancer Res,19,1862
-Am J Physiol Heart Circ Physiol,13,10897
-Am J Physiol Lung Cell Mol Physiol,10,5483
-Am J Respir Cell Mol Biol,11,6297
-Am J Transl Res,10,3820
-Anaesthesia,18,105093
-Anesth Analg,62,26388
-Anesthesiology,16,216437
-Angew Chem Int Ed Engl,14,47088
-Ann Thorac Surg,18,38078
-Anticancer Res,12,22918
-Arterioscler Thromb Vasc Biol,13,9765
-Artif Cells Nanomed Biotechnol,48,1979
-Biochem Biophys Res Commun,64,90309
-Biochem J,12,56124
-Biochemistry,16,700149
-Biochim Biophys Acta,12,98343
-Biol Psychiatry,11,12811
-Biomed Pharmacother,10,11297
-Biomed Res Int,50,20538
-Bioresour Technol,16,23238
-Biosci Rep,24,5244
-Biosens Bioelectron,15,12965
-Blood,35,3991063
-Br J Anaesth,23,19832
-Br J Pharmacol,11,24921
-Brain Res,15,60568
-Braz J Med Biol Res,15,6816
-Can J Anaesth,40,8614
-Cancer Cell Int,18,2422
-Cancer Lett,15,14690
-Cancer Manag Res,19,3665
-Cancer Res,62,56155
-Cancer Sci,13,5359
-Carcinogenesis,16,116366
-Cardiovasc Res,10,11566
-Cell,39,4959749
-Cell Cycle,10,238982
-Cell Death Dis,14,6977
-Cell Metab,10,3194
-Cell Physiol Biochem,22,5789
-Chem Commun (Camb),17,48307
-Chemosphere,13,28611
-Circ Res,24,18176
-Circulation,15,368983
-Clin Cancer Res,23,19243
-Clin Oral Implants Res,16,3744
-Cureus,23,15110
-Diabetes,33,743926
-Diagn Pathol,41,2005
-DNA Cell Biol,13,3555
-Early Hum Dev,28,4629
-EMBO J,25,20219
-Environ Monit Assess,13,12194
-Eur J Anaesthesiol,33,5250
-Eur J Med Res,20,2159
-Eur J Pharmacol,11,35445
-Eur Rev Med Pharmacol Sci,201,9614
-Evid Based Complement Alternat Med,22,9542
-Exp Cell Res,14,22801
-Exp Ther Med,20,10229
-FASEB J,20,14144
-FEBS Lett,17,50446
-Free Radic Biol Med,10,11063
-Front Oncol,11,9666
-Gene,12,2422229
+ACS Appl Mater Interfaces,27,40319
+ACS Nano,10,16547
+ACS Omega,10,11426
+Acta Anaesthesiol Scand,14,8913
+Acta Biomater,12,7525
+Am J Cancer Res,23,1970
+Am J Physiol Heart Circ Physiol,13,10957
+Am J Physiol Lung Cell Mol Physiol,10,5537
+Am J Respir Cell Mol Biol,11,6327
+Am J Transl Res,13,4296
+Anaesthesia,19,106542
+Anesth Analg,63,26449
+Anesthesiology,15,222079
+Angew Chem Int Ed Engl,14,47907
+Ann Thorac Surg,16,38353
+Anticancer Res,13,23096
+Arterioscler Thromb Vasc Biol,13,9818
+Artif Cells Nanomed Biotechnol,57,2006
+Biochem Biophys Res Commun,61,90593
+Biochem J,11,56192
+Biochemistry,12,713319
+Biochim Biophys Acta,10,98345
+Biol Psychiatry,11,12884
+Biomed Pharmacother,10,11736
+Biomed Res Int,50,21119
+Bioresour Technol,16,23755
+Biosci Rep,61,5347
+Biosens Bioelectron,15,13141
+Blood,33,4029108
+Br J Anaesth,23,19954
+Br J Pharmacol,11,25017
+Brain Res,12,60642
+Braz J Med Biol Res,17,6855
+Can J Anaesth,40,8673
+Cancer Biother Radiopharm,14,2053
+Cancer Cell Int,20,2614
+Cancer Gene Ther,12,2395
+Cancer Lett,16,14825
+Cancer Manag Res,28,3892
+Cancer Res,62,56277
+Cancer Sci,14,5461
+Carcinogenesis,15,118369
+Cardiovasc Res,10,11665
+Cell,33,5028073
+Cell Cycle,16,242527
+Cell Death Dis,17,7217
+Cell Metab,10,3243
+Cell Physiol Biochem,27,5809
+Chem Commun (Camb),17,49023
+Chemosphere,14,29689
+Circ Res,23,18249
+Circulation,13,372288
+Clin Cancer Res,23,19439
+Clin Oral Implants Res,16,3786
+Comput Med Imaging Graph,10,2166
+Cureus,24,17371
+Diabetes,32,757871
+Diagn Pathol,41,2035
+DNA Cell Biol,13,3581
+Drug Des Devel Ther,10,3354
+Early Hum Dev,30,4667
+EMBO J,19,20303
+Environ Monit Assess,13,12421
+Eur J Anaesthesiol,33,5272
+Eur J Med Res,21,2213
+Eur J Pharmacol,11,35651
+Eur Rev Med Pharmacol Sci,210,9790
+Evid Based Complement Alternat Med,23,10060
+Exp Cell Res,14,22897
+Exp Ther Med,32,10612
+FASEB J,20,14346
+FEBS Lett,15,50491
+Free Radic Biol Med,10,11171
+Front Oncol,21,11124
+Gene,11,2460404
 Genet Mol Res,13,7546
-Indian J Dermatol,10,3143
-Infect Immun,19,32077
-Innov Pharm,10,257
-Int J Cancer,22,25576
-Int J Cardiol,16,27958
+Indian J Dermatol,10,3217
+Infect Immun,16,32143
+Innov Pharm,10,279
+Int Immunopharmacol,11,7804
+Int J Cancer,22,25686
+Int J Cardiol,17,28140
 Int J Clin Exp Med,19,4106
-Int J Clin Exp Pathol,23,6174
-Int J Mol Med,12,7622
-Int J Mol Sci,12,38148
-Int J Nanomedicine,10,6127
-Int J Oncol,11,10891
-Int J Syst Evol Microbiol,13,11962
-Intensive Care Med,11,11606
-J Am Chem Soc,36,64828
-J Bacteriol,15,53491
-J Biol Chem,349,182747
-J Cell Biochem,81,12400
-J Cell Biol,11,22800
-J Cell Mol Med,13,6460
-J Cell Physiol,37,16387
-J Cell Sci,20,16297
-J Clin Anesth,10,5973
-J Clin Invest,41,32129
-J Clin Microbiol,10,31038
-J Clin Oncol,13,25278
-J Exp Clin Cancer Res,11,3757
-J Exp Med,11,24095
-J Gen Virol,11,15903
-J Hazard Mater,18,21952
-J Immunol,50,67029
-J Lipid Res,10,11295
-J Neurochem,19,27207
-J Neurosci,24,38391
-J Obstet Gynaecol Res,10,5033
-J Org Chem,13,36277
-J Orthop Surg Res,16,2883
-J Pers Soc Psychol,17,6572
-J Pharmacol Exp Ther,15,29542
-J Surg Res,10,15780
-J Thorac Cardiovasc Surg,11,30930
-J Virol,27,47359
-JAMA,10,111897
-Lancet,21,178782
-Langmuir,11,50840
-Leuk Lymphoma,12,12166
-Life Sci,33,29722
-Med Sci Monit,17,9816
-Medicine (Baltimore),37,28975
-Mol Biol Rep,36,8587
-Mol Cancer,11,3798
-Mol Cancer Ther,16,5262
-Mol Cell,14,8662
-Mol Cell Biochem,12,11168
-Mol Cell Biol,35,22875
-Mol Cells,12,3100
+Int J Clin Exp Pathol,26,6208
+Int J Immunopathol Pharmacol,16,2147
+Int J Mol Med,17,7677
+Int J Mol Sci,13,42355
+Int J Nanomedicine,11,6277
+Int J Oncol,16,10931
+Int J Syst Evol Microbiol,13,12140
+Intensive Care Med,11,11676
+J Am Chem Soc,37,65563
+J Bacteriol,14,53568
+J Biol Chem,356,183092
+J BUON,17,3741
+J Cell Biochem,170,12528
+J Cell Biol,10,22866
+J Cell Mol Med,13,6665
+J Cell Physiol,70,16499
+J Cell Sci,21,16387
+J Clin Anesth,10,6074
+J Clin Invest,33,32255
+J Clin Oncol,13,25425
+J Exp Clin Cancer Res,13,3849
+J Gen Virol,11,15946
+J Hazard Mater,18,23011
+J Immunol,46,67211
+J Lipid Res,10,11327
+J Neurochem,18,27272
+J Neurosci,25,38600
+J Obstet Gynaecol Res,10,5174
+J Org Chem,13,36770
+J Orthop Surg Res,17,3050
+J Pers Soc Psychol,17,6603
+J Pharmacol Exp Ther,14,29587
+J Thorac Cardiovasc Surg,11,31129
+J Virol,24,47563
+JAMA,10,113776
+Lancet,15,180764
+Langmuir,12,51674
+Leuk Lymphoma,12,12288
+Life Sci,35,29912
+Med Sci Monit,44,9947
+Medicine (Baltimore),45,29785
+Mol Biol Rep,37,8800
+Mol Cancer,12,3830
+Mol Cancer Ther,17,5336
+Mol Cell,14,8784
+Mol Cell Biochem,12,11222
+Mol Cell Biol,29,22896
+Mol Cells,12,3127
 Mol Endocrinol,12,5856
-Mol Med Rep,43,12290
-Mol Neurobiol,20,4977
-Mol Pharmacol,15,11802
-Molecules,10,620149
-N Engl J Med,24,81732
-Nat Cell Biol,11,4745
-Nat Commun,16,39109
-Nat Med,13,10765
-Nat Prod Res,11,7501
-Nature,84,603727
-Neurochem Res,10,8997
-Neurol Sci,10,6593
-Neurology,14,495437
-Neuropsychiatr Dis Treat,13,3409
-Neurosci Lett,32,34766
-Neuroscience,14,368086
-Nucleic Acids Res,18,48301
-Obstet Gynecol,18,28781
-Onco Targets Ther,48,5899
-Oncogene,16,278250
-Oncol Lett,32,12806
-Oncol Rep,21,12618
-Oncotarget,15,26102
+Mol Med Rep,61,12522
+Mol Neurobiol,19,5086
+Mol Pharmacol,14,11835
+Molecules,10,632032
+N Engl J Med,19,82138
+Nat Cell Biol,11,4800
+Nat Commun,16,40853
+Nat Med,13,10868
+Nat Prod Res,11,7655
+Nature,74,613383
+Naunyn Schmiedebergs Arch Pharmacol,13,8972
+Neurochem Res,10,9066
+Neurol Sci,10,6814
+Neurology,12,508583
+Neuropsychiatr Dis Treat,13,3496
+Neurosci Lett,32,34911
+Neuroscience,13,378957
+Nucleic Acids Res,16,48630
+Obstet Gynecol,18,28890
+Onco Targets Ther,64,6010
+Oncogene,16,281962
+Oncol Lett,42,12995
+Oncol Rep,34,12693
+Oncotarget,15,26187
 Open Biomed Eng J,11,222
-Org Lett,16,33284
-Paediatr Anaesth,10,5772
-Phys Chem Chem Phys,10,35098
-Phys Rev Lett,14,92043
-Phytother Res,23,5710
-Plant Physiol,11,32560
-PLoS One,335,249180
-Proc Biol Sci,10,11911
-Proc Natl Acad Sci U S A,111,145370
-Psychol Sci,11,4114
-Sci Rep,83,139066
-Sci Total Environ,10,42810
-Science,82,2483946
-ScientificWorldJournal,28,10014
-Spectrochim Acta A Mol Biomol Spectrosc,15,17031
-Stroke,11,346642
-Talanta,12,24551
-Tissue Eng Part A,12,3109
-Toxicol Ind Health,12,2489
-Toxicology,11,213258
-Transplant Proc,11,43345
-Transplantation,16,785984
-Tumour Biol,39,7265
-World Neurosurg,12,15972
-Yonsei Med J,12,4865
+Org Lett,16,33772
+Paediatr Anaesth,10,5818
+Phys Chem Chem Phys,10,35753
+Phys Rev Lett,14,92627
+Phytother Res,23,5815
+Plant Physiol,11,32563
+PLoS One,341,253454
+Proc Natl Acad Sci U S A,93,146483
+Psychol Sci,11,4161
+Sci Rep,88,145143
+Sci Total Environ,11,44718
+Science,68,2575336
+ScientificWorldJournal,28,10057
+Spectrochim Acta A Mol Biomol Spectrosc,15,17307
+Stroke,11,354489
+Talanta,12,24859
+Technol Cancer Res Treat,17,2041
+Tissue Eng Part A,13,3127
+Toxicol Ind Health,12,2509
+Toxicology,11,217216
+Transplant Proc,10,43465
+Transplantation,17,795970
+Tumour Biol,39,7273
+World Neurosurg,12,16425
+Yonsei Med J,12,4904
